@@ -1,9 +1,24 @@
 'use client';
 
 import { notFound } from 'next/navigation';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-const projects = [
+interface Project {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  features: string[];
+  image: string;
+  status: string;
+  github: string;
+  demo: string;
+}
+
+const projects: Project[] = [
   {
     id: 'matchinsight',
     title: 'MatchInsight',
@@ -44,18 +59,38 @@ const projects = [
   }
 ];
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage() {
   const router = useRouter();
-  const project = projects.find((p) => p.id === params.id);
+  const params = useParams();
+  const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const id = params.id as string;
+    const foundProject = projects.find((p) => p.id === id);
+    
+    if (!foundProject) {
+      notFound();
+    } else {
+      setProject(foundProject);
+      setLoading(false);
+    }
+  }, [params.id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-4xl mb-4">⏳</div>
+          <div className="text-lg">Cargando proyecto...</div>
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
-    notFound();
+    return null;
   }
 
   return (
@@ -124,7 +159,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                 Características Principales
               </h2>
               <ul className="space-y-2">
-                {project.features.map((feature, index) => (
+                {project.features.map((feature: string, index: number) => (
                   <li key={index} className="flex items-center gap-2 dark:text-gray-300 light:text-gray-600">
                     <span className="text-orange-500">→</span>
                     <span>{feature}</span>
@@ -141,7 +176,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                 Tecnologías Utilizadas
               </h2>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
+                {project.technologies.map((tech: string, index: number) => (
                   <span 
                     key={index}
                     className="px-3 py-2 bg-orange-500 text-black font-semibold rounded-lg text-sm hover:bg-orange-600 transition-colors duration-300"

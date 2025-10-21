@@ -132,7 +132,7 @@ export default function ReferencesSection() {
                 
                 {/* Descripción */}
                 <p className="text-gray-300 mb-6 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
-                  "{ref.description}"
+                  &ldquo;{ref.description}&rdquo;
                 </p>
                 
                 {/* Contacto */}
@@ -157,7 +157,7 @@ export default function ReferencesSection() {
                   </div>
                   
                   <div className="text-orange-500 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">"</span>
+                    <span className="text-2xl">&rdquo;</span>
                   </div>
                 </div>
               </div>

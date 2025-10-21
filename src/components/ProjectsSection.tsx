@@ -106,7 +106,7 @@ export default function ProjectsSection() {
 
                   {/* Botón Ver más */}
                   <div className="mb-4">
-                    <Link href={`/proyectos/${project.id === 'MatchInsight' ? 'matchinsight' : 'fintrack'}`}>
+                    <Link href={`/proyectos/${project.title === 'MatchInsight' ? 'matchinsight' : 'fintrack'}`}>
                       <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 text-sm">
                         Ver más →
                       </button>
