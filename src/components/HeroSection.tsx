@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -59,16 +61,16 @@ export default function HeroSection() {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold dark:text-white light:text-gray-900">
-          Dr. Cristian Gomez
+          {t.hero.title}
         </h1>
         
         <p className="text-sm sm:text-lg lg:text-xl dark:text-white light:text-gray-700 font-medium max-w-2xl mx-auto lg:mx-0">
-          FUTURE SOFTWARE ENGINEER WITH A PASSION FOR WEB DEVELOPMENT AND CREATING PROJECTS THAT ADD REAL VALUE.
+          {t.hero.subtitle}
         </p>
 
         <div className="space-y-2 sm:space-y-3 dark:text-white light:text-gray-700">
-          <p className="text-sm sm:text-base lg:text-lg">• PASSIONATE ABOUT FRONTEND, WEB INNOVATION AND CONSTANT LEARNING.</p>
-          <p className="text-sm sm:text-base lg:text-lg">• FOCUSED ON CREATING USEFUL PROJECTS WITH GOOD DESIGN.</p>
+          <p className="text-sm sm:text-base lg:text-lg">{t.hero.bullet1}</p>
+          <p className="text-sm sm:text-base lg:text-lg">{t.hero.bullet2}</p>
         </div>
 
         {/* Button and social media */}
@@ -82,7 +84,7 @@ export default function HeroSection() {
             }}
             className="group bg-orange-500 hover:bg-orange-600 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 w-full sm:w-auto"
           >
-            CONTACT ME
+            {t.hero.contactMe}
           </button>
           
           {/* Social media */}

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function TechnologiesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -34,29 +36,29 @@ export default function TechnologiesSection() {
   const technologies = [
     {
       id: 1,
-      title: "LANGUAGES",
-      description: "Programming languages for logic and interaction of modern web applications.",
+      title: t.technologies.languages,
+      description: t.technologies.languagesDesc,
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
       icon: "💻"
     },
     {
       id: 2,
-      title: "FRAMEWORKS",
-      description: "Tools for faster development and modern, dynamic applications.",
+      title: t.technologies.frameworks,
+      description: t.technologies.frameworksDesc,
       items: ["Next.js", "React", "TailwindCSS"],
       icon: "⚡"
     },
     {
       id: 3,
-      title: "TOOLS",
-      description: "Platforms for version control, collaboration and project deployment.",
+      title: t.technologies.tools,
+      description: t.technologies.toolsDesc,
       items: ["Git", "GitHub", "Figma", "VS Code"],
       icon: "🛠️"
     },
     {
       id: 4,
-      title: "STYLES / DESIGN",
-      description: "Technologies for visual interfaces, clean design and user experience.",
+      title: t.technologies.stylesDesign,
+      description: t.technologies.stylesDesc,
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
       icon: "🎨"
     }
@@ -65,6 +67,14 @@ export default function TechnologiesSection() {
   return (
     <section id="tecnologias" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900 mb-4">
+            {t.technologies.title}
+          </h1>
+          <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+            {t.technologies.subtitle}
+          </p>
+        </div>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Technologies grid */}
           <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 transition-all duration-1000 ${
@@ -131,8 +141,8 @@ export default function TechnologiesSection() {
               
               <div className="relative text-center">
                 <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">💻</div>
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">Web Development</div>
-                <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">Modern technologies to create exceptional digital experiences</div>
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">{t.technologies.webDevelopment}</div>
+                <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">{t.technologies.webDevelopmentDesc}</div>
               </div>
             </div>
           </div>

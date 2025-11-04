@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function TechnologiesPage() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -15,29 +17,29 @@ export default function TechnologiesPage() {
   const technologies = [
     {
       id: 1,
-      title: "LANGUAGES",
-      description: "Programming languages for logic and interaction of modern web applications.",
+      title: t.technologies.languages,
+      description: t.technologies.languagesDesc,
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
       icon: "💻"
     },
     {
       id: 2,
-      title: "FRAMEWORKS",
-      description: "Tools for faster development and modern, dynamic applications.",
+      title: t.technologies.frameworks,
+      description: t.technologies.frameworksDesc,
       items: ["Next.js", "React", "TailwindCSS"],
       icon: "⚡"
     },
     {
       id: 3,
-      title: "TOOLS",
-      description: "Platforms for version control, collaboration and project deployment.",
+      title: t.technologies.tools,
+      description: t.technologies.toolsDesc,
       items: ["Git", "GitHub", "Figma", "VS Code"],
       icon: "🛠️"
     },
     {
       id: 4,
-      title: "STYLES / DESIGN",
-      description: "Technologies for visual interfaces, clean design and user experience.",
+      title: t.technologies.stylesDesign,
+      description: t.technologies.stylesDesc,
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
       icon: "🎨"
     }
@@ -51,10 +53,10 @@ export default function TechnologiesPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
-            Technologies
+            {t.technologies.title}
           </h1>
           <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-            Tools and technologies I use to create modern and efficient web applications.
+            {t.technologies.subtitle}
           </p>
         </div>
 
@@ -119,11 +121,10 @@ export default function TechnologiesPage() {
           <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 text-center">
             <div className="text-4xl sm:text-5xl mb-4">🚀</div>
             <h2 className="text-2xl sm:text-3xl font-bold dark:text-white light:text-gray-900 mb-4">
-              Always Learning
+              {t.technologies.alwaysLearning}
             </h2>
             <p className="dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
-              I stay up to date with the latest technologies and best practices in web development, 
-              always looking for new ways to create exceptional digital experiences.
+              {t.technologies.alwaysLearningDesc}
             </p>
           </div>
         </div>
@@ -134,7 +135,7 @@ export default function TechnologiesPage() {
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Back to Home
+            {t.common.backToHome}
           </button>
         </div>
       </div>

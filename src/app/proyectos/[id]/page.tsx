@@ -2,7 +2,8 @@
 
 import { notFound } from 'next/navigation';
 import { useRouter, useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Project {
   id: string;
@@ -18,46 +19,7 @@ interface Project {
   demo: string;
 }
 
-const projects: Project[] = [
-  {
-    id: 'matchinsight',
-    title: 'MatchInsight',
-    subtitle: 'Match Analyzer',
-    description: 'Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.',
-    longDescription: 'MatchInsight is an innovative web application designed to analyze soccer matches in real-time. The platform uses advanced algorithms to process match data and generate detailed statistics that help coaches, analysts and fans better understand team and player performance.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Node.js'],
-    features: [
-      'Real-time match analysis',
-      'Detailed player statistics',
-      'Interactive charts and visualizations',
-      'Intuitive dashboard for coaches',
-      'REST API for integration with other systems'
-    ],
-    image: '/matchinsight-preview.png',
-    status: 'In Development',
-    github: 'https://github.com/cristian/matchinsight',
-    demo: 'https://matchinsight-demo.vercel.app'
-  },
-  {
-    id: 'fintrack',
-    title: 'FinTrack',
-    subtitle: 'Personal Expense Control',
-    description: 'Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.',
-    longDescription: 'FinTrack is a complete application for personal financial management that allows users to control their expenses, create budgets and generate detailed reports. The application features an intuitive interface and advanced features for financial analysis.',
-    technologies: ['React Native', 'React', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
-    features: [
-      'Automatic expense tracking',
-      'Smart categorization',
-      'Detailed financial reports',
-      'Customizable budgets',
-      'Synchronization between devices'
-    ],
-    image: '/fintrack-preview.png',
-    status: 'Completed',
-    github: 'https://github.com/cristian/fintrack',
-    demo: 'https://fintrack-demo.vercel.app'
-  }
-];
+// This will be moved inside the component to use translations
 
 
 export default function ProjectPage() {
@@ -65,6 +27,48 @@ export default function ProjectPage() {
   const params = useParams();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
+
+  const projects: Project[] = useMemo(() => [
+    {
+      id: 'matchinsight',
+      title: 'MatchInsight',
+      subtitle: t.projects.matchAnalyzer,
+      description: t.projects.matchDescription,
+      longDescription: 'MatchInsight is an innovative web application designed to analyze soccer matches in real-time. The platform uses advanced algorithms to process match data and generate detailed statistics that help coaches, analysts and fans better understand team and player performance.',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Node.js'],
+      features: [
+        'Real-time match analysis',
+        'Detailed player statistics',
+        'Interactive charts and visualizations',
+        'Intuitive dashboard for coaches',
+        'REST API for integration with other systems'
+      ],
+      image: '/matchinsight-preview.png',
+      status: t.projects.inDevelopment,
+      github: 'https://github.com/cristian/matchinsight',
+      demo: 'https://matchinsight-demo.vercel.app'
+    },
+    {
+      id: 'fintrack',
+      title: 'FinTrack',
+      subtitle: t.projects.personalExpenseControl,
+      description: t.projects.finTrackDescription,
+      longDescription: 'FinTrack is a complete application for personal financial management that allows users to control their expenses, create budgets and generate detailed reports. The application features an intuitive interface and advanced features for financial analysis.',
+      technologies: ['React Native', 'React', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
+      features: [
+        'Automatic expense tracking',
+        'Smart categorization',
+        'Detailed financial reports',
+        'Customizable budgets',
+        'Synchronization between devices'
+      ],
+      image: '/fintrack-preview.png',
+      status: t.projects.completed,
+      github: 'https://github.com/cristian/fintrack',
+      demo: 'https://fintrack-demo.vercel.app'
+    }
+  ], [t]);
 
   useEffect(() => {
     const id = params.id as string;
@@ -76,14 +80,14 @@ export default function ProjectPage() {
       setProject(foundProject);
       setLoading(false);
     }
-  }, [params.id]);
+  }, [params.id, projects]);
 
   if (loading) {
     return (
       <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl mb-4">⏳</div>
-          <div className="text-lg">Loading project...</div>
+          <div className="text-lg">{t.projectDetail.loading}</div>
         </div>
       </div>
     );
@@ -114,7 +118,7 @@ export default function ProjectPage() {
           
           <div className="flex items-center gap-4 mb-6">
             <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-              project.status === 'Completed' 
+              project.status === t.projects.completed 
                 ? 'bg-green-500 text-white' 
                 : 'bg-orange-500 text-black'
             }`}>
@@ -135,7 +139,7 @@ export default function ProjectPage() {
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
               >
-                Ver Demo
+                {t.projectDetail.viewDemo}
               </a>
             </div>
           </div>
@@ -147,7 +151,7 @@ export default function ProjectPage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Project Description
+                {t.projectDetail.projectDescription}
               </h2>
               <p className="dark:text-gray-300 light:text-gray-600 leading-relaxed">
                 {project.longDescription}
@@ -156,7 +160,7 @@ export default function ProjectPage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Main Features
+                {t.projectDetail.mainFeatures}
               </h2>
               <ul className="space-y-2">
                 {project.features.map((feature: string, index: number) => (
@@ -173,7 +177,7 @@ export default function ProjectPage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Technologies Used
+                {t.projectDetail.technologiesUsed}
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech: string, index: number) => (
@@ -197,7 +201,7 @@ export default function ProjectPage() {
                   {project.title}
                 </div>
                 <div className="dark:text-gray-300 light:text-gray-600 text-sm">
-                  Project preview
+                  {t.projectDetail.projectPreview}
                 </div>
               </div>
             </div>
@@ -210,7 +214,7 @@ export default function ProjectPage() {
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Back to Projects
+            {t.projectDetail.backToProjects}
           </button>
         </div>
       </div>

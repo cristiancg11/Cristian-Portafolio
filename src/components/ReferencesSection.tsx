@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ReferencesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +30,7 @@ export default function ReferencesSection() {
     {
       id: 1,
       name: "María González",
-      role: "University Classmate",
+      role: t.references.universityClassmate,
       description: "Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.",
       avatar: "https://i.pravatar.cc/100?img=1",
       contact: "maria.gonzalez@email.com",
@@ -38,7 +40,7 @@ export default function ReferencesSection() {
     {
       id: 2,
       name: "Carlos Rodríguez",
-      role: "Project Mentor",
+      role: t.references.projectMentor,
       description: "Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.",
       avatar: "https://i.pravatar.cc/100?img=2",
       contact: "carlos.rodriguez@email.com",
@@ -48,7 +50,7 @@ export default function ReferencesSection() {
     {
       id: 3,
       name: "Ana Martínez",
-      role: "Project Collaborator",
+      role: t.references.projectCollaborator,
       description: "Working with Cristian was a very positive experience. His creativity and technical skills are impressive.",
       avatar: "https://i.pravatar.cc/100?img=3",
       contact: "ana.martinez@email.com",
@@ -58,7 +60,7 @@ export default function ReferencesSection() {
     {
       id: 4,
       name: "Dr. Luis Pérez",
-      role: "Programming Professor",
+      role: t.references.programmingProfessor,
       description: "Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.",
       avatar: "https://i.pravatar.cc/100?img=4",
       contact: "luis.perez@universidad.edu",
@@ -77,12 +79,12 @@ export default function ReferencesSection() {
         <h1 className={`text-4xl font-bold text-orange-500 mb-4 text-center transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          References
+          {t.references.title}
         </h1>
         <p className={`text-gray-400 text-center mb-12 transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          What people who have worked with me say
+          {t.references.subtitle}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -173,19 +175,19 @@ export default function ReferencesSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-orange-500 mb-4">💬 Featured Testimonials</h2>
+            <h2 className="text-2xl font-bold text-orange-500 mb-4">💬 {t.references.featuredTestimonials}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">100%</div>
-                <div className="text-gray-300 text-sm">Recommendation</div>
+                <div className="text-gray-300 text-sm">{t.references.recommendation}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">5.0</div>
-                <div className="text-gray-300 text-sm">Average Rating</div>
+                <div className="text-gray-300 text-sm">{t.references.averageRating}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">4+</div>
-                <div className="text-gray-300 text-sm">Available References</div>
+                <div className="text-gray-300 text-sm">{t.references.availableReferences}</div>
               </div>
             </div>
           </div>

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,22 +29,22 @@ export default function ExperienceSection() {
   const experiences = [
     {
       id: 1,
-      title: "Git and GitHub Course",
-      description: "I learned version control, repository creation, branch management and project collaboration through GitHub. I mastered concepts like commits, pull requests, merge and collaborative development workflow.",
+      title: t.experience.gitTitle,
+      description: t.experience.gitDescription,
       image: "/git-github.png",
       platform: "Platzi"
     },
     {
       id: 2,
-      title: "Programming Fundamentals",
-      description: "I acquired solid knowledge in programming logic, variables, control structures, algorithms and object-oriented programming fundamentals. Essential foundation for software development.",
+      title: t.experience.programmingTitle,
+      description: t.experience.programmingDescription,
       image: "/programming.png",
       platform: "Platzi"
     },
     {
       id: 3,
-      title: "MySQL Workbench",
-      description: "I learned database design, table creation, SQL queries, indexes and optimization. Management of structured information and relationships between entities for robust web applications.",
+      title: t.experience.mysqlTitle,
+      description: t.experience.mysqlDescription,
       image: "/mysql.png",
       platform: "Platzi"
     }
@@ -106,7 +108,7 @@ export default function ExperienceSection() {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
-              Training Experiences
+              {t.experience.title}
             </h1>
             
             <div className="space-y-4 sm:space-y-6">

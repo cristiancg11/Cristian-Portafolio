@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProjectsPage() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -17,19 +19,19 @@ export default function ProjectsPage() {
       id: 'matchinsight',
       icon: '⚽',
       title: 'MatchInsight',
-      subtitle: 'Match Analyzer',
-      description: 'Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.',
+      subtitle: t.projects.matchAnalyzer,
+      description: t.projects.matchDescription,
       technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      status: 'In Development'
+      status: t.projects.inDevelopment
     },
     {
       id: 'fintrack',
       icon: '💰',
       title: 'FinTrack',
-      subtitle: 'Personal Expense Control',
-      description: 'Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.',
+      subtitle: t.projects.personalExpenseControl,
+      description: t.projects.finTrackDescription,
       technologies: ['React Native', 'React', 'Node.js', 'MongoDB'],
-      status: 'Completed'
+      status: t.projects.completed
     }
   ];
 
@@ -41,10 +43,10 @@ export default function ProjectsPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
-            My Projects
+            {t.projects.title}
           </h1>
           <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-            Here you can see some of the projects I've worked on, from web applications to data analysis tools.
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -86,7 +88,7 @@ export default function ProjectsPage() {
                 {/* Technologies */}
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold dark:text-white light:text-gray-900 mb-2">
-                    Technologies:
+                    {t.projects.technologies}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
@@ -103,7 +105,7 @@ export default function ProjectsPage() {
                 {/* Status and button */}
                 <div className="flex items-center justify-between">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    project.status === 'Completed' 
+                    project.status === t.projects.completed 
                       ? 'bg-green-500 text-white' 
                       : 'bg-orange-500 text-black'
                   }`}>
@@ -112,7 +114,7 @@ export default function ProjectsPage() {
                   
                   <Link href={`/proyectos/${project.id}`}>
                     <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25">
-                      See More
+                      {t.projects.seeMore}
                     </button>
                   </Link>
                 </div>
@@ -127,7 +129,7 @@ export default function ProjectsPage() {
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Back to Home
+            {t.common.backToHome}
           </button>
         </div>
       </div>

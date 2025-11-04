@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentProject, setCurrentProject] = useState(0);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -37,21 +39,21 @@ export default function ProjectsSection() {
       id: 1,
       icon: "⚽",
       title: "MatchInsight",
-      subtitle: "Match Analyzer",
-      description: "Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.",
+      subtitle: t.projects.matchAnalyzer,
+      description: t.projects.matchDescription,
       keywords: ["Soccer", "data analysis", "visualization", "charts"],
       image: "/matchinsight-preview.png",
-      status: "In Development"
+      status: t.projects.inDevelopment
     },
     {
       id: 2,
       icon: "💰",
       title: "FinTrack",
-      subtitle: "Personal Expense Control",
-      description: "Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.",
+      subtitle: t.projects.personalExpenseControl,
+      description: t.projects.finTrackDescription,
       keywords: ["Personal finance", "organization", "reports", "productivity"],
       image: "/fintrack-preview.png",
-      status: "Completed"
+      status: t.projects.completed
     }
   ];
 
@@ -72,7 +74,7 @@ export default function ProjectsSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
-              HELLO WORLD!
+              {t.projects.helloWorld}
             </h1>
             
             <div className="space-y-4 sm:space-y-6">
@@ -108,7 +110,7 @@ export default function ProjectsSection() {
                   <div className="mb-4">
                     <Link href={`/proyectos/${project.title === 'MatchInsight' ? 'matchinsight' : 'fintrack'}`}>
                       <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 text-sm">
-                        See More →
+                        {t.projects.seeMore} →
                       </button>
                     </Link>
                   </div>
@@ -123,14 +125,14 @@ export default function ProjectsSection() {
                 className="group relative px-4 sm:px-6 py-2 sm:py-3 dark:bg-gray-800 light:bg-gray-200 dark:text-white light:text-gray-900 dark:hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative">Previous</span>
+                <span className="relative">{t.projects.previous}</span>
               </button>
               <button
                 onClick={nextProject}
                 className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-orange-500 text-black font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative">Next</span>
+                <span className="relative">{t.projects.next}</span>
               </button>
             </div>
           </div>

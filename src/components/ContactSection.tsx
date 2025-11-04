@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +12,7 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,7 +40,7 @@ export default function ContactSection() {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     console.log('Form submitted:', formData);
-    alert('Message sent! I will contact you soon.');
+    alert(t.contact.successMessage);
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
   };
@@ -92,10 +94,10 @@ export default function ContactSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <p className="dark:text-white light:text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-            If you want to talk to me, fill out the form or write to me through my social networks.
+            {t.contact.subtitle}
           </p>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900">
-            CONTACT ME
+            {t.contact.title}
           </h1>
         </div>
         
@@ -105,11 +107,11 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">NAME</label>
+                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.name}</label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder={t.contact.namePlaceholder}
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
@@ -118,11 +120,11 @@ export default function ContactSection() {
               </div>
               
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">EMAIL</label>
+                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.email}</label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your@Email"
+                  placeholder={t.contact.emailPlaceholder}
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
@@ -132,10 +134,10 @@ export default function ContactSection() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">Message</label>
+              <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.message}</label>
               <textarea
                 name="message"
-                placeholder="Write Your Message Here..."
+                placeholder={t.contact.messagePlaceholder}
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
@@ -152,10 +154,10 @@ export default function ContactSection() {
               {isSubmitting ? (
                   <div className="flex items-center justify-center gap-2">
                   <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                  Sending...
+                  {t.contact.sending}
                 </div>
               ) : (
-                'Send Message'
+                t.contact.send
               )}
             </button>
           </form>
