@@ -15,29 +15,29 @@ export default function TechnologiesPage() {
   const technologies = [
     {
       id: 1,
-      title: "LENGUAJES",
-      description: "Lenguajes de programación para la lógica e interacción de aplicaciones web modernas.",
+      title: "LANGUAGES",
+      description: "Programming languages for logic and interaction of modern web applications.",
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
       icon: "💻"
     },
     {
       id: 2,
       title: "FRAMEWORKS",
-      description: "Herramientas para desarrollo más rápido y aplicaciones modernas y dinámicas.",
+      description: "Tools for faster development and modern, dynamic applications.",
       items: ["Next.js", "React", "TailwindCSS"],
       icon: "⚡"
     },
     {
       id: 3,
-      title: "HERRAMIENTAS",
-      description: "Plataformas para control de versiones, colaboración y despliegue de proyectos.",
+      title: "TOOLS",
+      description: "Platforms for version control, collaboration and project deployment.",
       items: ["Git", "GitHub", "Figma", "VS Code"],
       icon: "🛠️"
     },
     {
       id: 4,
-      title: "ESTILOS / DISEÑO",
-      description: "Tecnologías para interfaces visuales, diseño limpio y experiencia de usuario.",
+      title: "STYLES / DESIGN",
+      description: "Technologies for visual interfaces, clean design and user experience.",
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
       icon: "🎨"
     }
@@ -51,14 +51,14 @@ export default function TechnologiesPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
-            Tecnologías
+            Technologies
           </h1>
           <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-            Herramientas y tecnologías que utilizo para crear aplicaciones web modernas y eficientes.
+            Tools and technologies I use to create modern and efficient web applications.
           </p>
         </div>
 
-        {/* Grid de tecnologías */}
+        {/* Technologies grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {technologies.map((tech, index) => (
             <div
@@ -70,18 +70,18 @@ export default function TechnologiesPage() {
               onMouseEnter={() => setHoveredCard(tech.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Efecto de gradiente naranja */}
+              {/* Orange gradient effect */}
               <div className={`absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                 hoveredCard === tech.id ? 'opacity-100' : ''
               }`} />
               
-              {/* Borde naranja animado */}
+              {/* Animated orange border */}
               <div className={`absolute inset-0 rounded-xl border-2 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                 hoveredCard === tech.id ? 'opacity-100' : ''
               }`} />
               
               <div className="relative z-10">
-                {/* Icono y título */}
+                {/* Icon and title */}
                 <div className="text-center mb-4">
                   <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
@@ -91,12 +91,12 @@ export default function TechnologiesPage() {
                   </h3>
                 </div>
                 
-                {/* Descripción */}
+                {/* Description */}
                 <p className="dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed text-center">
                   {tech.description}
                 </p>
                 
-                {/* Tecnologías */}
+                {/* Technologies */}
                 <div className="space-y-2">
                   {tech.items.map((item, itemIndex) => (
                     <button
@@ -112,29 +112,29 @@ export default function TechnologiesPage() {
           ))}
         </div>
 
-        {/* Sección adicional */}
+        {/* Additional section */}
         <div className={`mt-12 sm:mt-16 transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 text-center">
             <div className="text-4xl sm:text-5xl mb-4">🚀</div>
             <h2 className="text-2xl sm:text-3xl font-bold dark:text-white light:text-gray-900 mb-4">
-              Siempre Aprendiendo
+              Always Learning
             </h2>
             <p className="dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
-              Me mantengo actualizado con las últimas tecnologías y mejores prácticas en desarrollo web, 
-              siempre buscando nuevas formas de crear experiencias digitales excepcionales.
+              I stay up to date with the latest technologies and best practices in web development, 
+              always looking for new ways to create exceptional digital experiences.
             </p>
           </div>
         </div>
 
-        {/* Botón de regreso */}
+        {/* Back button */}
         <div className="mt-8 sm:mt-12 text-center">
           <button 
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Volver al Inicio
+            ← Back to Home
           </button>
         </div>
       </div>

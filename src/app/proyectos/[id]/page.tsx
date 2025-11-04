@@ -22,38 +22,38 @@ const projects: Project[] = [
   {
     id: 'matchinsight',
     title: 'MatchInsight',
-    subtitle: 'Analizador de Partidos',
-    description: 'Plataforma web que analiza partidos de fútbol en tiempo real, mostrando estadísticas detalladas de jugadores clave, rendimiento del equipo y gráficos interactivos para una mejor comprensión del juego.',
-    longDescription: 'MatchInsight es una aplicación web innovadora diseñada para analizar partidos de fútbol en tiempo real. La plataforma utiliza algoritmos avanzados para procesar datos de partidos y generar estadísticas detalladas que ayudan a entrenadores, analistas y aficionados a comprender mejor el rendimiento de los equipos y jugadores.',
+    subtitle: 'Match Analyzer',
+    description: 'Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.',
+    longDescription: 'MatchInsight is an innovative web application designed to analyze soccer matches in real-time. The platform uses advanced algorithms to process match data and generate detailed statistics that help coaches, analysts and fans better understand team and player performance.',
     technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Node.js'],
     features: [
-      'Análisis en tiempo real de partidos',
-      'Estadísticas detalladas de jugadores',
-      'Gráficos interactivos y visualizaciones',
-      'Dashboard intuitivo para entrenadores',
-      'API REST para integración con otros sistemas'
+      'Real-time match analysis',
+      'Detailed player statistics',
+      'Interactive charts and visualizations',
+      'Intuitive dashboard for coaches',
+      'REST API for integration with other systems'
     ],
     image: '/matchinsight-preview.png',
-    status: 'En desarrollo',
+    status: 'In Development',
     github: 'https://github.com/cristian/matchinsight',
     demo: 'https://matchinsight-demo.vercel.app'
   },
   {
     id: 'fintrack',
     title: 'FinTrack',
-    subtitle: 'Control de Gastos Personales',
-    description: 'Aplicación móvil y web para el control de gastos personales con seguimiento automático de categorías, generación de reportes financieros y herramientas de productividad para una mejor gestión del dinero.',
-    longDescription: 'FinTrack es una aplicación completa para la gestión financiera personal que permite a los usuarios controlar sus gastos, crear presupuestos y generar reportes detallados. La aplicación cuenta con una interfaz intuitiva y funcionalidades avanzadas para el análisis financiero.',
+    subtitle: 'Personal Expense Control',
+    description: 'Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.',
+    longDescription: 'FinTrack is a complete application for personal financial management that allows users to control their expenses, create budgets and generate detailed reports. The application features an intuitive interface and advanced features for financial analysis.',
     technologies: ['React Native', 'React', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
     features: [
-      'Seguimiento automático de gastos',
-      'Categorización inteligente',
-      'Reportes financieros detallados',
-      'Presupuestos personalizables',
-      'Sincronización entre dispositivos'
+      'Automatic expense tracking',
+      'Smart categorization',
+      'Detailed financial reports',
+      'Customizable budgets',
+      'Synchronization between devices'
     ],
     image: '/fintrack-preview.png',
-    status: 'Completado',
+    status: 'Completed',
     github: 'https://github.com/cristian/fintrack',
     demo: 'https://fintrack-demo.vercel.app'
   }
@@ -83,7 +83,7 @@ export default function ProjectPage() {
       <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl mb-4">⏳</div>
-          <div className="text-lg">Cargando proyecto...</div>
+          <div className="text-lg">Loading project...</div>
         </div>
       </div>
     );
@@ -114,7 +114,7 @@ export default function ProjectPage() {
           
           <div className="flex items-center gap-4 mb-6">
             <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-              project.status === 'Completado' 
+              project.status === 'Completed' 
                 ? 'bg-green-500 text-white' 
                 : 'bg-orange-500 text-black'
             }`}>
@@ -141,13 +141,13 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Contenido principal */}
+        {/* Main content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Descripción */}
+          {/* Description */}
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Descripción del Proyecto
+                Project Description
               </h2>
               <p className="dark:text-gray-300 light:text-gray-600 leading-relaxed">
                 {project.longDescription}
@@ -156,7 +156,7 @@ export default function ProjectPage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Características Principales
+                Main Features
               </h2>
               <ul className="space-y-2">
                 {project.features.map((feature: string, index: number) => (
@@ -169,11 +169,11 @@ export default function ProjectPage() {
             </div>
           </div>
 
-          {/* Tecnologías e imagen */}
+          {/* Technologies and image */}
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
-                Tecnologías Utilizadas
+                Technologies Used
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech: string, index: number) => (
@@ -197,20 +197,20 @@ export default function ProjectPage() {
                   {project.title}
                 </div>
                 <div className="dark:text-gray-300 light:text-gray-600 text-sm">
-                  Vista previa del proyecto
+                  Project preview
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Botón de regreso */}
+        {/* Back button */}
         <div className="mt-8 sm:mt-12 text-center">
           <button 
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Volver a Proyectos
+            ← Back to Projects
           </button>
         </div>
       </div>

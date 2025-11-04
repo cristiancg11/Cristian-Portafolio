@@ -34,11 +34,11 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simular envío del formulario
+    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
-    console.log('Formulario enviado:', formData);
-    alert('¡Mensaje enviado! Te contactaré pronto.');
+    console.log('Form submitted:', formData);
+    alert('Message sent! I will contact you soon.');
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
   };
@@ -57,7 +57,7 @@ export default function ContactSection() {
       icon: '🐙',
       url: 'https://github.com/cristiangomez',
       color: 'hover:bg-gray-700',
-      description: 'Mis proyectos y código'
+      description: 'My projects and code'
     },
     {
       id: 'linkedin',
@@ -65,7 +65,7 @@ export default function ContactSection() {
       icon: '💼',
       url: 'https://linkedin.com/in/cristiangomez',
       color: 'hover:bg-blue-600',
-      description: 'Mi perfil profesional'
+      description: 'My professional profile'
     },
     {
       id: 'email',
@@ -73,7 +73,7 @@ export default function ContactSection() {
       icon: '📧',
       url: 'mailto:cristian@example.com',
       color: 'hover:bg-red-600',
-      description: 'Contacto directo'
+      description: 'Direct contact'
     },
     {
       id: 'twitter',
@@ -81,7 +81,7 @@ export default function ContactSection() {
       icon: '🐦',
       url: 'https://twitter.com/cristiangomez',
       color: 'hover:bg-blue-500',
-      description: 'Sígueme en redes'
+      description: 'Follow me on social media'
     }
   ];
 
@@ -92,10 +92,10 @@ export default function ContactSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <p className="dark:text-white light:text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-            Si quieres hablar conmigo, completa el formulario o escríbeme por mis redes.
+            If you want to talk to me, fill out the form or write to me through my social networks.
           </p>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900">
-            CONTACTAME
+            CONTACT ME
           </h1>
         </div>
         
@@ -105,11 +105,11 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">NOMBRE</label>
+                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">NAME</label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Tu Nombre"
+                  placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
@@ -118,11 +118,11 @@ export default function ContactSection() {
               </div>
               
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">CORREO</label>
+                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">EMAIL</label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Tu@Correo"
+                  placeholder="Your@Email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
@@ -132,10 +132,10 @@ export default function ContactSection() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">Mensaje</label>
+              <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">Message</label>
               <textarea
                 name="message"
-                placeholder="Escribe Tu Mensaje Aquí..."
+                placeholder="Write Your Message Here..."
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
@@ -150,18 +150,18 @@ export default function ContactSection() {
               className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 text-black font-bold py-3 sm:py-4 px-6 rounded-lg transition-all duration-300 hover:scale-105 disabled:cursor-not-allowed text-sm sm:text-base"
             >
               {isSubmitting ? (
-                <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center justify-center gap-2">
                   <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                  Enviando...
+                  Sending...
                 </div>
               ) : (
-                'Enviar Mensaje'
+                'Send Message'
               )}
             </button>
           </form>
         </div>
         
-        {/* Redes sociales */}
+        {/* Social media */}
         <div className={`flex justify-center gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>

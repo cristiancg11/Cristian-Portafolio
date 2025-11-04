@@ -37,21 +37,21 @@ export default function ProjectsSection() {
       id: 1,
       icon: "⚽",
       title: "MatchInsight",
-      subtitle: "Analizador de Partidos",
-      description: "Plataforma web que analiza partidos de fútbol en tiempo real, mostrando estadísticas detalladas de jugadores clave, rendimiento del equipo y gráficos interactivos para una mejor comprensión del juego.",
-      keywords: ["Fútbol", "análisis de datos", "visualización", "gráficos"],
+      subtitle: "Match Analyzer",
+      description: "Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.",
+      keywords: ["Soccer", "data analysis", "visualization", "charts"],
       image: "/matchinsight-preview.png",
-      status: "En desarrollo"
+      status: "In Development"
     },
     {
       id: 2,
       icon: "💰",
       title: "FinTrack",
-      subtitle: "Control de Gastos Personales",
-      description: "Aplicación móvil y web para el control de gastos personales con seguimiento automático de categorías, generación de reportes financieros y herramientas de productividad para una mejor gestión del dinero.",
-      keywords: ["Finanzas personales", "organización", "reportes", "productividad"],
+      subtitle: "Personal Expense Control",
+      description: "Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.",
+      keywords: ["Personal finance", "organization", "reports", "productivity"],
       image: "/fintrack-preview.png",
-      status: "Completado"
+      status: "Completed"
     }
   ];
 
@@ -67,12 +67,12 @@ export default function ProjectsSection() {
     <section id="proyectos" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Contenido de la izquierda */}
+          {/* Left content */}
           <div className={`space-y-6 sm:space-y-8 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
-              ¡HOLA MUNDO!
+              HELLO WORLD!
             </h1>
             
             <div className="space-y-4 sm:space-y-6">
@@ -104,11 +104,11 @@ export default function ProjectsSection() {
                     ))}
                   </div>
 
-                  {/* Botón Ver más */}
+                  {/* See More button */}
                   <div className="mb-4">
                     <Link href={`/proyectos/${project.title === 'MatchInsight' ? 'matchinsight' : 'fintrack'}`}>
                       <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 text-sm">
-                        Ver más →
+                        See More →
                       </button>
                     </Link>
                   </div>
@@ -116,26 +116,26 @@ export default function ProjectsSection() {
               ))}
             </div>
             
-            {/* Navegación */}
+            {/* Navigation */}
             <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
               <button
                 onClick={prevProject}
                 className="group relative px-4 sm:px-6 py-2 sm:py-3 dark:bg-gray-800 light:bg-gray-200 dark:text-white light:text-gray-900 dark:hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative">Atras</span>
+                <span className="relative">Previous</span>
               </button>
               <button
                 onClick={nextProject}
                 className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-orange-500 text-black font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative">Siguiente</span>
+                <span className="relative">Next</span>
               </button>
             </div>
           </div>
 
-          {/* Carrusel de la derecha */}
+          {/* Right carousel */}
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
@@ -149,7 +149,7 @@ export default function ProjectsSection() {
                     }`}
                     onClick={() => scrollToSection('proyectos')}
                   >
-                    {/* Efecto de gradiente naranja */}
+                    {/* Orange gradient effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="relative z-10">
@@ -164,7 +164,7 @@ export default function ProjectsSection() {
                 ))}
               </div>
               
-              {/* Indicadores de navegación */}
+              {/* Navigation indicators */}
               <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
                 <button onClick={prevProject} className="group dark:text-white light:text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
                   <span className="group-hover:drop-shadow-lg">←</span>

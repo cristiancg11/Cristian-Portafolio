@@ -27,22 +27,22 @@ export default function ExperienceSection() {
   const experiences = [
     {
       id: 1,
-      title: "Curso de Git y GitHub",
-      description: "Aprendí el control de versiones, creación de repositorios, manejo de ramas y colaboración en proyectos a través de GitHub. Dominé conceptos como commits, pull requests, merge y workflow de desarrollo colaborativo.",
+      title: "Git and GitHub Course",
+      description: "I learned version control, repository creation, branch management and project collaboration through GitHub. I mastered concepts like commits, pull requests, merge and collaborative development workflow.",
       image: "/git-github.png",
       platform: "Platzi"
     },
     {
       id: 2,
-      title: "Fundamentos de Programación",
-      description: "Adquirí conocimientos sólidos en lógica de programación, variables, estructuras de control, algoritmos y fundamentos de programación orientada a objetos. Base esencial para el desarrollo de software.",
+      title: "Programming Fundamentals",
+      description: "I acquired solid knowledge in programming logic, variables, control structures, algorithms and object-oriented programming fundamentals. Essential foundation for software development.",
       image: "/programming.png",
       platform: "Platzi"
     },
     {
       id: 3,
       title: "MySQL Workbench",
-      description: "Aprendí diseño de bases de datos, creación de tablas, consultas SQL, índices y optimización. Manejo de información estructurada y relaciones entre entidades para aplicaciones web robustas.",
+      description: "I learned database design, table creation, SQL queries, indexes and optimization. Management of structured information and relationships between entities for robust web applications.",
       image: "/mysql.png",
       platform: "Platzi"
     }
@@ -52,7 +52,7 @@ export default function ExperienceSection() {
     <section id="experiencias" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Carrusel de la izquierda */}
+          {/* Left carousel */}
           <div className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
@@ -76,7 +76,7 @@ export default function ExperienceSection() {
               ))}
             </div>
             
-            {/* Indicadores de navegación */}
+            {/* Navigation indicators */}
             <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
               <button className="dark:text-white light:text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
                 ←
@@ -101,12 +101,12 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          {/* Descripción de la derecha */}
+          {/* Right description */}
           <div className={`space-y-4 sm:space-y-6 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
-              Experiencias en Formación
+              Training Experiences
             </h1>
             
             <div className="space-y-4 sm:space-y-6">

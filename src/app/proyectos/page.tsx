@@ -17,19 +17,19 @@ export default function ProjectsPage() {
       id: 'matchinsight',
       icon: '⚽',
       title: 'MatchInsight',
-      subtitle: 'Analizador de Partidos',
-      description: 'Plataforma web que analiza partidos de fútbol en tiempo real, mostrando estadísticas detalladas de jugadores clave, rendimiento del equipo y gráficos interactivos para una mejor comprensión del juego.',
+      subtitle: 'Match Analyzer',
+      description: 'Web platform that analyzes soccer matches in real-time, showing detailed statistics of key players, team performance and interactive charts for a better understanding of the game.',
       technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      status: 'En desarrollo'
+      status: 'In Development'
     },
     {
       id: 'fintrack',
       icon: '💰',
       title: 'FinTrack',
-      subtitle: 'Control de Gastos Personales',
-      description: 'Aplicación móvil y web para el control de gastos personales con seguimiento automático de categorías, generación de reportes financieros y herramientas de productividad para una mejor gestión del dinero.',
+      subtitle: 'Personal Expense Control',
+      description: 'Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.',
       technologies: ['React Native', 'React', 'Node.js', 'MongoDB'],
-      status: 'Completado'
+      status: 'Completed'
     }
   ];
 
@@ -41,10 +41,10 @@ export default function ProjectsPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
-            Mis Proyectos
+            My Projects
           </h1>
           <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-            Aquí puedes ver algunos de los proyectos en los que he trabajado, desde aplicaciones web hasta herramientas de análisis de datos.
+            Here you can see some of the projects I've worked on, from web applications to data analysis tools.
           </p>
         </div>
 
@@ -58,14 +58,14 @@ export default function ProjectsPage() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              {/* Efecto de gradiente naranja */}
+              {/* Orange gradient effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
-              {/* Borde naranja animado */}
+              {/* Animated orange border */}
               <div className="absolute inset-0 rounded-xl border-2 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10">
-                {/* Header del proyecto */}
+                {/* Project header */}
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-4xl sm:text-5xl">{project.icon}</span>
                   <div>
@@ -78,15 +78,15 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                {/* Descripción */}
+                {/* Description */}
                 <p className="dark:text-gray-300 light:text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
 
-                {/* Tecnologías */}
+                {/* Technologies */}
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold dark:text-white light:text-gray-900 mb-2">
-                    Tecnologías:
+                    Technologies:
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
@@ -100,10 +100,10 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                {/* Status y botón */}
+                {/* Status and button */}
                 <div className="flex items-center justify-between">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    project.status === 'Completado' 
+                    project.status === 'Completed' 
                       ? 'bg-green-500 text-white' 
                       : 'bg-orange-500 text-black'
                   }`}>
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
                   
                   <Link href={`/proyectos/${project.id}`}>
                     <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25">
-                      Ver más
+                      See More
                     </button>
                   </Link>
                 </div>
@@ -121,13 +121,13 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Botón de regreso */}
+        {/* Back button */}
         <div className="mt-8 sm:mt-12 text-center">
           <button 
             onClick={() => router.back()}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
           >
-            ← Volver al Inicio
+            ← Back to Home
           </button>
         </div>
       </div>

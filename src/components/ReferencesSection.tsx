@@ -28,8 +28,8 @@ export default function ReferencesSection() {
     {
       id: 1,
       name: "María González",
-      role: "Compañera de Universidad",
-      description: "Excelente compañero de equipo, muy dedicado y siempre dispuesto a ayudar. Su pasión por el desarrollo web es admirable.",
+      role: "University Classmate",
+      description: "Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.",
       avatar: "https://i.pravatar.cc/100?img=1",
       contact: "maria.gonzalez@email.com",
       linkedin: "https://linkedin.com/in/mariagonzalez",
@@ -38,8 +38,8 @@ export default function ReferencesSection() {
     {
       id: 2,
       name: "Carlos Rodríguez",
-      role: "Mentor de Proyecto",
-      description: "Cristian demuestra gran potencial en el desarrollo frontend. Su capacidad de aprendizaje y adaptación es excepcional.",
+      role: "Project Mentor",
+      description: "Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.",
       avatar: "https://i.pravatar.cc/100?img=2",
       contact: "carlos.rodriguez@email.com",
       linkedin: "https://linkedin.com/in/carlosrodriguez",
@@ -48,8 +48,8 @@ export default function ReferencesSection() {
     {
       id: 3,
       name: "Ana Martínez",
-      role: "Colaboradora en Proyecto",
-      description: "Trabajar con Cristian fue una experiencia muy positiva. Su creatividad y habilidades técnicas son impresionantes.",
+      role: "Project Collaborator",
+      description: "Working with Cristian was a very positive experience. His creativity and technical skills are impressive.",
       avatar: "https://i.pravatar.cc/100?img=3",
       contact: "ana.martinez@email.com",
       linkedin: "https://linkedin.com/in/anamartinez",
@@ -58,8 +58,8 @@ export default function ReferencesSection() {
     {
       id: 4,
       name: "Dr. Luis Pérez",
-      role: "Profesor de Programación",
-      description: "Estudiante destacado con gran potencial. Su dedicación y curiosidad por aprender nuevas tecnologías es notable.",
+      role: "Programming Professor",
+      description: "Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.",
       avatar: "https://i.pravatar.cc/100?img=4",
       contact: "luis.perez@universidad.edu",
       linkedin: "https://linkedin.com/in/luisperez",
@@ -69,7 +69,7 @@ export default function ReferencesSection() {
 
   return (
     <section id="referencias" className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 relative overflow-hidden">
-      {/* Efecto de fondo animado */}
+      {/* Animated background effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-black to-gray-900 opacity-90" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.1),transparent_50%)]" />
       
@@ -77,12 +77,12 @@ export default function ReferencesSection() {
         <h1 className={`text-4xl font-bold text-orange-500 mb-4 text-center transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          Referencias
+          References
         </h1>
         <p className={`text-gray-400 text-center mb-12 transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          Lo que dicen las personas que han trabajado conmigo
+          What people who have worked with me say
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -96,11 +96,11 @@ export default function ReferencesSection() {
               onMouseEnter={() => setHoveredCard(ref.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Efecto de brillo en hover */}
+              {/* Glow effect on hover */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
-                {/* Header con avatar y nombre */}
+                {/* Header with avatar and name */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative">
                     <img
@@ -130,12 +130,12 @@ export default function ReferencesSection() {
                   </div>
                 </div>
                 
-                {/* Descripción */}
+                {/* Description */}
                 <p className="text-gray-300 mb-6 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                   &ldquo;{ref.description}&rdquo;
                 </p>
                 
-                {/* Contacto */}
+                {/* Contact */}
                 <div className="flex items-center justify-between">
                   <div className="flex gap-3">
                     <a
@@ -162,30 +162,30 @@ export default function ReferencesSection() {
                 </div>
               </div>
               
-              {/* Efecto de borde animado */}
+              {/* Animated border effect */}
               <div className="absolute inset-0 rounded-xl border-2 border-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
         
-        {/* Sección adicional de testimonios */}
+        {/* Additional testimonials section */}
         <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-orange-500 mb-4">💬 Testimonios Destacados</h2>
+            <h2 className="text-2xl font-bold text-orange-500 mb-4">💬 Featured Testimonials</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">100%</div>
-                <div className="text-gray-300 text-sm">Recomendación</div>
+                <div className="text-gray-300 text-sm">Recommendation</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">5.0</div>
-                <div className="text-gray-300 text-sm">Calificación Promedio</div>
+                <div className="text-gray-300 text-sm">Average Rating</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">4+</div>
-                <div className="text-gray-300 text-sm">Referencias Disponibles</div>
+                <div className="text-gray-300 text-sm">Available References</div>
               </div>
             </div>
           </div>

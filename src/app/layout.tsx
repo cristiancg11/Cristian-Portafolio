@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import ClientThemeProvider from "@/components/ClientThemeProvider";
 
 export const metadata = {
-  title: "Portafolio Dr. Cristian Gomez",
-  description: "Portafolio personal en Next.js + Tailwind",
+  title: "Portfolio Dr. Cristian Gomez",
+  description: "Personal portfolio in Next.js + Tailwind",
 };
 
 export default function RootLayout({

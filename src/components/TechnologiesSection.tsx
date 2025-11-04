@@ -34,29 +34,29 @@ export default function TechnologiesSection() {
   const technologies = [
     {
       id: 1,
-      title: "LENGUAJES",
-      description: "Lenguajes de programación para la lógica e interacción de aplicaciones web modernas.",
+      title: "LANGUAGES",
+      description: "Programming languages for logic and interaction of modern web applications.",
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
       icon: "💻"
     },
     {
       id: 2,
       title: "FRAMEWORKS",
-      description: "Herramientas para desarrollo más rápido y aplicaciones modernas y dinámicas.",
+      description: "Tools for faster development and modern, dynamic applications.",
       items: ["Next.js", "React", "TailwindCSS"],
       icon: "⚡"
     },
     {
       id: 3,
-      title: "HERRAMIENTAS",
-      description: "Plataformas para control de versiones, colaboración y despliegue de proyectos.",
+      title: "TOOLS",
+      description: "Platforms for version control, collaboration and project deployment.",
       items: ["Git", "GitHub", "Figma", "VS Code"],
       icon: "🛠️"
     },
     {
       id: 4,
-      title: "ESTILOS / DISEÑO",
-      description: "Tecnologías para interfaces visuales, diseño limpio y experiencia de usuario.",
+      title: "STYLES / DESIGN",
+      description: "Technologies for visual interfaces, clean design and user experience.",
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
       icon: "🎨"
     }
@@ -66,7 +66,7 @@ export default function TechnologiesSection() {
     <section id="tecnologias" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Grid de tecnologías */}
+          {/* Technologies grid */}
           <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
@@ -81,12 +81,12 @@ export default function TechnologiesSection() {
                 onMouseEnter={() => setHoveredCard(tech.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Efecto de gradiente naranja en hover */}
+                {/* Orange gradient effect on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   hoveredCard === tech.id ? 'opacity-100' : ''
                 }`} />
                 
-                {/* Borde naranja animado */}
+                {/* Animated orange border */}
                 <div className={`absolute inset-0 rounded-xl border-2 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   hoveredCard === tech.id ? 'opacity-100' : ''
                 }`} />
@@ -120,19 +120,19 @@ export default function TechnologiesSection() {
             ))}
           </div>
 
-          {/* Ilustración 3D */}
+          {/* 3D illustration */}
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
             <div className="group relative dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 transition-all duration-300"
                  onClick={() => scrollToSection('tecnologias')}>
-              {/* Efecto de gradiente naranja */}
+              {/* Orange gradient effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative text-center">
                 <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">💻</div>
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">Desarrollo Web</div>
-                <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">Tecnologías modernas para crear experiencias digitales excepcionales</div>
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">Web Development</div>
+                <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">Modern technologies to create exceptional digital experiences</div>
               </div>
             </div>
           </div>

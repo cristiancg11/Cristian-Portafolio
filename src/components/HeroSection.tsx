@@ -22,7 +22,7 @@ export default function HeroSection() {
       id="inicio" 
       className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 py-16 sm:py-20 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 light:bg-gradient-to-b light:from-white light:to-gray-100 dark:text-white light:text-gray-900 relative overflow-hidden"
     >
-      {/* Efecto de partículas de fondo */}
+      {/* Background particles effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
           className="absolute w-2 h-2 bg-orange-500/20 rounded-full animate-pulse"
@@ -42,7 +42,7 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Avatar a la izquierda */}
+      {/* Avatar on the left */}
       <div className={`flex-1 flex justify-center lg:justify-start z-10 mb-8 lg:mb-0 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
       }`}>
@@ -54,7 +54,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Contenido a la derecha */}
+      {/* Content on the right */}
       <div className={`flex-1 text-center lg:text-left space-y-4 sm:space-y-6 z-10 transition-all duration-1000 delay-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
@@ -63,15 +63,15 @@ export default function HeroSection() {
         </h1>
         
         <p className="text-sm sm:text-lg lg:text-xl dark:text-white light:text-gray-700 font-medium max-w-2xl mx-auto lg:mx-0">
-          FUTURO INGENIERO EN SOFTWARE CON PASIÓN POR EL DESARROLLO WEB Y LA CREACIÓN DE PROYECTOS QUE APORTEN VALOR REAL.
+          FUTURE SOFTWARE ENGINEER WITH A PASSION FOR WEB DEVELOPMENT AND CREATING PROJECTS THAT ADD REAL VALUE.
         </p>
 
         <div className="space-y-2 sm:space-y-3 dark:text-white light:text-gray-700">
-          <p className="text-sm sm:text-base lg:text-lg">• APASIONADO POR EL FRONTEND, LA INNOVACIÓN WEB Y EL APRENDIZAJE CONSTANTE.</p>
-          <p className="text-sm sm:text-base lg:text-lg">• ENFOCADO EN CREAR PROYECTOS ÚTILES Y CON BUEN DISEÑO.</p>
+          <p className="text-sm sm:text-base lg:text-lg">• PASSIONATE ABOUT FRONTEND, WEB INNOVATION AND CONSTANT LEARNING.</p>
+          <p className="text-sm sm:text-base lg:text-lg">• FOCUSED ON CREATING USEFUL PROJECTS WITH GOOD DESIGN.</p>
         </div>
 
-        {/* Botón y redes sociales */}
+        {/* Button and social media */}
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <button 
             onClick={() => {
@@ -82,10 +82,10 @@ export default function HeroSection() {
             }}
             className="group bg-orange-500 hover:bg-orange-600 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 w-full sm:w-auto"
           >
-            CONTACTAME
+            CONTACT ME
           </button>
           
-          {/* Redes sociales */}
+          {/* Social media */}
           <div className="flex gap-3 sm:gap-4">
             <a href="mailto:cristian@example.com" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
               <span className="text-black text-sm sm:text-lg">📧</span>
