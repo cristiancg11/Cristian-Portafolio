@@ -66,13 +66,13 @@ export default function Navbar() {
         {/* Centered links */}
         <div className="flex gap-1 sm:gap-2 md:gap-3 overflow-x-auto">
           {[
-            { id: 'inicio', labelKey: 'home', icon: '🏠' },
-            { id: 'proyectos', labelKey: 'projects', icon: '💻' },
-            { id: 'tecnologias', labelKey: 'technologies', icon: '⚡' },
-            { id: 'experiencias', labelKey: 'experience', icon: '🎯' },
-            { id: 'referencias', labelKey: 'references', icon: '⭐' },
-            { id: 'contacto', labelKey: 'downloadCV', icon: '📄' }
-          ].map(({ id, labelKey, icon }) => (
+            { id: 'inicio', labelKey: 'home'  },
+            { id: 'proyectos', labelKey: 'projects' },
+            { id: 'tecnologias', labelKey: 'technologies' },
+            { id: 'experiencias', labelKey: 'experience' },
+            { id: 'referencias', labelKey: 'references' },
+            { id: 'contacto', labelKey: 'downloadCV' }
+          ].map(({ id, labelKey }) => (
             <button 
               key={id}
               onClick={() => scrollToSection(id)}
@@ -89,7 +89,7 @@ export default function Navbar() {
               
               {/* Button content */}
               <span className="relative flex items-center gap-1 sm:gap-2 group-hover:scale-105 transition-transform duration-300">
-                <span className="text-xs sm:text-sm">{icon}</span>
+                <span className="text-xs sm:text-sm"></span>
                 <span className="hidden sm:inline">{t.nav[labelKey as keyof typeof t.nav]}</span>
                 <span className="sm:hidden">{t.nav[labelKey as keyof typeof t.nav].split(' ')[0]}</span>
               </span>
