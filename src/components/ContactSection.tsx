@@ -56,7 +56,7 @@ export default function ContactSection() {
     {
       id: 'github',
       name: 'GitHub',
-      icon: <FaGithub size={24} />,
+      icon: 'githud.png',
       url: 'https://github.com/cristiancg11',
       color: 'hover:bg-gray-700',
       description: 'My projects and code'
@@ -64,16 +64,16 @@ export default function ContactSection() {
     {
       id: 'linkedin',
       name: 'LinkedIn',
-      icon: '💼',
-      url: 'www.linkedin.com/in/cristian-gomez-9935a4311',
+      icon: <FaLinkedin size={24} />,
+      url: 'https://www.linkedin.com/in/cristian-gomez-9935a4311',
       color: 'hover:bg-blue-600',
       description: 'My professional profile'
     },
     {
       id: 'email',
       name: 'Email',
-      icon: '📧',
-      url: 'cristiansantacruzz123321@gmail.com',
+      icon: <FaEnvelope size={24} />,
+      url: 'mailto:cristiansantacruzz123321@gmail.com',
       color: 'hover:bg-red-600',
       description: 'Direct contact'
     },
@@ -161,10 +161,10 @@ export default function ContactSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {[
-            { name: "Instagram", icon: "📷", url: "https://www.instagram.com/cristiancg1111/" },
-            { name: "Github", icon: "🐙", url: "https://github.com/cristiancg11" },
-            { name: "Linkedin", icon: "💼", url: "https://linkedin.com/in/cristian" },
-            { name: "Gmail", icon: "📧", url: "https://mail.google.com/mail/u/0/#inbox" }
+            { name: "Instagram", icon: <FaInstagram size={24} />, url: "https://www.instagram.com/cristiancg1111/" },
+            { name: "Github", icon: <FaGithub size={24} />, url: "https://github.com/cristiancg11" },
+            { name: "Linkedin", icon: <FaLinkedin size={24} />, url: "https://www.linkedin.com/in/cristian-gomez-9935a4311" },
+            { name: "Gmail", icon: <FaEnvelope size={24} />, url: "mailto:cristiansantacruzz123321@gmail.com" }
           ].map((social, index) => (
             <a
               key={social.name}
@@ -174,7 +174,7 @@ export default function ContactSection() {
               className="flex flex-col items-center gap-1 sm:gap-2 dark:text-white light:text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-                <span className="text-black text-lg sm:text-xl">{social.icon}</span>
+                <span className="text-black flex items-center justify-center">{social.icon}</span>
               </div>
               <span className="text-xs sm:text-sm font-medium">{social.name}</span>
             </a>
