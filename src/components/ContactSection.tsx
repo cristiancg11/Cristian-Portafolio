@@ -1,5 +1,5 @@
 'use client';
-
+import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -56,8 +56,8 @@ export default function ContactSection() {
     {
       id: 'github',
       name: 'GitHub',
-      icon: '🐙',
-      url: 'https://github.com/cristiangomez',
+      icon: <FaGithub size={24} />,
+      url: 'https://github.com/cristiancg11',
       color: 'hover:bg-gray-700',
       description: 'My projects and code'
     },
@@ -65,7 +65,7 @@ export default function ContactSection() {
       id: 'linkedin',
       name: 'LinkedIn',
       icon: '💼',
-      url: 'https://linkedin.com/in/cristiangomez',
+      url: 'www.linkedin.com/in/cristian-gomez-9935a4311',
       color: 'hover:bg-blue-600',
       description: 'My professional profile'
     },
@@ -73,18 +73,11 @@ export default function ContactSection() {
       id: 'email',
       name: 'Email',
       icon: '📧',
-      url: 'mailto:cristian@example.com',
+      url: 'cristiansantacruzz123321@gmail.com',
       color: 'hover:bg-red-600',
       description: 'Direct contact'
     },
-    {
-      id: 'twitter',
-      name: 'Twitter',
-      icon: '🐦',
-      url: 'https://twitter.com/cristiangomez',
-      color: 'hover:bg-blue-500',
-      description: 'Follow me on social media'
-    }
+    
   ];
 
   return (
