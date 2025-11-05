@@ -32,7 +32,7 @@ export default function ReferencesSection() {
       name: "Andres Parra",
       role: t.references.universityClassmate,
       description: "Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.",
-      avatar: "https://i.pravatar.cc/100?img=1",
+      avatar: "",
       contact: "maria.gonzalez@email.com",
       linkedin: "https://linkedin.com/in/mariagonzalez",
       rating: 5
@@ -42,7 +42,7 @@ export default function ReferencesSection() {
       name: "Carlos Rodríguez",
       role: t.references.projectMentor,
       description: "Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.",
-      avatar: "https://i.pravatar.cc/100?img=2",
+      avatar: "",
       contact: "carlos.rodriguez@email.com",
       linkedin: "https://linkedin.com/in/carlosrodriguez",
       rating: 5
@@ -52,7 +52,7 @@ export default function ReferencesSection() {
       name: "Ana Martínez",
       role: t.references.projectCollaborator,
       description: "Working with Cristian was a very positive experience. His creativity and technical skills are impressive.",
-      avatar: "https://i.pravatar.cc/100?img=3",
+      avatar: "",
       contact: "ana.martinez@email.com",
       linkedin: "https://linkedin.com/in/anamartinez",
       rating: 5
@@ -62,7 +62,7 @@ export default function ReferencesSection() {
       name: "Dr. Luis Pérez",
       role: t.references.programmingProfessor,
       description: "Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.",
-      avatar: "https://i.pravatar.cc/100?img=4",
+      avatar: "",
       contact: "luis.perez@universidad.edu",
       linkedin: "https://linkedin.com/in/luisperez",
       rating: 5
