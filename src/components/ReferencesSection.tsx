@@ -29,7 +29,7 @@ export default function ReferencesSection() {
   const references = [
     {
       id: 1,
-      name: "María González",
+      name: "Andres Parra",
       role: t.references.universityClassmate,
       description: "Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.",
       avatar: "https://i.pravatar.cc/100?img=1",

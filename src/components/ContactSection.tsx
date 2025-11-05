@@ -1,5 +1,5 @@
 'use client';
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -55,7 +55,7 @@ export default function ContactSection() {
   const socialLinks = [
     {
       id: 'github',
-      name: 'GitHub',
+      name: <FaGithub size={24} />,
       icon: 'githud.png',
       url: 'https://github.com/cristiancg11',
       color: 'hover:bg-gray-700',
@@ -164,7 +164,7 @@ export default function ContactSection() {
             { name: "Instagram", icon: <FaInstagram size={24} />, url: "https://www.instagram.com/cristiancg1111/" },
             { name: "Github", icon: <FaGithub size={24} />, url: "https://github.com/cristiancg11" },
             { name: "Linkedin", icon: <FaLinkedin size={24} />, url: "https://www.linkedin.com/in/cristian-gomez-9935a4311" },
-            { name: "Gmail", icon: <FaEnvelope size={24} />, url: "mailto:cristiansantacruzz123321@gmail.com" }
+            { name: "Gmail", icon: <FaEnvelope size={24} />, url: "cristiansantacruzz123321@gmail.com" }
           ].map((social, index) => (
             <a
               key={social.name}
