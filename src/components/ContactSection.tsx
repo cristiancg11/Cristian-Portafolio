@@ -168,10 +168,10 @@ export default function ContactSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {[
-            { name: "Instagram", icon: "📷", url: "https://instagram.com/cristian" },
-            { name: "Github", icon: "🐙", url: "https://github.com/cristian" },
+            { name: "Instagram", icon: "📷", url: "https://www.instagram.com/cristiancg1111/" },
+            { name: "Github", icon: "🐙", url: "https://github.com/cristiancg11" },
             { name: "Linkedin", icon: "💼", url: "https://linkedin.com/in/cristian" },
-            { name: "Gmail", icon: "📧", url: "mailto:cristian@example.com" }
+            { name: "Gmail", icon: "📧", url: "https://mail.google.com/mail/u/0/#inbox" }
           ].map((social, index) => (
             <a
               key={social.name}
