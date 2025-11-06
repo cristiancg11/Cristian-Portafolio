@@ -39,28 +39,28 @@ export default function TechnologiesSection() {
       title: t.technologies.languages,
       description: t.technologies.languagesDesc,
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
-      icon: "💻"
+      icon: ""
     },
     {
       id: 2,
       title: t.technologies.frameworks,
       description: t.technologies.frameworksDesc,
       items: ["Next.js", "React", "TailwindCSS"],
-      icon: "⚡"
+      icon: ""
     },
     {
       id: 3,
       title: t.technologies.tools,
       description: t.technologies.toolsDesc,
       items: ["Git", "GitHub", "Figma", "VS Code"],
-      icon: "🛠️"
+      icon: ""
     },
     {
       id: 4,
       title: t.technologies.stylesDesign,
       description: t.technologies.stylesDesc,
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
-      icon: "🎨"
+      icon: ""
     }
   ];
 
@@ -139,8 +139,7 @@ export default function TechnologiesSection() {
               {/* Orange gradient effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
-              <div className="relative text-center">
-                <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">💻</div>
+                <div className="relative text-center">
                 <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">{t.technologies.webDevelopment}</div>
                 <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">{t.technologies.webDevelopmentDesc}</div>
               </div>

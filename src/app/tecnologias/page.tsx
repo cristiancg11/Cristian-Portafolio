@@ -20,28 +20,28 @@ export default function TechnologiesPage() {
       title: t.technologies.languages,
       description: t.technologies.languagesDesc,
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
-      icon: "💻"
+      icon: ""
     },
     {
       id: 2,
       title: t.technologies.frameworks,
       description: t.technologies.frameworksDesc,
       items: ["Next.js", "React", "TailwindCSS"],
-      icon: "⚡"
+      icon: ""
     },
     {
       id: 3,
       title: t.technologies.tools,
       description: t.technologies.toolsDesc,
       items: ["Git", "GitHub", "Figma", "VS Code"],
-      icon: "🛠️"
+      icon: ""
     },
     {
       id: 4,
       title: t.technologies.stylesDesign,
       description: t.technologies.stylesDesc,
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
-      icon: "🎨"
+      icon: ""
     }
   ];
 
@@ -119,7 +119,6 @@ export default function TechnologiesPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 text-center">
-            <div className="text-4xl sm:text-5xl mb-4">🚀</div>
             <h2 className="text-2xl sm:text-3xl font-bold dark:text-white light:text-gray-900 mb-4">
               {t.technologies.alwaysLearning}
             </h2>

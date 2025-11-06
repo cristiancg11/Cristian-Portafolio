@@ -50,7 +50,6 @@ export default function HeroSection() {
       }`}>
         <div className="relative group">
           <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-orange-500 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-orange-500/25 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-            <span className="text-4xl sm:text-5xl lg:text-6xl">👨‍💻</span>
           </div>
           <div className="absolute inset-0 rounded-full border-4 border-orange-500/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
@@ -90,13 +89,10 @@ export default function HeroSection() {
           {/* Social media */}
           <div className="flex gap-3 sm:gap-4">
             <a href="mailto:cristian@example.com" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
-              <span className="text-black text-sm sm:text-lg">📧</span>
             </a>
             <a href="https://instagram.com/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
-              <span className="text-black text-sm sm:text-lg">📷</span>
             </a>
             <a href="https://linkedin.com/in/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
-              <span className="text-black text-sm sm:text-lg">💼</span>
             </a>
           </div>
         </div>

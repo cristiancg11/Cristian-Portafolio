@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 'matchinsight',
-      icon: '⚽',
+      icon: '',
       title: 'MatchInsight',
       subtitle: t.projects.matchAnalyzer,
       description: t.projects.matchDescription,
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
     },
     {
       id: 'fintrack',
-      icon: '💰',
+      icon: '',
       title: 'FinTrack',
       subtitle: t.projects.personalExpenseControl,
       description: t.projects.finTrackDescription,
@@ -69,7 +69,6 @@ export default function ProjectsPage() {
               <div className="relative z-10">
                 {/* Project header */}
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-4xl sm:text-5xl">{project.icon}</span>
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold dark:text-white light:text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
                       {project.title}

@@ -56,7 +56,6 @@ export default function Navbar() {
           
           {/* Theme icon */}
           <span className="relative text-lg group-hover:scale-110 transition-transform duration-300">
-            {theme === 'dark' ? '☀️' : '🌙'}
           </span>
           
           {/* Pulse effect */}

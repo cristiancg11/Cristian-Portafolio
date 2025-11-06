@@ -86,7 +86,6 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="text-4xl mb-4">⏳</div>
           <div className="text-lg">{t.projectDetail.loading}</div>
         </div>
       </div>
@@ -103,9 +102,6 @@ export default function ProjectPage() {
         {/* Header del proyecto */}
         <div className="mb-8 sm:mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-4xl sm:text-5xl">
-              {project.id === 'matchinsight' ? '⚽' : '💰'}
-            </span>
             <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900">
                 {project.title}
@@ -194,9 +190,6 @@ export default function ProjectPage() {
             {/* Imagen del proyecto */}
             <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-6xl sm:text-8xl mb-4">
-                  {project.id === 'matchinsight' ? '⚽' : '💰'}
-                </div>
                 <div className="text-lg font-semibold text-orange-500">
                   {project.title}
                 </div>

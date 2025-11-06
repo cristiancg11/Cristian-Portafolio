@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      icon: "⚽",
+      icon: "",
       title: "MatchInsight",
       subtitle: t.projects.matchAnalyzer,
       description: t.projects.matchDescription,
@@ -47,7 +47,7 @@ export default function ProjectsSection() {
     },
     {
       id: 2,
-      icon: "💰",
+      icon: "",
       title: "FinTrack",
       subtitle: t.projects.personalExpenseControl,
       description: t.projects.finTrackDescription,
@@ -86,7 +86,6 @@ export default function ProjectsSection() {
                   }`}
                 >
                   <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl">{project.icon}</span>
                     <div>
                       <h2 className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-white light:text-gray-900">{project.title}</h2>
                       <p className="text-orange-500 font-semibold text-sm sm:text-base">{project.subtitle}</p>
@@ -156,7 +155,6 @@ export default function ProjectsSection() {
                     
                     <div className="relative z-10">
                       <div className="dark:bg-gray-700 light:bg-gray-200 rounded-lg h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors duration-300">
-                        <span className="text-4xl sm:text-5xl lg:text-6xl group-hover:scale-110 transition-transform duration-300">{project.icon}</span>
                       </div>
                       <button className="w-full dark:bg-gray-900 light:bg-gray-300 dark:text-white light:text-gray-900 dark:hover:bg-gray-800 light:hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-orange-500 group-hover:text-black group-hover:font-bold">
                         {project.title}

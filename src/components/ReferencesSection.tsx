@@ -144,7 +144,6 @@ export default function ReferencesSection() {
                       href={`mailto:${ref.contact}`}
                       className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
                     >
-                      <span className="text-lg">📧</span>
                       Email
                     </a>
                     <a
@@ -153,7 +152,6 @@ export default function ReferencesSection() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
                     >
-                      <span className="text-lg">💼</span>
                       LinkedIn
                     </a>
                   </div>
@@ -175,7 +173,7 @@ export default function ReferencesSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-orange-500 mb-4">💬 {t.references.featuredTestimonials}</h2>
+            <h2 className="text-2xl font-bold text-orange-500 mb-4">{t.references.featuredTestimonials}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-500 mb-2">100%</div>

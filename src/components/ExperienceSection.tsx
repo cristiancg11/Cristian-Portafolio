@@ -69,7 +69,6 @@ export default function ExperienceSection() {
                     onMouseLeave={() => setActiveCard(null)}
                   >
                     <div className="dark:bg-gray-700 light:bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center">
-                      <span className="text-2xl sm:text-3xl lg:text-4xl">📚</span>
                     </div>
                     <button className="w-full dark:bg-gray-900 light:bg-gray-300 dark:text-white light:text-gray-900 dark:hover:bg-gray-800 light:hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
                       {exp.title}
