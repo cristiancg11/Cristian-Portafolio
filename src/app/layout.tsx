@@ -14,6 +14,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const shouldBeDark = theme === 'dark' || (!theme && prefersDark);
+                  if (shouldBeDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-800 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:text-white text-gray-900 transition-colors duration-300">
         <ClientThemeProvider>
           <Navbar />
