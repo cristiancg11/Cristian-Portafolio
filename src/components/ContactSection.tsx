@@ -81,60 +81,60 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contacto" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
+    <section id="contacto" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4">
         <div className={`text-center mb-6 sm:mb-8 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <p className="dark:text-white light:text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
+          <p className="dark:text-white text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
             {t.contact.subtitle}
           </p>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white text-gray-900">
             {t.contact.title}
           </h1>
         </div>
         
-        <div className={`dark:bg-gray-800 light:bg-gray-100 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg transition-all duration-1000 delay-300 ${
+        <div className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg transition-all duration-1000 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.name}</label>
+                <label className="block text-sm font-medium dark:text-white text-gray-900 mb-2">{t.contact.name}</label>
                 <input
                   type="text"
                   name="name"
                   placeholder={t.contact.namePlaceholder}
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.email}</label>
+                <label className="block text-sm font-medium dark:text-white text-gray-900 mb-2">{t.contact.email}</label>
                 <input
                   type="email"
                   name="email"
                   placeholder={t.contact.emailPlaceholder}
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
                   required
                 />
               </div>
             </div>
             
             <div>
-              <label className="block text-sm font-medium dark:text-white light:text-gray-900 mb-2">{t.contact.message}</label>
+              <label className="block text-sm font-medium dark:text-white text-gray-900 mb-2">{t.contact.message}</label>
               <textarea
                 name="message"
                 placeholder={t.contact.messagePlaceholder}
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 light:bg-gray-200 dark:text-white light:text-gray-900 dark:border-gray-600 light:border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
+                className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
                 required
               />
             </div>
@@ -171,9 +171,9 @@ export default function ContactSection() {
               href={social.url}
               target={social.name !== 'Gmail' ? '_blank' : undefined}
               rel={social.name !== 'Gmail' ? 'noopener noreferrer' : undefined}
-              className="flex flex-col items-center gap-1 sm:gap-2 dark:text-white light:text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+              className="flex flex-col items-center gap-1 sm:gap-2 dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
                 <span className="text-black flex items-center justify-center">{social.icon}</span>
               </div>
               <span className="text-xs sm:text-sm font-medium">{social.name}</span>

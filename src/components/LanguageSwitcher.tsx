@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 light:bg-gray-200 dark:text-white light:text-gray-900 hover:dark:bg-gray-700 hover:light:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden"
+      className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden"
       aria-label="Toggle language"
       title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
     >

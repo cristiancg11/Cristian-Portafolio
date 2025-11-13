@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio');
@@ -43,12 +44,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 dark:bg-black/90 light:bg-white/90 backdrop-blur-sm border-b dark:border-gray-800 light:border-gray-200">
+    <nav className="fixed w-full top-0 z-50 dark:bg-black/90 bg-white/90 backdrop-blur-sm border-b dark:border-gray-800 border-gray-200">
       <div className="flex justify-between items-center py-3 px-2 sm:py-4 sm:px-4">
         {/* Theme toggle button */}
         <button
           onClick={toggleTheme}
-          className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 light:bg-gray-200 dark:text-white light:text-gray-900 hover:dark:bg-gray-700 hover:light:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden"
+          className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden"
           aria-label="Toggle theme"
         >
           {/* Hover gradient effect */}
@@ -56,6 +57,7 @@ export default function Navbar() {
           
           {/* Theme icon */}
           <span className="relative text-lg group-hover:scale-110 transition-transform duration-300">
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </span>
           
           {/* Pulse effect */}
@@ -78,7 +80,7 @@ export default function Navbar() {
               className={`group relative px-2 py-1 sm:px-3 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden ${
                 activeSection === id
                   ? 'bg-orange-500 text-black shadow-lg shadow-orange-500/25'
-                  : 'dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 light:bg-gray-200 light:text-gray-900 light:hover:bg-gray-300 hover:shadow-lg'
+                  : 'dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg'
               }`}
             >
               {/* Hover gradient effect */}

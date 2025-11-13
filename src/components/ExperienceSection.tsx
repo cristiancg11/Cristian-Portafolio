@@ -51,7 +51,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="experiencias" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
+    <section id="experiencias" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left carousel */}
@@ -62,15 +62,15 @@ export default function ExperienceSection() {
               {experiences.map((exp, index) => (
                   <div
                     key={exp.id}
-                    className={`dark:bg-gray-800 light:bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 light:border-gray-300 hover:border-orange-500/50 ${
+                    className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500/50 ${
                       activeCard === exp.id ? 'scale-105 shadow-2xl border-orange-500/50' : ''
                     }`}
                     onMouseEnter={() => setActiveCard(exp.id)}
                     onMouseLeave={() => setActiveCard(null)}
                   >
-                    <div className="dark:bg-gray-700 light:bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center">
                     </div>
-                    <button className="w-full dark:bg-gray-900 light:bg-gray-300 dark:text-white light:text-gray-900 dark:hover:bg-gray-800 light:hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
+                    <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
                       {exp.title}
                     </button>
                   </div>
@@ -79,7 +79,7 @@ export default function ExperienceSection() {
             
             {/* Navigation indicators */}
             <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-              <button className="dark:text-white light:text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
+              <button className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
                 ←
               </button>
               <div className="flex gap-2">
@@ -87,12 +87,12 @@ export default function ExperienceSection() {
                   <button
                     key={index}
                     className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                      activeCard === index ? 'bg-orange-500' : 'dark:bg-gray-600 light:bg-gray-400'
+                      activeCard === index ? 'bg-orange-500' : 'dark:bg-gray-600 bg-gray-400'
                     }`}
                   />
                 ))}
               </div>
-              <button className="dark:text-white light:text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
+              <button className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
                 →
               </button>
             </div>
@@ -106,7 +106,7 @@ export default function ExperienceSection() {
           <div className={`space-y-4 sm:space-y-6 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white text-gray-900 text-center lg:text-left">
               {t.experience.title}
             </h1>
             
@@ -121,7 +121,7 @@ export default function ExperienceSection() {
                   <h2 className="text-lg sm:text-xl font-bold text-orange-500 mb-2 sm:mb-3 text-center lg:text-left">
                     {exp.title}
                   </h2>
-                  <p className="dark:text-gray-300 light:text-gray-600 leading-relaxed text-sm sm:text-base text-center lg:text-left">
+                  <p className="dark:text-gray-300 text-gray-600 leading-relaxed text-sm sm:text-base text-center lg:text-left">
                     {exp.description}
                   </p>
                 </div>

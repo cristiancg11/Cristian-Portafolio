@@ -46,16 +46,16 @@ export default function TechnologiesPage() {
   ];
 
   return (
-    <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12">
+    <div className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12">
       <div className="w-full max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white text-gray-900 mb-4">
             {t.technologies.title}
           </h1>
-          <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             {t.technologies.subtitle}
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function TechnologiesPage() {
           {technologies.map((tech, index) => (
             <div
               key={tech.id}
-              className={`group relative dark:bg-gray-800 light:bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 light:border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
+              className={`group relative dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -88,13 +88,13 @@ export default function TechnologiesPage() {
                   <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold dark:text-white light:text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
+                  <h3 className="text-base sm:text-lg font-bold dark:text-white text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
                     {tech.title}
                   </h3>
                 </div>
                 
                 {/* Description */}
-                <p className="dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed text-center">
+                <p className="dark:text-gray-300 text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed text-center">
                   {tech.description}
                 </p>
                 
@@ -118,11 +118,11 @@ export default function TechnologiesPage() {
         <div className={`mt-12 sm:mt-16 transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold dark:text-white light:text-gray-900 mb-4">
+          <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-6 sm:p-8 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold dark:text-white text-gray-900 mb-4">
               {t.technologies.alwaysLearning}
             </h2>
-            <p className="dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
+            <p className="dark:text-gray-300 text-gray-600 max-w-2xl mx-auto">
               {t.technologies.alwaysLearningDesc}
             </p>
           </div>

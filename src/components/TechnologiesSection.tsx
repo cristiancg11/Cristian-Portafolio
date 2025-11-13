@@ -65,13 +65,13 @@ export default function TechnologiesSection() {
   ];
 
   return (
-    <section id="tecnologias" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12 relative overflow-hidden">
+    <section id="tecnologias" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 mb-4">
             {t.technologies.title}
           </h1>
-          <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             {t.technologies.subtitle}
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function TechnologiesSection() {
             {technologies.map((tech, index) => (
               <div
                 key={tech.id}
-                className={`group relative dark:bg-gray-800 light:bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 light:border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
+                className={`group relative dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
@@ -106,12 +106,12 @@ export default function TechnologiesSection() {
                     <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
                       {tech.icon}
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold dark:text-white light:text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-bold dark:text-white text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
                       {tech.title}
                     </h3>
                   </div>
                   
-                  <p className="dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed text-center">
+                  <p className="dark:text-gray-300 text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed text-center">
                     {tech.description}
                   </p>
                   
@@ -134,14 +134,14 @@ export default function TechnologiesSection() {
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
-            <div className="group relative dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 transition-all duration-300"
+            <div className="group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 transition-all duration-300"
                  onClick={() => scrollToSection('tecnologias')}>
               {/* Orange gradient effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
                 <div className="relative text-center">
                 <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-400 transition-colors duration-300">{t.technologies.webDevelopment}</div>
-                <div className="dark:text-gray-300 light:text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">{t.technologies.webDevelopmentDesc}</div>
+                <div className="dark:text-gray-300 text-gray-600 text-sm sm:text-base group-hover:text-orange-300 transition-colors duration-300">{t.technologies.webDevelopmentDesc}</div>
               </div>
             </div>
           </div>

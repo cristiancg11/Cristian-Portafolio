@@ -36,16 +36,16 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12">
+    <div className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12">
       <div className="w-full max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white light:text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold dark:text-white text-gray-900 mb-4">
             {t.projects.title}
           </h1>
-          <p className="text-lg sm:text-xl dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             {t.projects.subtitle}
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`group relative dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 sm:p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 light:border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
+              className={`group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-6 sm:p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500 cursor-pointer overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
                 {/* Project header */}
                 <div className="flex items-center gap-4 mb-4">
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-bold dark:text-white light:text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
+                    <h2 className="text-xl sm:text-2xl font-bold dark:text-white text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
                       {project.title}
                     </h2>
                     <p className="text-orange-500 font-semibold text-sm sm:text-base">
@@ -80,13 +80,13 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Description */}
-                <p className="dark:text-gray-300 light:text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
+                <p className="dark:text-gray-300 text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h3 className="text-sm font-semibold dark:text-white light:text-gray-900 mb-2">
+                  <h3 className="text-sm font-semibold dark:text-white text-gray-900 mb-2">
                     {t.projects.technologies}
                   </h3>
                   <div className="flex flex-wrap gap-2">

@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <section 
       id="inicio" 
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 py-16 sm:py-20 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 light:bg-gradient-to-b light:from-white light:to-gray-100 dark:text-white light:text-gray-900 relative overflow-hidden"
+      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 py-16 sm:py-20 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 bg-gradient-to-b from-white to-gray-100 dark:text-white text-gray-900 relative overflow-hidden"
     >
       {/* Background particles effect */}
       <div className="absolute inset-0 overflow-hidden">
@@ -59,15 +59,15 @@ export default function HeroSection() {
       <div className={`flex-1 text-center lg:text-left space-y-4 sm:space-y-6 z-10 transition-all duration-1000 delay-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold dark:text-white light:text-gray-900">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold dark:text-white text-gray-900">
           {t.hero.title}
         </h1>
         
-        <p className="text-sm sm:text-lg lg:text-xl dark:text-white light:text-gray-700 font-medium max-w-2xl mx-auto lg:mx-0">
+        <p className="text-sm sm:text-lg lg:text-xl dark:text-white text-gray-700 font-medium max-w-2xl mx-auto lg:mx-0">
           {t.hero.subtitle}
         </p>
 
-        <div className="space-y-2 sm:space-y-3 dark:text-white light:text-gray-700">
+        <div className="space-y-2 sm:space-y-3 dark:text-white text-gray-700">
           <p className="text-sm sm:text-base lg:text-lg">{t.hero.bullet1}</p>
           <p className="text-sm sm:text-base lg:text-lg">{t.hero.bullet2}</p>
         </div>
@@ -88,11 +88,11 @@ export default function HeroSection() {
           
           {/* Social media */}
           <div className="flex gap-3 sm:gap-4">
-            <a href="mailto:cristian@example.com" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a href="mailto:cristian@example.com" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
             </a>
-            <a href="https://instagram.com/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a href="https://instagram.com/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
             </a>
-            <a href="https://linkedin.com/in/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white light:bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a href="https://linkedin.com/in/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
             </a>
           </div>
         </div>
