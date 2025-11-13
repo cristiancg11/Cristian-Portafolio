@@ -74,7 +74,7 @@ export default function ProjectsSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 text-center lg:text-left">
-              {t.projects.helloWorld}
+              {t.projects.title}
             </h1>
             
             <div className="space-y-4 sm:space-y-6">
