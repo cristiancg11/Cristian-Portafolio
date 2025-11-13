@@ -171,12 +171,13 @@ export default function ContactSection() {
               href={social.url}
               target={social.name !== 'Gmail' ? '_blank' : undefined}
               rel={social.name !== 'Gmail' ? 'noopener noreferrer' : undefined}
-              className="flex flex-col items-center gap-1 sm:gap-2 dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+              className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+              title={social.name}
+              aria-label={social.name}
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
                 <span className="text-black flex items-center justify-center">{social.icon}</span>
               </div>
-              <span className="text-xs sm:text-sm font-medium">{social.name}</span>
             </a>
           ))}
         </div>
