@@ -37,6 +37,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
+      slug: 'matchinsight',
       icon: "",
       title: "MatchInsight",
       subtitle: t.projects.matchAnalyzer,
@@ -47,6 +48,7 @@ export default function ProjectsSection() {
     },
     {
       id: 2,
+      slug: 'fintrack',
       icon: "",
       title: "FinTrack",
       subtitle: t.projects.personalExpenseControl,
@@ -107,7 +109,7 @@ export default function ProjectsSection() {
 
                   {/* See More button */}
                   <div className="mb-4">
-                    <Link href={`/proyectos/${project.title === 'MatchInsight' ? 'matchinsight' : 'fintrack'}`}>
+                    <Link href={`/proyectos/${project.slug}`}>
                       <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 text-sm">
                         {t.projects.seeMore} →
                       </button>
