@@ -84,7 +84,7 @@ export default function ProjectPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center justify-center">
+      <div className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="text-lg">{t.projectDetail.loading}</div>
         </div>
@@ -97,13 +97,13 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 py-8 sm:py-12">
+    <div className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12">
       <div className="w-full max-w-6xl mx-auto px-4">
         {/* Header del proyecto */}
         <div className="mb-8 sm:mb-12">
           <div className="flex items-center gap-4 mb-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900">
                 {project.title}
               </h1>
               <p className="text-orange-500 font-semibold text-lg sm:text-xl">
@@ -146,21 +146,21 @@ export default function ProjectPage() {
           {/* Description */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
+              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.projectDescription}
               </h2>
-              <p className="dark:text-gray-300 light:text-gray-600 leading-relaxed">
+              <p className="dark:text-gray-300 text-gray-600 leading-relaxed">
                 {project.longDescription}
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
+              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.mainFeatures}
               </h2>
               <ul className="space-y-2">
                 {project.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center gap-2 dark:text-gray-300 light:text-gray-600">
+                  <li key={index} className="flex items-center gap-2 dark:text-gray-300 text-gray-600">
                     <span className="text-orange-500">→</span>
                     <span>{feature}</span>
                   </li>
@@ -172,7 +172,7 @@ export default function ProjectPage() {
           {/* Technologies and image */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white light:text-gray-900">
+              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.technologiesUsed}
               </h2>
               <div className="flex flex-wrap gap-2">
@@ -188,12 +188,12 @@ export default function ProjectPage() {
             </div>
 
             {/* Imagen del proyecto */}
-            <div className="dark:bg-gray-800 light:bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center">
+            <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-lg font-semibold text-orange-500">
                   {project.title}
                 </div>
-                <div className="dark:text-gray-300 light:text-gray-600 text-sm">
+                <div className="dark:text-gray-300 text-gray-600 text-sm">
                   {t.projectDetail.projectPreview}
                 </div>
               </div>

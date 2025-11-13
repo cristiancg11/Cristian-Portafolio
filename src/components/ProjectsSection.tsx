@@ -66,14 +66,14 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="proyectos" className="min-h-screen dark:bg-black light:bg-white dark:text-white light:text-gray-900 flex items-center py-8 sm:py-12 relative overflow-hidden">
+    <section id="proyectos" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 flex items-center py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left content */}
           <div className={`space-y-6 sm:space-y-8 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white light:text-gray-900 text-center lg:text-left">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 text-center lg:text-left">
               {t.projects.helloWorld}
             </h1>
             
@@ -87,12 +87,12 @@ export default function ProjectsSection() {
                 >
                   <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div>
-                      <h2 className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-white light:text-gray-900">{project.title}</h2>
+                      <h2 className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-white text-gray-900">{project.title}</h2>
                       <p className="text-orange-500 font-semibold text-sm sm:text-base">{project.subtitle}</p>
                     </div>
                   </div>
                   
-                  <p className="dark:text-gray-300 light:text-gray-600 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
+                  <p className="dark:text-gray-300 text-gray-600 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                     {project.description}
                   </p>
                   
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
             <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
               <button
                 onClick={prevProject}
-                className="group relative px-4 sm:px-6 py-2 sm:py-3 dark:bg-gray-800 light:bg-gray-200 dark:text-white light:text-gray-900 dark:hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
+                className="group relative px-4 sm:px-6 py-2 sm:py-3 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative">{t.projects.previous}</span>
@@ -145,7 +145,7 @@ export default function ProjectsSection() {
                 {projects.map((project, index) => (
                   <div
                     key={project.id}
-                    className={`group relative dark:bg-gray-800 light:bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 ${
+                    className={`group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 ${
                       currentProject === index ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
                     }`}
                     onClick={() => scrollToSection('proyectos')}
@@ -154,9 +154,9 @@ export default function ProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="relative z-10">
-                      <div className="dark:bg-gray-700 light:bg-gray-200 rounded-lg h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors duration-300">
+                      <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors duration-300">
                       </div>
-                      <button className="w-full dark:bg-gray-900 light:bg-gray-300 dark:text-white light:text-gray-900 dark:hover:bg-gray-800 light:hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-orange-500 group-hover:text-black group-hover:font-bold">
+                      <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-orange-500 group-hover:text-black group-hover:font-bold">
                         {project.title}
                       </button>
                     </div>
@@ -166,7 +166,7 @@ export default function ProjectsSection() {
               
               {/* Navigation indicators */}
               <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-                <button onClick={prevProject} className="group dark:text-white light:text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
+                <button onClick={prevProject} className="group dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
                   <span className="group-hover:drop-shadow-lg">←</span>
                 </button>
                 <div className="flex gap-2">
@@ -175,12 +175,12 @@ export default function ProjectsSection() {
                       key={index}
                       onClick={() => setCurrentProject(index)}
                       className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                        currentProject === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 light:bg-gray-400 hover:bg-orange-400'
+                        currentProject === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
                       }`}
                     />
                   ))}
                 </div>
-                <button onClick={nextProject} className="group dark:text-white light:text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
+                <button onClick={nextProject} className="group dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
                   <span className="group-hover:drop-shadow-lg">→</span>
                 </button>
               </div>
