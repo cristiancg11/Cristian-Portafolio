@@ -89,9 +89,60 @@ export default function ContactSection() {
           <p className="dark:text-white text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
             {t.contact.subtitle}
           </p>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white text-gray-900">
-            {t.contact.title}
-          </h1>
+          <div className="flex flex-col items-center gap-4 sm:gap-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white text-gray-900">
+              {t.contact.title}
+            </h1>
+            {/* Social media icons */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <a
+                href="https://www.instagram.com/cristiancg1111/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                title="Instagram"
+                aria-label="Instagram"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                  <FaInstagram className="text-black" size={20} />
+                </div>
+              </a>
+              <a
+                href="mailto:cristiansantacruzz123321@gmail.com"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                title="Gmail"
+                aria-label="Gmail"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                  <FaEnvelope className="text-black" size={20} />
+                </div>
+              </a>
+              <a
+                href="https://github.com/cristiancg11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                title="GitHub"
+                aria-label="GitHub"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                  <FaGithub className="text-black" size={20} />
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/cristian-gomez-9935a4311"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                  <FaLinkedin className="text-black" size={20} />
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
         
         <div className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg transition-all duration-1000 delay-300 ${
