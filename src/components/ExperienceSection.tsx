@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<number>(0);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -62,11 +62,10 @@ export default function ExperienceSection() {
               {experiences.map((exp, index) => (
                   <div
                     key={exp.id}
-                    className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500/50 ${
-                      activeCard === exp.id ? 'scale-105 shadow-2xl border-orange-500/50' : ''
+                    className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500/50 cursor-pointer ${
+                      activeCard === index ? 'scale-105 shadow-2xl border-orange-500/50 ring-2 ring-orange-500' : ''
                     }`}
-                    onMouseEnter={() => setActiveCard(exp.id)}
-                    onMouseLeave={() => setActiveCard(null)}
+                    onClick={() => setActiveCard(index)}
                   >
                     <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center">
                     </div>
@@ -79,20 +78,30 @@ export default function ExperienceSection() {
             
             {/* Navigation indicators */}
             <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-              <button className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
+              <button 
+                onClick={() => setActiveCard((prev) => (prev - 1 + experiences.length) % experiences.length)}
+                className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
+                aria-label="Previous experience"
+              >
                 ←
               </button>
               <div className="flex gap-2">
                 {experiences.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                      activeCard === index ? 'bg-orange-500' : 'dark:bg-gray-600 bg-gray-400'
+                    onClick={() => setActiveCard(index)}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                      activeCard === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
                     }`}
+                    aria-label={`Go to experience ${index + 1}`}
                   />
                 ))}
               </div>
-              <button className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl">
+              <button 
+                onClick={() => setActiveCard((prev) => (prev + 1) % experiences.length)}
+                className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
+                aria-label="Next experience"
+              >
                 →
               </button>
             </div>
@@ -110,12 +119,12 @@ export default function ExperienceSection() {
               {t.experience.title}
             </h1>
             
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4 sm:space-y-6 relative min-h-[200px]">
               {experiences.map((exp, index) => (
                 <div
                   key={exp.id}
                   className={`transition-all duration-500 ${
-                    activeCard === exp.id ? 'opacity-100' : 'opacity-0 absolute'
+                    activeCard === index ? 'opacity-100' : 'opacity-0 absolute inset-0'
                   }`}
                 >
                   <h2 className="text-lg sm:text-xl font-bold text-orange-500 mb-2 sm:mb-3 text-center lg:text-left">

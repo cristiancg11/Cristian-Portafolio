@@ -67,7 +67,7 @@ export default function TechnologiesSection() {
     if (technologies.length > 0 && selectedTech === null) {
       setSelectedTech(technologies[0].id);
     }
-  }, []);
+  }, [technologies.length, selectedTech]);
 
   return (
     <section id="tecnologias" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
