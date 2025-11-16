@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ExperienceSection() {
@@ -67,7 +68,18 @@ export default function ExperienceSection() {
                     }`}
                     onClick={() => setActiveCard(index)}
                   >
-                    <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center">
+                    <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-24 sm:h-28 lg:h-32 mb-3 sm:mb-4 flex items-center justify-center overflow-hidden relative">
+                      {exp.image ? (
+                        <Image
+                          src={exp.image}
+                          alt={exp.title}
+                          fill
+                          className="object-cover rounded-lg"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                        />
+                      ) : (
+                        <div className="text-orange-500 text-2xl font-bold">{exp.title.charAt(0)}</div>
+                      )}
                     </div>
                     <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
                       {exp.title}
