@@ -142,14 +142,6 @@ export default function ReferencesSection() {
                 <div className="flex items-center justify-between">
                   <div className="flex gap-3">
                     <a
-                      href={`mailto:${ref.contact}`}
-                      className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-violet-600/20 hover:text-violet-500 transition-all duration-300 text-sm"
-                      title="Email"
-                      aria-label="Email"
-                    >
-                      Email
-                    </a>
-                    <a
                       href={ref.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
