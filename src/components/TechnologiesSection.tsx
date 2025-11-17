@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function TechnologiesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedTech, setSelectedTech] = useState<number | null>(null);
+  const [currentTechIndex, setCurrentTechIndex] = useState(0);
   const { t } = useLanguage();
 
 
@@ -70,6 +71,18 @@ export default function TechnologiesSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const nextTech = () => {
+    const nextIndex = (currentTechIndex + 1) % technologies.length;
+    setCurrentTechIndex(nextIndex);
+    setSelectedTech(technologies[nextIndex].id);
+  };
+
+  const prevTech = () => {
+    const prevIndex = (currentTechIndex - 1 + technologies.length) % technologies.length;
+    setCurrentTechIndex(prevIndex);
+    setSelectedTech(technologies[prevIndex].id);
+  };
+
   return (
     <section id="tecnologias" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4">
@@ -82,10 +95,11 @@ export default function TechnologiesSection() {
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Technologies grid */}
-          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          {/* Technologies grid with navigation */}
+          <div className="relative">
+            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             {technologies.map((tech, index) => (
               <div
                 key={tech.id}
@@ -136,6 +150,40 @@ export default function TechnologiesSection() {
                 </div>
               </div>
             ))}
+            </div>
+            
+            {/* Navigation arrows */}
+            <div className="flex justify-center items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
+              <button 
+                onClick={prevTech}
+                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-orange-500 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                aria-label="Previous technology"
+              >
+                <span className="text-xl sm:text-2xl font-bold">←</span>
+              </button>
+              <div className="flex gap-2">
+                {technologies.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentTechIndex(index);
+                      setSelectedTech(technologies[index].id);
+                    }}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                      currentTechIndex === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
+                    }`}
+                    aria-label={`Go to technology ${index + 1}`}
+                  />
+                ))}
+              </div>
+              <button 
+                onClick={nextTech}
+                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-orange-500 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                aria-label="Next technology"
+              >
+                <span className="text-xl sm:text-2xl font-bold">→</span>
+              </button>
+            </div>
           </div>
 
           {/* Description panel */}
