@@ -23,12 +23,18 @@ export default function RootLayout({
                   const theme = localStorage.getItem('theme');
                   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   const shouldBeDark = theme === 'dark' || (!theme && prefersDark);
+                  const root = document.documentElement;
                   if (shouldBeDark) {
-                    document.documentElement.classList.add('dark');
+                    root.classList.add('dark');
+                    root.classList.remove('light');
                   } else {
-                    document.documentElement.classList.remove('dark');
+                    root.classList.remove('dark');
+                    root.classList.add('light');
                   }
-                } catch (e) {}
+                } catch (e) {
+                  // Fallback: default to dark
+                  document.documentElement.classList.add('dark');
+                }
               })();
             `,
           }}

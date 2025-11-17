@@ -76,7 +76,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(prevTheme => {
       try {
         const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
-        // Aplicar inmediatamente para mejor UX
+        // Aplicar inmediatamente para mejor UX (sin esperar re-render)
         const root = document.documentElement;
         if (newTheme === 'dark') {
           root.classList.add('dark');
@@ -85,7 +85,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
           root.classList.remove('dark');
           root.classList.add('light');
         }
-        localStorage.setItem('theme', newTheme);
+        // Persistir en localStorage
+        try {
+          localStorage.setItem('theme', newTheme);
+        } catch (storageError) {
+          console.warn('Could not save theme to localStorage:', storageError);
+        }
         return newTheme;
       } catch (error) {
         console.error('Error toggling theme:', error);
