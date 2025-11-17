@@ -20,6 +20,39 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## GitHub Repositories Section
+
+The portfolio includes a dynamic section that fetches and displays GitHub repositories. To use this feature:
+
+### Configuration
+
+1. Create a `.env.local` file in the root directory (if it doesn't exist).
+
+2. Add your GitHub Personal Access Token (optional but recommended to avoid rate limits):
+
+```env
+GITHUB_TOKEN=your_github_personal_access_token_here
+```
+
+### Getting a GitHub Token
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate a new token with `public_repo` scope (or `repo` for private repos)
+3. Copy the token and add it to `.env.local`
+
+### Features
+
+- Fetches public repositories from GitHub API
+- Displays repository name, description, language, stars, and last update date
+- Filter by programming language
+- Toggle to show only starred repositories (>0 stars)
+- Lazy loading with "Load more" button (shows 12 repos initially)
+- Responsive design (grid on desktop, list on mobile)
+
+### Default Username
+
+By default, the section fetches repositories from `cristiancg11`. To change this, modify the username in `src/components/GithubReposSection.tsx`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
