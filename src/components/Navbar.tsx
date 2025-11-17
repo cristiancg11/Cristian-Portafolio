@@ -113,7 +113,7 @@ export default function Navbar() {
               onClick={() => scrollToSection(id)}
               className={`group relative px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden ${
                 activeSection === id
-                  ? 'bg-violet-600 text-black shadow-lg shadow-violet-600/25'
+                  ? 'bg-violet-600 text-white shadow-lg shadow-violet-600/25'
                   : 'dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg'
               }`}
             >

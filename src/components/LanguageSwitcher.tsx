@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
       title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
     >
       {/* Hover gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Language icon */}
       <span className="relative text-lg group-hover:scale-110 transition-transform duration-300">
@@ -25,7 +25,7 @@ export default function LanguageSwitcher() {
       </span>
       
       {/* Pulse effect */}
-      <div className="absolute inset-0 rounded-lg border-2 border-orange-500 opacity-0 group-hover:opacity-100 animate-ping" />
+      <div className="absolute inset-0 rounded-lg border-2 border-violet-600 opacity-0 group-hover:opacity-100 animate-ping" />
     </button>
   );
 }
