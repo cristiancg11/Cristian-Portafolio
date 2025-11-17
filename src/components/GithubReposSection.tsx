@@ -2,7 +2,14 @@ import { fetchGitHubRepos } from '@/lib/github';
 import GithubReposClient from './GithubReposClient';
 
 export default async function GithubReposSection() {
-  const repos = await fetchGitHubRepos('cristiancg11');
-
-  return <GithubReposClient initialRepos={repos} />;
+  try {
+    const repos = await fetchGitHubRepos('cristiancg11');
+    
+    // Si no hay repos, aún mostramos la sección con mensaje
+    return <GithubReposClient initialRepos={repos} />;
+  } catch (error) {
+    console.error('Error in GithubReposSection:', error);
+    // Retornar componente con array vacío para que muestre el estado vacío
+    return <GithubReposClient initialRepos={[]} />;
+  }
 }

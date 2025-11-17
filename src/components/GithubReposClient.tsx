@@ -209,7 +209,19 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
         )}
 
         {/* Empty state */}
-        {filteredRepos.length === 0 && (
+        {filteredRepos.length === 0 && repos.length === 0 && (
+          <div className="text-center py-12">
+            <FaGithub className="mx-auto text-4xl text-gray-400 mb-4" />
+            <p className="text-lg dark:text-gray-300 text-gray-600 mb-2">
+              No se pudieron cargar los repositorios de GitHub.
+            </p>
+            <p className="text-sm dark:text-gray-400 text-gray-500">
+              Esto puede deberse a límites de la API o problemas de conexión. Intenta recargar la página.
+            </p>
+          </div>
+        )}
+
+        {filteredRepos.length === 0 && repos.length > 0 && (
           <div className="text-center py-12">
             <p className="text-lg dark:text-gray-300 text-gray-600">
               No se encontraron repositorios con los filtros seleccionados.

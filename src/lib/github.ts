@@ -26,14 +26,23 @@ export async function fetchGitHubRepos(username: string = 'cristiancg11'): Promi
       {
         headers,
         next: { revalidate: 60 }, // Revalidate every 60 seconds
+        cache: 'no-store', // Force fresh fetch in production
       }
     );
 
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error(`GitHub API error ${response.status}:`, errorText);
+      // Return empty array instead of throwing to prevent page crash
+      return [];
     }
 
     const repos: GitHubRepo[] = await response.json();
+    
+    if (!Array.isArray(repos)) {
+      console.error('GitHub API returned non-array response:', repos);
+      return [];
+    }
     
     // Sort by pushed_at (most recent first)
     return repos.sort((a, b) => {
@@ -41,6 +50,7 @@ export async function fetchGitHubRepos(username: string = 'cristiancg11'): Promi
     });
   } catch (error) {
     console.error('Error fetching GitHub repos:', error);
+    // Return empty array to prevent page crash
     return [];
   }
 }
