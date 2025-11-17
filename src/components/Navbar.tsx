@@ -141,16 +141,21 @@ export default function Navbar() {
         <div className="md:hidden relative" ref={menuRef}>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="group relative flex items-center justify-center w-10 h-10 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110"
+            className="group relative flex items-center justify-center w-10 h-10 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
+            type="button"
           >
             {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
 
           {/* Mobile menu dropdown */}
           {isMobileMenuOpen && (
-            <div className="absolute top-full right-0 mt-2 w-48 dark:bg-gray-800 bg-white border dark:border-gray-700 border-gray-200 shadow-xl z-50">
+            <div 
+              className="absolute top-full right-0 mt-2 w-48 dark:bg-gray-800 bg-white border dark:border-gray-700 border-gray-200 shadow-xl z-50 rounded-lg overflow-hidden animate-in"
+              role="menu"
+              aria-orientation="vertical"
+            >
               {[
                 { id: 'inicio', labelKey: 'home'  },
                 { id: 'proyectos', labelKey: 'projects' },
@@ -158,16 +163,24 @@ export default function Navbar() {
                 { id: 'experiencias', labelKey: 'experience' },
                 { id: 'referencias', labelKey: 'references' },
                 { id: 'contacto', labelKey: 'downloadCV' }
-              ].map(({ id, labelKey }) => (
+              ].map(({ id, labelKey }, index) => (
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className={`w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-300 border-b dark:border-gray-700 border-gray-200 last:border-b-0 ${
+                  className={`w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-200 border-b dark:border-gray-700 border-gray-200 last:border-b-0 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-inset ${
                     activeSection === id
-                      ? 'bg-violet-600 text-black'
+                      ? 'bg-violet-600 text-white'
                       : 'dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200'
                   }`}
+                  style={{
+                    animation: `slideInFromRight 0.2s ease-out ${index * 50}ms forwards`,
+                    opacity: 0
+                  }}
+                  onAnimationEnd={(e) => {
+                    (e.currentTarget as HTMLElement).style.opacity = '1';
+                  }}
                   aria-label={t.nav[labelKey as keyof typeof t.nav]}
+                  role="menuitem"
                 >
                   {t.nav[labelKey as keyof typeof t.nav]}
                 </button>
