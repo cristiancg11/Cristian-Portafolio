@@ -1,14 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { t } = useLanguage();
 
@@ -41,7 +43,39 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
   };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="fixed w-full top-0 z-50 dark:bg-black/90 bg-white/90 backdrop-blur-sm border-b dark:border-gray-800 border-gray-200">
@@ -64,8 +98,8 @@ export default function Navbar() {
           <div className="absolute inset-0 rounded-lg border-2 border-orange-500 opacity-0 group-hover:opacity-100 animate-ping" />
         </button>
 
-        {/* Centered links */}
-        <div className="flex gap-1 sm:gap-2 md:gap-3 overflow-x-auto">
+        {/* Desktop navigation */}
+        <div className="hidden md:flex gap-1 sm:gap-2 md:gap-3 overflow-x-auto">
           {[
             { id: 'inicio', labelKey: 'home'  },
             { id: 'proyectos', labelKey: 'projects' },
@@ -101,6 +135,45 @@ export default function Navbar() {
               )}
             </button>
           ))}
+        </div>
+
+        {/* Mobile hamburger button */}
+        <div className="md:hidden relative" ref={menuRef}>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="group relative flex items-center justify-center w-10 h-10 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+          </button>
+
+          {/* Mobile menu dropdown */}
+          {isMobileMenuOpen && (
+            <div className="absolute top-full right-0 mt-2 w-48 dark:bg-gray-800 bg-white border dark:border-gray-700 border-gray-200 shadow-xl z-50">
+              {[
+                { id: 'inicio', labelKey: 'home'  },
+                { id: 'proyectos', labelKey: 'projects' },
+                { id: 'tecnologias', labelKey: 'technologies' },
+                { id: 'experiencias', labelKey: 'experience' },
+                { id: 'referencias', labelKey: 'references' },
+                { id: 'contacto', labelKey: 'downloadCV' }
+              ].map(({ id, labelKey }) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className={`w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-300 border-b dark:border-gray-700 border-gray-200 last:border-b-0 ${
+                    activeSection === id
+                      ? 'bg-orange-500 text-black'
+                      : 'dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200'
+                  }`}
+                  aria-label={t.nav[labelKey as keyof typeof t.nav]}
+                >
+                  {t.nav[labelKey as keyof typeof t.nav]}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Language switcher and space */}
