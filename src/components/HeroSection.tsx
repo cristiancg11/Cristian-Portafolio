@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function HeroSection() {
@@ -88,11 +89,33 @@ export default function HeroSection() {
           
           {/* Social media */}
           <div className="flex gap-3 sm:gap-4">
-            <a href="mailto:cristian@example.com" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a 
+              href="https://www.instagram.com/cristiancg1111/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              title="Instagram"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="text-black" size={20} />
             </a>
-            <a href="https://instagram.com/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a 
+              href="mailto:cristiansantacruzz123321@gmail.com" 
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              title="Gmail"
+              aria-label="Gmail"
+            >
+              <FaEnvelope className="text-black" size={20} />
             </a>
-            <a href="https://linkedin.com/in/cristian" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110">
+            <a 
+              href="https://github.com/cristiancg11" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              title="GitHub"
+              aria-label="GitHub"
+            >
+              <FaGithub className="text-black" size={20} />
             </a>
           </div>
         </div>
