@@ -25,8 +25,7 @@ export async function fetchGitHubRepos(username: string = 'cristiancg11'): Promi
       `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
       {
         headers,
-        next: { revalidate: 60 }, // Revalidate every 60 seconds
-        cache: 'no-store', // Force fresh fetch in production
+        next: { revalidate: 300 }, // Revalidate every 5 minutes
       }
     );
 
