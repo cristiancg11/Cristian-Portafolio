@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { FaInstagram } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ReferencesSection() {
@@ -34,7 +35,7 @@ export default function ReferencesSection() {
       description: "Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.",
       avatar: "",
       contact: "maria.gonzalez@email.com",
-      linkedin: "https://linkedin.com/in/mariagonzalez",
+      instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     },
     {
@@ -44,7 +45,7 @@ export default function ReferencesSection() {
       description: "Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.",
       avatar: "",
       contact: "carlos.rodriguez@email.com",
-      linkedin: "https://linkedin.com/in/carlosrodriguez",
+      instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     },
     {
@@ -54,7 +55,7 @@ export default function ReferencesSection() {
       description: "Working with Cristian was a very positive experience. His creativity and technical skills are impressive.",
       avatar: "",
       contact: "ana.martinez@email.com",
-      linkedin: "https://linkedin.com/in/anamartinez",
+      instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     },
     {
@@ -64,7 +65,7 @@ export default function ReferencesSection() {
       description: "Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.",
       avatar: "",
       contact: "luis.perez@universidad.edu",
-      linkedin: "https://linkedin.com/in/luisperez",
+      instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     }
   ];
@@ -143,16 +144,21 @@ export default function ReferencesSection() {
                     <a
                       href={`mailto:${ref.contact}`}
                       className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
+                      title="Email"
+                      aria-label="Email"
                     >
                       Email
                     </a>
                     <a
-                      href={ref.linkedin}
+                      href={ref.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
+                      title="Instagram"
+                      aria-label="Instagram"
                     >
-                      LinkedIn
+                      <FaInstagram size={16} />
+                      <span>Instagram</span>
                     </a>
                   </div>
                   
