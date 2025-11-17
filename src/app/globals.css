@@ -6,7 +6,16 @@
   --primary: #6D28D9;
   --primary-dark: #5B21B6;
   --primary-light: #8B5CF6;
-  --primary-lighter: #A78BFA;
+  --primary-accent: #A78BFA;
+}
+
+.dark {
+  --background: #0F0F0F;
+  --foreground: #F5F5F5;
+  --primary: #8B5CF6;
+  --primary-dark: #6D28D9;
+  --primary-light: #A78BFA;
+  --primary-accent: #C4B5FD;
 }
 
 @theme inline {
@@ -15,7 +24,7 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
-  --color-primary-lighter: var(--primary-lighter);
+  --color-primary-accent: var(--primary-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

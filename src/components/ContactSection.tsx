@@ -99,21 +99,21 @@ export default function ContactSection() {
                 href="https://www.instagram.com/cristiancg1111/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 hover:scale-110"
                 title="Instagram"
                 aria-label="Instagram"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300">
                   <FaInstagram className="text-black" size={20} />
                 </div>
               </a>
               <a
                 href="mailto:cristiansantacruzz123321@gmail.com"
-                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 hover:scale-110"
                 title="Gmail"
                 aria-label="Gmail"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300">
                   <FaEnvelope className="text-black" size={20} />
                 </div>
               </a>
@@ -121,11 +121,11 @@ export default function ContactSection() {
                 href="https://github.com/cristiancg11"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 hover:scale-110"
                 title="GitHub"
                 aria-label="GitHub"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300">
                   <FaGithub className="text-black" size={20} />
                 </div>
               </a>
@@ -133,11 +133,11 @@ export default function ContactSection() {
                 href="https://www.linkedin.com/in/cristian-gomez-9935a4311"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 hover:scale-110"
                 title="LinkedIn"
                 aria-label="LinkedIn"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300">
                   <FaLinkedin className="text-black" size={20} />
                 </div>
               </a>
@@ -158,7 +158,7 @@ export default function ContactSection() {
                   placeholder={t.contact.namePlaceholder}
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-violet-600 focus:outline-none transition-all duration-300 text-sm sm:text-base"
                   required
                 />
               </div>
@@ -171,7 +171,7 @@ export default function ContactSection() {
                   placeholder={t.contact.emailPlaceholder}
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                  className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-violet-600 focus:outline-none transition-all duration-300 text-sm sm:text-base"
                   required
                 />
               </div>
@@ -185,7 +185,7 @@ export default function ContactSection() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
+                className="w-full p-3 sm:p-4 rounded-lg dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-900 dark:border-gray-600 border-gray-300 focus:border-violet-600 focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
                 required
               />
             </div>
@@ -193,7 +193,7 @@ export default function ContactSection() {
             <button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 text-black font-bold py-3 sm:py-4 px-6 rounded-lg transition-all duration-300 hover:scale-105 disabled:cursor-not-allowed text-sm sm:text-base"
+              className="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-violet-600/50 text-black font-bold py-3 sm:py-4 px-6 rounded-lg transition-all duration-300 hover:scale-105 disabled:cursor-not-allowed text-sm sm:text-base"
             >
               {isSubmitting ? (
                   <div className="flex items-center justify-center gap-2">
@@ -222,11 +222,11 @@ export default function ContactSection() {
               href={social.url}
               target={social.name !== 'Gmail' ? '_blank' : undefined}
               rel={social.name !== 'Gmail' ? 'noopener noreferrer' : undefined}
-              className="flex items-center justify-center dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 hover:scale-110"
+              className="flex items-center justify-center dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 hover:scale-110"
               title={social.name}
               aria-label={social.name}
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300">
                 <span className="text-black flex items-center justify-center">{social.icon}</span>
               </div>
             </a>

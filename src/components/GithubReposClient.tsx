@@ -109,7 +109,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
                 setSelectedLanguage(e.target.value);
                 setDisplayedCount(12);
               }}
-              className="w-full px-4 py-2 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 rounded-lg border dark:border-gray-700 border-gray-300 focus:border-orange-500 focus:outline-none transition-all duration-300"
+              className="w-full px-4 py-2 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 rounded-lg border dark:border-gray-700 border-gray-300 focus:border-violet-600 focus:outline-none transition-all duration-300"
             >
               <option value="all">Todos los lenguajes</option>
               {languages.map(lang => (
@@ -127,7 +127,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
                   setOnlyStarred(e.target.checked);
                   setDisplayedCount(12);
                 }}
-                className="w-5 h-5 text-orange-500 rounded focus:ring-orange-500 focus:ring-2"
+                className="w-5 h-5 text-violet-600 rounded focus:ring-violet-600 focus:ring-2"
               />
               <span className="text-sm font-medium dark:text-white text-gray-900">
                 Solo con estrellas (&gt;0)
@@ -146,19 +146,19 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 dark:border-gray-700 border-gray-300 overflow-hidden hover:scale-105 hover:shadow-2xl hover:border-orange-500/50 ${
+              className={`group relative dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 dark:border-gray-700 border-gray-300 overflow-hidden hover:scale-105 hover:shadow-2xl hover:border-violet-600/50 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               {/* Orange gradient effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10">
                 {/* Repo name */}
                 <div className="flex items-center gap-2 mb-2">
-                  <FaGithub className="text-orange-500" size={20} />
-                  <h3 className="text-lg sm:text-xl font-bold dark:text-white text-gray-900 group-hover:text-orange-500 transition-colors duration-300 truncate">
+                  <FaGithub className="text-violet-600" size={20} />
+                  <h3 className="text-lg sm:text-xl font-bold dark:text-white text-gray-900 group-hover:text-violet-600 transition-colors duration-300 truncate">
                     {repo.name}
                   </h3>
                 </div>
@@ -180,7 +180,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
                   )}
                   
                   <div className="flex items-center gap-1 dark:text-gray-300 text-gray-600">
-                    <FaStar className="text-orange-500" size={14} />
+                    <FaStar className="text-violet-600" size={14} />
                     <span>{repo.stargazers_count}</span>
                   </div>
                   
@@ -201,7 +201,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
           }`}>
             <button
               onClick={loadMore}
-              className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
+              className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25"
             >
               Cargar más repositorios
             </button>

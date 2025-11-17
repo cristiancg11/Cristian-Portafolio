@@ -107,7 +107,7 @@ export default function TechnologiesSection() {
                 className={`group relative dark:bg-gray-800 bg-gray-100 p-4 sm:p-6 rounded-xl shadow-lg transition-all duration-500 dark:border-gray-700 border-gray-300 overflow-hidden cursor-pointer ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 } ${
-                  selectedTech === tech.id ? 'ring-2 ring-orange-500 scale-105' : 'hover:scale-105'
+                  selectedTech === tech.id ? 'ring-2 ring-violet-600 scale-105' : 'hover:scale-105'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
                 role="button"
@@ -126,7 +126,7 @@ export default function TechnologiesSection() {
                     <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
                       {tech.icon}
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold dark:text-white text-gray-900 group-hover:text-orange-500 transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-bold dark:text-white text-gray-900 group-hover:text-violet-600 transition-colors duration-300">
                       {tech.title}
                     </h3>
                   </div>
@@ -141,7 +141,7 @@ export default function TechnologiesSection() {
                         key={itemIndex}
                         role="button"
                         aria-label={item}
-                        className="w-full bg-orange-500 text-black font-semibold px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm"
+                        className="w-full bg-violet-600 text-black font-semibold px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm"
                       >
                         {item}
                       </div>
@@ -156,7 +156,7 @@ export default function TechnologiesSection() {
             <div className="flex justify-center items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
               <button 
                 onClick={prevTech}
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-orange-500 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
                 aria-label="Previous technology"
               >
                 <span className="text-xl sm:text-2xl font-bold">←</span>
@@ -170,7 +170,7 @@ export default function TechnologiesSection() {
                       setSelectedTech(technologies[index].id);
                     }}
                     className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                      currentTechIndex === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
+                      currentTechIndex === index ? 'bg-violet-600 shadow-lg shadow-violet-600/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-violet-500'
                     }`}
                     aria-label={`Go to technology ${index + 1}`}
                   />
@@ -178,7 +178,7 @@ export default function TechnologiesSection() {
               </div>
               <button 
                 onClick={nextTech}
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-orange-500 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
                 aria-label="Next technology"
               >
                 <span className="text-xl sm:text-2xl font-bold">→</span>
@@ -190,14 +190,14 @@ export default function TechnologiesSection() {
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
-            <div className="group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden border-2 border-orange-500/30 transition-all duration-300">
+            <div className="group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden border-2 border-violet-600/30 transition-all duration-300">
               {/* Orange gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-violet-700/10 transition-opacity duration-300" />
               
               <div className="relative text-center px-4">
                 {selectedTech ? (
                   <>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-4 transition-colors duration-300">
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-violet-600 mb-4 transition-colors duration-300">
                       {technologies.find(t => t.id === selectedTech)?.title}
                     </div>
                     <div className="dark:text-gray-300 text-gray-600 text-sm sm:text-base leading-relaxed transition-colors duration-300">
@@ -206,7 +206,7 @@ export default function TechnologiesSection() {
                   </>
                 ) : (
                   <>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 mb-2 transition-colors duration-300">{t.technologies.webDevelopment}</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-violet-600 mb-2 transition-colors duration-300">{t.technologies.webDevelopment}</div>
                     <div className="dark:text-gray-300 text-gray-600 text-sm sm:text-base transition-colors duration-300">{t.technologies.webDevelopmentDesc}</div>
                   </>
                 )}

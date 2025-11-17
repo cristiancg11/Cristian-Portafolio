@@ -77,7 +77,7 @@ export default function ReferencesSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.1),transparent_50%)]" />
       
       <div className="relative z-10 w-full max-w-7xl px-4">
-        <h1 className={`text-4xl font-bold text-orange-500 mb-4 text-center transition-all duration-1000 ${
+        <h1 className={`text-4xl font-bold text-violet-600 mb-4 text-center transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {t.references.title}
@@ -92,15 +92,15 @@ export default function ReferencesSection() {
           {references.map((ref, index) => (
             <div
               key={ref.id}
-              className={`group relative bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-700 hover:border-orange-500/50 ${
+              className={`group relative bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-700 hover:border-violet-600/50 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              } ${hoveredCard === ref.id ? 'scale-105 shadow-2xl border-orange-500/50' : ''}`}
+              } ${hoveredCard === ref.id ? 'scale-105 shadow-2xl border-violet-600/50' : ''}`}
               style={{ transitionDelay: `${index * 150}ms` }}
               onMouseEnter={() => setHoveredCard(ref.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-600/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
                 {/* Header with avatar and name */}
@@ -109,25 +109,25 @@ export default function ReferencesSection() {
                     <img
                       src={ref.avatar}
                       alt={ref.name}
-                      className="w-16 h-16 rounded-full border-2 border-orange-500/30 group-hover:border-orange-500 transition-all duration-300"
+                      className="w-16 h-16 rounded-full border-2 border-violet-600/30 group-hover:border-violet-600 transition-all duration-300"
                     />
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center">
                       <span className="text-black text-xs font-bold">★</span>
                     </div>
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white group-hover:text-violet-500 transition-colors duration-300">
                       {ref.name}
                     </h3>
-                    <p className="text-orange-500 font-semibold text-sm">
+                    <p className="text-violet-600 font-semibold text-sm">
                       {ref.role}
                     </p>
                     
                     {/* Rating con estrellas */}
                     <div className="flex gap-1 mt-1">
                       {[...Array(ref.rating)].map((_, i) => (
-                        <span key={i} className="text-orange-500 text-sm">★</span>
+                        <span key={i} className="text-violet-600 text-sm">★</span>
                       ))}
                     </div>
                   </div>
@@ -143,7 +143,7 @@ export default function ReferencesSection() {
                   <div className="flex gap-3">
                     <a
                       href={`mailto:${ref.contact}`}
-                      className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
+                      className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-violet-600/20 hover:text-violet-500 transition-all duration-300 text-sm"
                       title="Email"
                       aria-label="Email"
                     >
@@ -153,7 +153,7 @@ export default function ReferencesSection() {
                       href={ref.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-orange-500/20 hover:text-orange-400 transition-all duration-300 text-sm"
+                      className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-violet-600/20 hover:text-violet-500 transition-all duration-300 text-sm"
                       title="Instagram"
                       aria-label="Instagram"
                     >
@@ -162,14 +162,14 @@ export default function ReferencesSection() {
                     </a>
                   </div>
                   
-                  <div className="text-orange-500 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-violet-600 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">&rdquo;</span>
                   </div>
                 </div>
               </div>
               
               {/* Animated border effect */}
-              <div className="absolute inset-0 rounded-xl border-2 border-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-xl border-2 border-violet-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
@@ -178,19 +178,19 @@ export default function ReferencesSection() {
         <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-orange-500 mb-4">{t.references.featuredTestimonials}</h2>
+          <div className="bg-violet-600/10 border border-violet-600/30 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-violet-600 mb-4">{t.references.featuredTestimonials}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-2">100%</div>
+                <div className="text-3xl font-bold text-violet-600 mb-2">100%</div>
                 <div className="text-gray-300 text-sm">{t.references.recommendation}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-2">5.0</div>
+                <div className="text-3xl font-bold text-violet-600 mb-2">5.0</div>
                 <div className="text-gray-300 text-sm">{t.references.averageRating}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-2">4+</div>
+                <div className="text-3xl font-bold text-violet-600 mb-2">4+</div>
                 <div className="text-gray-300 text-sm">{t.references.availableReferences}</div>
               </div>
             </div>

@@ -63,8 +63,8 @@ export default function ExperienceSection() {
               {experiences.map((exp, index) => (
                   <div
                     key={exp.id}
-                    className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-orange-500/50 cursor-pointer ${
-                      activeCard === index ? 'scale-105 shadow-2xl border-orange-500/50 ring-2 ring-orange-500' : ''
+                    className={`dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:border-gray-700 border-gray-300 hover:border-violet-600/50 cursor-pointer ${
+                      activeCard === index ? 'scale-105 shadow-2xl border-violet-600/50 ring-2 ring-violet-600' : ''
                     }`}
                     onClick={() => setActiveCard(index)}
                   >
@@ -78,7 +78,7 @@ export default function ExperienceSection() {
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
                         />
                       ) : (
-                        <div className="text-orange-500 text-2xl font-bold">{exp.title.charAt(0)}</div>
+                        <div className="text-violet-600 text-2xl font-bold">{exp.title.charAt(0)}</div>
                       )}
                     </div>
                     <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
@@ -92,7 +92,7 @@ export default function ExperienceSection() {
             <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
               <button 
                 onClick={() => setActiveCard((prev) => (prev - 1 + experiences.length) % experiences.length)}
-                className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
+                className="dark:text-white text-gray-900 hover:text-violet-600 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
                 aria-label="Previous experience"
               >
                 ←
@@ -103,7 +103,7 @@ export default function ExperienceSection() {
                     key={index}
                     onClick={() => setActiveCard(index)}
                     className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                      activeCard === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
+                      activeCard === index ? 'bg-violet-600 shadow-lg shadow-violet-600/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-violet-500'
                     }`}
                     aria-label={`Go to experience ${index + 1}`}
                   />
@@ -111,7 +111,7 @@ export default function ExperienceSection() {
               </div>
               <button 
                 onClick={() => setActiveCard((prev) => (prev + 1) % experiences.length)}
-                className="dark:text-white text-gray-900 hover:text-orange-500 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
+                className="dark:text-white text-gray-900 hover:text-violet-600 transition-colors duration-300 text-lg sm:text-xl hover:scale-110"
                 aria-label="Next experience"
               >
                 →
@@ -119,7 +119,7 @@ export default function ExperienceSection() {
             </div>
             
             <div className="text-center mt-3 sm:mt-4">
-              <span className="text-orange-500 font-semibold text-sm sm:text-base">Platzi</span>
+              <span className="text-violet-600 font-semibold text-sm sm:text-base">Platzi</span>
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export default function ExperienceSection() {
                     activeCard === index ? 'opacity-100' : 'opacity-0 absolute inset-0'
                   }`}
                 >
-                  <h2 className="text-lg sm:text-xl font-bold text-orange-500 mb-2 sm:mb-3 text-center lg:text-left">
+                  <h2 className="text-lg sm:text-xl font-bold text-violet-600 mb-2 sm:mb-3 text-center lg:text-left">
                     {exp.title}
                   </h2>
                   <p className="dark:text-gray-300 text-gray-600 leading-relaxed text-sm sm:text-base text-center lg:text-left">

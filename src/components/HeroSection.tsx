@@ -28,7 +28,7 @@ export default function HeroSection() {
       {/* Background particles effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
-          className="absolute w-2 h-2 bg-orange-500/20 rounded-full animate-pulse"
+          className="absolute w-2 h-2 bg-violet-600/20 rounded-full animate-pulse"
           style={{
             left: `${mousePosition.x * 0.1}px`,
             top: `${mousePosition.y * 0.1}px`,
@@ -36,7 +36,7 @@ export default function HeroSection() {
           }}
         />
         <div 
-          className="absolute w-1 h-1 bg-orange-500/30 rounded-full animate-pulse"
+          className="absolute w-1 h-1 bg-violet-600/30 rounded-full animate-pulse"
           style={{
             left: `${mousePosition.x * 0.2}px`,
             top: `${mousePosition.y * 0.2}px`,
@@ -50,9 +50,9 @@ export default function HeroSection() {
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
       }`}>
         <div className="relative group">
-          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-orange-500 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-orange-500/25 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-violet-600 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center">
           </div>
-          <div className="absolute inset-0 rounded-full border-4 border-orange-500/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 rounded-full border-4 border-violet-600/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
                 element.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="group bg-orange-500 hover:bg-orange-600 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 w-full sm:w-auto"
+            className="group bg-violet-600 hover:bg-violet-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25 w-full sm:w-auto"
           >
             {t.hero.contactMe}
           </button>
@@ -93,7 +93,7 @@ export default function HeroSection() {
               href="https://www.instagram.com/cristiancg1111/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300 hover:scale-110"
               title="Instagram"
               aria-label="Instagram"
             >
@@ -101,7 +101,7 @@ export default function HeroSection() {
             </a>
             <a 
               href="mailto:cristiansantacruzz123321@gmail.com" 
-              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300 hover:scale-110"
               title="Gmail"
               aria-label="Gmail"
             >
@@ -111,7 +111,7 @@ export default function HeroSection() {
               href="https://github.com/cristiancg11" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 hover:scale-110"
+              className="w-10 h-10 sm:w-12 sm:h-12 dark:bg-white bg-gray-200 rounded-full flex items-center justify-center hover:bg-violet-600 transition-all duration-300 hover:scale-110"
               title="GitHub"
               aria-label="GitHub"
             >

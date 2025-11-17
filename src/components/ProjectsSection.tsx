@@ -91,7 +91,7 @@ export default function ProjectsSection() {
                   <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div>
                       <h2 className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-white text-gray-900">{project.title}</h2>
-                      <p className="text-orange-500 font-semibold text-sm sm:text-base">{project.subtitle}</p>
+                      <p className="text-violet-600 font-semibold text-sm sm:text-base">{project.subtitle}</p>
                     </div>
                   </div>
                   
@@ -101,7 +101,7 @@ export default function ProjectsSection() {
                   
                   <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
                     {project.keywords.map((keyword, keyIndex) => (
-                      <div key={keyIndex} className="flex items-center gap-1 text-orange-500 text-xs sm:text-sm">
+                      <div key={keyIndex} className="flex items-center gap-1 text-violet-600 text-xs sm:text-sm">
                         <span>→</span>
                         <span>{keyword}</span>
                       </div>
@@ -111,7 +111,7 @@ export default function ProjectsSection() {
                   {/* See More button */}
                   <div className="mb-4">
                     <Link href={`/proyectos/${project.slug}`}>
-                      <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 text-sm">
+                      <button className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25 text-sm">
                         {t.projects.seeMore} →
                       </button>
                     </Link>
@@ -126,14 +126,14 @@ export default function ProjectsSection() {
                 onClick={prevProject}
                 className="group relative px-4 sm:px-6 py-2 sm:py-3 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative">{t.projects.previous}</span>
               </button>
               <button
                 onClick={nextProject}
-                className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-orange-500 text-black font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
+                className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-violet-600 text-black font-semibold rounded-lg hover:bg-violet-700 transition-all duration-300 hover:scale-105 text-sm sm:text-base overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative">{t.projects.next}</span>
               </button>
             </div>
@@ -148,16 +148,16 @@ export default function ProjectsSection() {
                 {projects.map((project, index) => (
                   <div
                     key={project.id}
-                    className={`group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 cursor-pointer overflow-hidden border-2 border-transparent hover:border-orange-500 ${
+                    className={`group relative dark:bg-gray-800 bg-gray-100 rounded-xl p-3 sm:p-4 transition-all duration-500 cursor-pointer overflow-hidden border-2 border-transparent hover:border-violet-600 ${
                       currentProject === index ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
                     }`}
                     onClick={() => scrollToSection('proyectos')}
                   >
                     {/* Orange gradient effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="relative z-10">
-                      <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors duration-300 overflow-hidden relative">
+                      <div className="dark:bg-gray-700 bg-gray-200 rounded-lg h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-violet-600/20 transition-colors duration-300 overflow-hidden relative">
                         {project.image ? (
                           <Image
                             src={project.image}
@@ -167,10 +167,10 @@ export default function ProjectsSection() {
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                         ) : (
-                          <div className="text-orange-500 text-4xl font-bold">{project.title.charAt(0)}</div>
+                          <div className="text-violet-600 text-4xl font-bold">{project.title.charAt(0)}</div>
                         )}
                       </div>
-                      <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-orange-500 group-hover:text-black group-hover:font-bold">
+                      <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-violet-600 group-hover:text-black group-hover:font-bold">
                         {project.title}
                       </button>
                     </div>
@@ -180,7 +180,7 @@ export default function ProjectsSection() {
               
               {/* Navigation indicators */}
               <div className="flex justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-                <button onClick={prevProject} className="group dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
+                <button onClick={prevProject} className="group dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
                   <span className="group-hover:drop-shadow-lg">←</span>
                 </button>
                 <div className="flex gap-2">
@@ -189,12 +189,12 @@ export default function ProjectsSection() {
                       key={index}
                       onClick={() => setCurrentProject(index)}
                       className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                        currentProject === index ? 'bg-orange-500 shadow-lg shadow-orange-500/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-orange-400'
+                        currentProject === index ? 'bg-violet-600 shadow-lg shadow-violet-600/50' : 'dark:bg-gray-600 bg-gray-400 hover:bg-violet-500'
                       }`}
                     />
                   ))}
                 </div>
-                <button onClick={nextProject} className="group dark:text-white text-gray-900 hover:text-orange-500 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
+                <button onClick={nextProject} className="group dark:text-white text-gray-900 hover:text-violet-600 transition-all duration-300 text-lg sm:text-xl hover:scale-110">
                   <span className="group-hover:drop-shadow-lg">→</span>
                 </button>
               </div>

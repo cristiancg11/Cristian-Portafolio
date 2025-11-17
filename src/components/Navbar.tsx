@@ -87,7 +87,7 @@ export default function Navbar() {
           aria-label="Toggle theme"
         >
           {/* Hover gradient effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
           {/* Theme icon */}
           <span className="relative text-lg group-hover:scale-110 transition-transform duration-300">
@@ -95,7 +95,7 @@ export default function Navbar() {
           </span>
           
           {/* Pulse effect */}
-          <div className="absolute inset-0 rounded-lg border-2 border-orange-500 opacity-0 group-hover:opacity-100 animate-ping" />
+          <div className="absolute inset-0 rounded-lg border-2 border-violet-600 opacity-0 group-hover:opacity-100 animate-ping" />
         </button>
 
         {/* Desktop navigation */}
@@ -113,12 +113,12 @@ export default function Navbar() {
               onClick={() => scrollToSection(id)}
               className={`group relative px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden ${
                 activeSection === id
-                  ? 'bg-orange-500 text-black shadow-lg shadow-orange-500/25'
+                  ? 'bg-violet-600 text-black shadow-lg shadow-violet-600/25'
                   : 'dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg'
               }`}
             >
               {/* Hover gradient effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+              <div className={`absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                 activeSection === id ? 'opacity-100' : ''
               }`} />
               
@@ -164,7 +164,7 @@ export default function Navbar() {
                   onClick={() => scrollToSection(id)}
                   className={`w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-300 border-b dark:border-gray-700 border-gray-200 last:border-b-0 ${
                     activeSection === id
-                      ? 'bg-orange-500 text-black'
+                      ? 'bg-violet-600 text-black'
                       : 'dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200'
                   }`}
                   aria-label={t.nav[labelKey as keyof typeof t.nav]}
