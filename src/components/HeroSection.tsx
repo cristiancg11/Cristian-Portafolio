@@ -73,22 +73,8 @@ export default function HeroSection() {
           <p className="text-sm sm:text-base lg:text-lg">{t.hero.bullet2}</p>
         </div>
 
-        {/* Button and social media */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <button 
-            onClick={() => {
-              const element = document.getElementById('contacto');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="group bg-violet-600 hover:bg-violet-700 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25 w-full sm:w-auto"
-          >
-            {t.hero.contactMe}
-          </button>
-          
-          {/* Social media */}
-          <div className="flex gap-3 sm:gap-4">
+        {/* Social media */}
+        <div className="flex gap-3 sm:gap-4 justify-center">
             <a 
               href="https://www.instagram.com/cristiancg1111/" 
               target="_blank" 
@@ -118,7 +104,6 @@ export default function HeroSection() {
               <FaGithub className="text-black" size={20} />
             </a>
           </div>
-        </div>
       </div>
     </section>
   );
