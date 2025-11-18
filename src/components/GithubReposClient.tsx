@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { FaGithub, FaStar, FaCodeBranch, FaCalendarAlt } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface GitHubRepo {
   id: number;
@@ -25,6 +26,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
   const [onlyStarred, setOnlyStarred] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,7 +72,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('es-ES', {
+    return date.toLocaleDateString(language === 'es' ? 'es-ES' : 'en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
@@ -87,10 +89,10 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 mb-4">
-            Mis Repositorios de GitHub
+            {t.githubRepos.title}
           </h1>
           <p className="text-lg sm:text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
-            Explora mis proyectos y contribuciones en GitHub
+            {t.githubRepos.subtitle}
           </p>
         </div>
 
@@ -100,7 +102,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
         }`}>
           <div className="flex-1">
             <label htmlFor="language-filter" className="block text-sm font-medium mb-2 dark:text-white text-gray-900">
-              Filtrar por lenguaje:
+              {t.githubRepos.filterByLanguage}
             </label>
             <select
               id="language-filter"
@@ -111,7 +113,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
               }}
               className="w-full px-4 py-2 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 rounded-lg border dark:border-gray-700 border-gray-300 focus:border-violet-600 focus:outline-none transition-all duration-300"
             >
-              <option value="all">Todos los lenguajes</option>
+              <option value="all">{t.githubRepos.allLanguages}</option>
               {languages.map(lang => (
                 <option key={lang} value={lang}>{lang}</option>
               ))}
@@ -130,7 +132,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
                 className="w-5 h-5 text-violet-600 rounded focus:ring-violet-600 focus:ring-2"
               />
               <span className="text-sm font-medium dark:text-white text-gray-900">
-                Solo con estrellas (&gt;0)
+                {t.githubRepos.onlyStarred}
               </span>
             </label>
           </div>
@@ -203,7 +205,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
               onClick={loadMore}
               className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25"
             >
-              Cargar más repositorios
+              {t.githubRepos.loadMore}
             </button>
           </div>
         )}
@@ -213,10 +215,10 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
           <div className="text-center py-12">
             <FaGithub className="mx-auto text-4xl text-gray-400 mb-4" />
             <p className="text-lg dark:text-gray-300 text-gray-600 mb-2">
-              No se pudieron cargar los repositorios de GitHub.
+              {t.githubRepos.errorLoading}
             </p>
             <p className="text-sm dark:text-gray-400 text-gray-500">
-              Esto puede deberse a límites de la API o problemas de conexión. Intenta recargar la página.
+              {t.githubRepos.errorDescription}
             </p>
           </div>
         )}
@@ -224,7 +226,7 @@ export default function GithubReposClient({ initialRepos }: GithubReposClientPro
         {filteredRepos.length === 0 && repos.length > 0 && (
           <div className="text-center py-12">
             <p className="text-lg dark:text-gray-300 text-gray-600">
-              No se encontraron repositorios con los filtros seleccionados.
+              {t.githubRepos.noReposFound}
             </p>
           </div>
         )}
