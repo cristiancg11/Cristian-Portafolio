@@ -53,6 +53,48 @@ GITHUB_TOKEN=your_github_personal_access_token_here
 
 By default, the section fetches repositories from `cristiancg11`. To change this, modify the username in `src/components/GithubReposSection.tsx`.
 
+## Images and Media Assets
+
+The portfolio uses images for projects and experiences sections. All images are stored in the `/public` directory and organized by category.
+
+### Project Images
+
+Project images are located in `/public/projects/`:
+- `matchinsight-card.svg` - Image for MatchInsight project
+- `fintrack-card.svg` - Image for FinTrack project
+- `placeholder-project.svg` - Placeholder image for projects without a specific image
+
+**To replace project images:**
+1. Add your image file to `/public/projects/` with the naming convention: `<project-slug>-card.<extension>`
+2. Supported formats: `.svg`, `.png`, `.jpg`, `.webp`
+3. Recommended size: 600x400px for optimal display
+4. Update the `image` property in the project object in `src/components/ProjectsSection.tsx` or `src/app/proyectos/[id]/page.tsx`
+
+### Experience Images
+
+Experience images are located in `/public/experiences/`:
+- `github-exp.svg` - Image for Git & GitHub experience
+- `fundamentos-exp.svg` - Image for Programming Fundamentals experience
+- `mysql-exp.svg` - Image for MySQL Workbench experience
+- `teamwork-exp.svg` - Image for Teamwork experience
+- `placeholder-exp.svg` - Placeholder image for experiences without a specific image
+
+**To replace experience images:**
+1. Add your image file to `/public/experiences/` with the naming convention: `<experience-slug>-exp.<extension>`
+2. Supported formats: `.svg`, `.png`, `.jpg`, `.webp`
+3. Recommended size: 400x300px for optimal display
+4. Update the `image` property in the experience object in `src/components/ExperienceSection.tsx`
+
+### Image Optimization
+
+All images are automatically optimized by Next.js using the `next/image` component. The component provides:
+- Automatic image optimization
+- Lazy loading
+- Responsive images with proper sizing
+- WebP format support when available
+
+**Note:** When adding new images, ensure they are free of copyright restrictions or you have proper licensing. SVG images are recommended for scalability and smaller file sizes.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
