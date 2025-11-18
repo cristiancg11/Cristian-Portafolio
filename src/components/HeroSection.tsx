@@ -53,11 +53,11 @@ export default function HeroSection() {
         <div className="relative group">
           <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative">
             <Image
-              src="/cristian.jpg"
-              alt="Mi foto"
-              width={320}
-              height={320}
-              className="object-cover w-full h-full rounded-full"
+              src="/cristian-profile.jpg"
+              alt="Foto de Cristian Gómez"
+              width={300}
+              height={300}
+              className="rounded-full object-cover shadow-lg w-full h-full"
               priority
             />
           </div>
