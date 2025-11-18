@@ -105,25 +105,25 @@ export default function ReferencesSection() {
               <div className="relative z-10">
                 {/* Header with avatar and name */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="relative">
+                  <div className="relative flex-shrink-0">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-600/20 to-violet-700/30 dark:bg-gray-700 bg-gray-300 flex items-center justify-center text-2xl font-bold text-violet-600 dark:text-violet-400 border-2 border-violet-600/30 group-hover:border-violet-600 transition-all duration-300 shadow-lg">
                       {ref.name.charAt(0).toUpperCase()}
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center shadow-md">
                       <span className="text-black text-xs font-bold">★</span>
                     </div>
                   </div>
                   
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white group-hover:text-violet-500 transition-colors duration-300">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-bold text-white group-hover:text-violet-500 transition-colors duration-300 mb-1">
                       {ref.name}
                     </h3>
-                    <p className="text-violet-600 font-semibold text-sm">
+                    <p className="text-violet-600 font-semibold text-sm mb-2">
                       {ref.role}
                     </p>
                     
                     {/* Rating con estrellas */}
-                    <div className="flex gap-1 mt-1">
+                    <div className="flex gap-1">
                       {[...Array(ref.rating)].map((_, i) => (
                         <span key={i} className="text-violet-600 text-sm">★</span>
                       ))}

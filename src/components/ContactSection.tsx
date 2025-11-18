@@ -83,7 +83,7 @@ export default function ContactSection() {
   return (
     <section id="contacto" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4">
-        <div className={`text-center mb-6 sm:mb-8 transition-all duration-1000 ${
+        <div className={`text-center mb-8 sm:mb-10 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <p className="dark:text-white text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
