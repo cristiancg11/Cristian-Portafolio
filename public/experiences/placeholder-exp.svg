@@ -1,0 +1,19 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="expPlaceholderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B7280;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B5563;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#expPlaceholderGrad)"/>
+  <!-- Certificate/Experience icon -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="200" height="140" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.4" rx="5"/>
+    <line x1="20" y1="40" x2="180" y2="40" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <line x1="20" y1="70" x2="160" y2="70" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <line x1="20" y1="100" x2="140" y2="100" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+  </g>
+  <!-- Title -->
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" opacity="0.7" text-anchor="middle">Experience</text>
+</svg>
+
