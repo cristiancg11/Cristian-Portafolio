@@ -3,6 +3,7 @@
 import { notFound } from 'next/navigation';
 import { useRouter, useParams } from 'next/navigation';
 import { useEffect, useState, useMemo } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Project {
@@ -44,7 +45,7 @@ export default function ProjectPage() {
         'Intuitive dashboard for coaches',
         'REST API for integration with other systems'
       ],
-      image: '/matchinsight-preview.png',
+      image: '/projects/matchinsight-card.svg',
       status: t.projects.inDevelopment,
       github: 'https://github.com/cristian/matchinsight',
       demo: 'https://matchinsight-demo.vercel.app'
@@ -63,7 +64,7 @@ export default function ProjectPage() {
         'Customizable budgets',
         'Synchronization between devices'
       ],
-      image: '/fintrack-preview.png',
+      image: '/projects/fintrack-card.svg',
       status: t.projects.completed,
       github: 'https://github.com/cristian/fintrack',
       demo: 'https://fintrack-demo.vercel.app'
@@ -188,15 +189,26 @@ export default function ProjectPage() {
             </div>
 
             {/* Imagen del proyecto */}
-            <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-lg font-semibold text-orange-500">
-                  {project.title}
-                </div>
-                <div className="dark:text-gray-300 text-gray-600 text-sm">
-                  {t.projectDetail.projectPreview}
-                </div>
-              </div>
+            <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center overflow-hidden relative">
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={`${project.title} - ${project.subtitle}`}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  title={project.title}
+                />
+              ) : (
+                <Image
+                  src="/projects/placeholder-project.svg"
+                  alt={`Placeholder for ${project.title}`}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  title={project.title}
+                />
+              )}
             </div>
           </div>
         </div>
