@@ -11,6 +11,7 @@ interface Translations {
     technologies: string;
     experience: string;
     references: string;
+    contact: string;
     downloadCV: string;
   };
   hero: {
@@ -123,6 +124,7 @@ const translations: Record<Language, Translations> = {
       technologies: 'TECHNOLOGIES',
       experience: 'EXPERIENCE',
       references: 'REFERENCES',
+      contact: 'CONTACT',
       downloadCV: 'DOWNLOAD CV',
     },
     hero: {
@@ -233,6 +235,7 @@ const translations: Record<Language, Translations> = {
       technologies: 'TECNOLOGÍAS',
       experience: 'EXPERIENCIAS',
       references: 'REFERENCIAS',
+      contact: 'CONTACTO',
       downloadCV: 'DESCARGAR CV',
     },
     hero: {
