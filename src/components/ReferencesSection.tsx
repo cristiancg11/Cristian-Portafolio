@@ -106,11 +106,9 @@ export default function ReferencesSection() {
                 {/* Header with avatar and name */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative">
-                    <img
-                      src={ref.avatar}
-                      alt={ref.name}
-                      className="w-16 h-16 rounded-full border-2 border-violet-600/30 group-hover:border-violet-600 transition-all duration-300"
-                    />
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-600/20 to-violet-700/30 dark:bg-gray-700 bg-gray-300 flex items-center justify-center text-2xl font-bold text-violet-600 dark:text-violet-400 border-2 border-violet-600/30 group-hover:border-violet-600 transition-all duration-300 shadow-lg">
+                      {ref.name.charAt(0).toUpperCase()}
+                    </div>
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center">
                       <span className="text-black text-xs font-bold">★</span>
                     </div>
