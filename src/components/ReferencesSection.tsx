@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { FaInstagram } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -27,7 +27,7 @@ export default function ReferencesSection() {
     return () => observer.disconnect();
   }, []);
 
-  const references = [
+  const references = useMemo(() => [
     {
       id: 1,
       name: "Andres Parra",
@@ -68,7 +68,7 @@ export default function ReferencesSection() {
       instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     }
-  ];
+  ], [t]);
 
   return (
     <section id="referencias" className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 relative overflow-hidden">
@@ -144,11 +144,11 @@ export default function ReferencesSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-violet-600/20 hover:text-violet-500 transition-all duration-300 text-sm"
-                      title="Instagram"
-                      aria-label="Instagram"
+                      title={t.references.instagram}
+                      aria-label={t.references.instagram}
                     >
                       <FaInstagram size={16} />
-                      <span>Instagram</span>
+                      <span>{t.references.instagram}</span>
                     </a>
                   </div>
                   

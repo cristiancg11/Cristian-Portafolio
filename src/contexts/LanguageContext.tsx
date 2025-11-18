@@ -88,6 +88,7 @@ interface Translations {
     ref2Description: string;
     ref3Description: string;
     ref4Description: string;
+    instagram: string;
   };
   githubRepos: {
     title: string;
@@ -199,6 +200,7 @@ const translations: Record<Language, Translations> = {
       ref2Description: 'Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.',
       ref3Description: 'Working with Cristian was a very positive experience. His creativity and technical skills are impressive.',
       ref4Description: 'Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.',
+      instagram: 'Instagram',
     },
     githubRepos: {
       title: 'My GitHub Repositories',
@@ -308,6 +310,7 @@ const translations: Record<Language, Translations> = {
       ref2Description: 'Cristian muestra un gran potencial en el desarrollo frontend. Su capacidad de aprendizaje y adaptabilidad son excepcionales.',
       ref3Description: 'Trabajar con Cristian fue una experiencia muy positiva. Su creatividad y habilidades técnicas son impresionantes.',
       ref4Description: 'Estudiante destacado con gran potencial. Su dedicación y curiosidad por aprender nuevas tecnologías es notable.',
+      instagram: 'Instagram',
     },
     githubRepos: {
       title: 'Mis Repositorios de GitHub',
