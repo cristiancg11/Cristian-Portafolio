@@ -32,21 +32,21 @@ export default function ExperienceSection() {
       id: 1,
       title: t.experience.gitTitle,
       description: t.experience.gitDescription,
-      image: "/git-github.png",
+      image: "/experiences/github-exp.svg",
       platform: "Platzi"
     },
     {
       id: 2,
       title: t.experience.programmingTitle,
       description: t.experience.programmingDescription,
-      image: "/programming.png",
+      image: "/experiences/fundamentos-exp.svg",
       platform: "Platzi"
     },
     {
       id: 3,
       title: t.experience.mysqlTitle,
       description: t.experience.mysqlDescription,
-      image: "/mysql.png",
+      image: "/experiences/mysql-exp.svg",
       platform: "Platzi"
     }
   ];
@@ -76,9 +76,17 @@ export default function ExperienceSection() {
                           fill
                           className="object-cover rounded-lg"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                          title={exp.title}
                         />
                       ) : (
-                        <div className="text-violet-600 text-2xl font-bold">{exp.title.charAt(0)}</div>
+                        <Image
+                          src="/experiences/placeholder-exp.svg"
+                          alt={`Placeholder for ${exp.title}`}
+                          fill
+                          className="object-cover rounded-lg"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                          title={exp.title}
+                        />
                       )}
                     </div>
                     <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm">
