@@ -58,6 +58,9 @@ export default function HeroSection() {
               width={320}
               height={320}
               className="rounded-full object-cover shadow-lg w-full h-full"
+              style={{
+                objectPosition: '50% 30%' // Ajusta estos valores: primer número (50%) = horizontal (0% izquierda, 100% derecha), segundo número (30%) = vertical (0% arriba, 100% abajo)
+              }}
               priority
               sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
             />
