@@ -78,8 +78,16 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="fixed w-full top-0 z-50 dark:bg-black/90 bg-white/90 backdrop-blur-sm border-b dark:border-gray-800 border-gray-200">
-      <div className="flex justify-between items-center py-3 px-2 sm:py-4 sm:px-4">
+    <>
+      {/* Overlay para cerrar el menú móvil al hacer click fuera */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 dark:bg-black/40 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+      <nav className="fixed w-full top-0 z-50 dark:bg-black/90 bg-white/90 backdrop-blur-sm border-b dark:border-gray-800 border-gray-200">
+        <div className="flex justify-between items-center py-3 px-2 sm:py-4 sm:px-4">
         {/* Theme toggle button */}
         <button
           onClick={toggleTheme}
@@ -138,10 +146,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile hamburger button */}
-        <div className="md:hidden relative" ref={menuRef}>
+        <div className="md:hidden fixed top-4 right-4 z-50" ref={menuRef}>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="group relative flex items-center justify-center w-10 h-10 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2"
+            className="group relative flex items-center justify-center w-12 h-12 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 rounded-full shadow-lg"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
             type="button"
@@ -149,12 +157,16 @@ export default function Navbar() {
             {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
 
-          {/* Mobile menu dropdown */}
+          {/* Mobile menu dropdown - se despliega desde la esquina */}
           {isMobileMenuOpen && (
             <div 
-              className="absolute top-full right-0 mt-2 w-48 dark:bg-gray-800 bg-white border dark:border-gray-700 border-gray-200 shadow-xl z-50 rounded-lg overflow-hidden animate-in"
+              className="fixed top-20 right-4 w-56 dark:bg-gray-800 bg-white border dark:border-gray-700 border-gray-200 shadow-2xl z-50 rounded-xl overflow-hidden"
               role="menu"
               aria-orientation="vertical"
+              style={{
+                animation: 'slideDownFadeIn 0.3s ease-out forwards',
+                transformOrigin: 'top right'
+              }}
             >
               {[
                 { id: 'inicio', labelKey: 'home'  },
@@ -173,7 +185,7 @@ export default function Navbar() {
                       : 'dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200'
                   }`}
                   style={{
-                    animation: `slideInFromRight 0.2s ease-out ${index * 50}ms forwards`,
+                    animation: `slideInFromRight 0.2s ease-out ${index * 30}ms forwards`,
                     opacity: 0
                   }}
                   onAnimationEnd={(e) => {
@@ -196,6 +208,7 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    </>
   );
 }
 
