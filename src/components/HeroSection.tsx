@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -50,7 +51,14 @@ export default function HeroSection() {
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
       }`}>
         <div className="relative group">
-          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-violet-600 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center">
+          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative">
+            <Image
+              src="/cristian.jpg"
+              alt="Mi foto"
+              width={200}
+              height={200}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="absolute inset-0 rounded-full border-4 border-violet-600/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
