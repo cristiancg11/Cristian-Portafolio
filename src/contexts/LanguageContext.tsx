@@ -84,6 +84,21 @@ interface Translations {
     recommendation: string;
     averageRating: string;
     availableReferences: string;
+    ref1Description: string;
+    ref2Description: string;
+    ref3Description: string;
+    ref4Description: string;
+  };
+  githubRepos: {
+    title: string;
+    subtitle: string;
+    filterByLanguage: string;
+    allLanguages: string;
+    onlyStarred: string;
+    loadMore: string;
+    errorLoading: string;
+    errorDescription: string;
+    noReposFound: string;
   };
   projectDetail: {
     projectDescription: string;
@@ -180,6 +195,21 @@ const translations: Record<Language, Translations> = {
       recommendation: 'Recommendation',
       averageRating: 'Average Rating',
       availableReferences: 'Available References',
+      ref1Description: 'Excellent team member, very dedicated and always willing to help. His passion for web development is admirable.',
+      ref2Description: 'Cristian shows great potential in frontend development. His learning ability and adaptability are exceptional.',
+      ref3Description: 'Working with Cristian was a very positive experience. His creativity and technical skills are impressive.',
+      ref4Description: 'Outstanding student with great potential. His dedication and curiosity to learn new technologies is remarkable.',
+    },
+    githubRepos: {
+      title: 'My GitHub Repositories',
+      subtitle: 'Explore my projects and contributions on GitHub',
+      filterByLanguage: 'Filter by language:',
+      allLanguages: 'All languages',
+      onlyStarred: 'Only starred (>0)',
+      loadMore: 'Load more repositories',
+      errorLoading: 'Could not load GitHub repositories.',
+      errorDescription: 'This may be due to API limits or connection issues. Try reloading the page.',
+      noReposFound: 'No repositories found with the selected filters.',
     },
     projectDetail: {
       projectDescription: 'Project Description',
@@ -274,6 +304,21 @@ const translations: Record<Language, Translations> = {
       recommendation: 'Recomendación',
       averageRating: 'Calificación Promedio',
       availableReferences: 'Referencias Disponibles',
+      ref1Description: 'Excelente miembro del equipo, muy dedicado y siempre dispuesto a ayudar. Su pasión por el desarrollo web es admirable.',
+      ref2Description: 'Cristian muestra un gran potencial en el desarrollo frontend. Su capacidad de aprendizaje y adaptabilidad son excepcionales.',
+      ref3Description: 'Trabajar con Cristian fue una experiencia muy positiva. Su creatividad y habilidades técnicas son impresionantes.',
+      ref4Description: 'Estudiante destacado con gran potencial. Su dedicación y curiosidad por aprender nuevas tecnologías es notable.',
+    },
+    githubRepos: {
+      title: 'Mis Repositorios de GitHub',
+      subtitle: 'Explora mis proyectos y contribuciones en GitHub',
+      filterByLanguage: 'Filtrar por lenguaje:',
+      allLanguages: 'Todos los lenguajes',
+      onlyStarred: 'Solo con estrellas (>0)',
+      loadMore: 'Cargar más repositorios',
+      errorLoading: 'No se pudieron cargar los repositorios de GitHub.',
+      errorDescription: 'Esto puede deberse a límites de la API o problemas de conexión. Intenta recargar la página.',
+      noReposFound: 'No se encontraron repositorios con los filtros seleccionados.',
     },
     projectDetail: {
       projectDescription: 'Descripción del Proyecto',
