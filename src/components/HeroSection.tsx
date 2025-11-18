@@ -52,7 +52,7 @@ export default function HeroSection() {
       }`}>
         <div className="relative group" style={{
           // Ajusta la posición horizontal del círculo (valores negativos = izquierda, positivos = derecha)
-          marginLeft: '30px', // Cambia este valor para mover: '20px' = derecha, '-20px' = izquierda
+          marginLeft: '60px', // Movido más hacia la derecha para mejor posicionamiento en PC
           marginTop: '0px' // Cambia este valor para mover verticalmente: '20px' = abajo, '-20px' = arriba
         }}>
           <div 
