@@ -106,8 +106,8 @@ export default function ReferencesSection() {
                 {/* Header with avatar and name */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-600/20 to-violet-700/30 dark:bg-gray-700 bg-gray-300 flex items-center justify-center text-2xl font-bold text-violet-600 dark:text-violet-400 border-2 border-violet-600/30 group-hover:border-violet-600 transition-all duration-300 shadow-lg">
-                      {ref.name.charAt(0).toUpperCase()}
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-600/30 to-violet-700/40 dark:bg-violet-600/20 bg-violet-100 flex items-center justify-center text-2xl sm:text-3xl font-bold text-violet-700 dark:text-violet-300 border-2 border-violet-600/50 group-hover:border-violet-600 transition-all duration-300 shadow-lg">
+                      {ref.name.split(' ').filter(word => !['Dr.', 'Mr.', 'Mrs.', 'Ms.'].includes(word)).join(' ').charAt(0).toUpperCase()}
                     </div>
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center shadow-md">
                       <span className="text-black text-xs font-bold">★</span>
