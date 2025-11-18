@@ -44,7 +44,7 @@ export default function ProjectsSection() {
       subtitle: t.projects.matchAnalyzer,
       description: t.projects.matchDescription,
       keywords: ["Soccer", "data analysis", "visualization", "charts"],
-      image: "/matchinsight-preview.png",
+      image: "/projects/matchinsight-card.svg",
       status: t.projects.inDevelopment
     },
     {
@@ -55,7 +55,7 @@ export default function ProjectsSection() {
       subtitle: t.projects.personalExpenseControl,
       description: t.projects.finTrackDescription,
       keywords: ["Personal finance", "organization", "reports", "productivity"],
-      image: "/fintrack-preview.png",
+      image: "/projects/fintrack-card.svg",
       status: t.projects.completed
     }
   ];
@@ -161,13 +161,21 @@ export default function ProjectsSection() {
                         {project.image ? (
                           <Image
                             src={project.image}
-                            alt={project.title}
+                            alt={`${project.title} - ${project.subtitle}`}
                             fill
                             className="object-cover rounded-lg"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            title={project.title}
                           />
                         ) : (
-                          <div className="text-violet-600 text-4xl font-bold">{project.title.charAt(0)}</div>
+                          <Image
+                            src="/projects/placeholder-project.svg"
+                            alt={`Placeholder for ${project.title}`}
+                            fill
+                            className="object-cover rounded-lg"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            title={project.title}
+                          />
                         )}
                       </div>
                       <button className="w-full dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900 dark:hover:bg-gray-800 hover:bg-gray-400 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm group-hover:bg-violet-600 group-hover:text-black group-hover:font-bold">
