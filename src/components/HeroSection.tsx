@@ -52,7 +52,7 @@ export default function HeroSection() {
       }`}>
         <div className="relative group" style={{
           // Ajusta la posición horizontal del círculo (valores negativos = izquierda, positivos = derecha)
-          marginLeft: '0px', // Cambia este valor para mover: '20px' = derecha, '-20px' = izquierda
+          marginLeft: '30px', // Cambia este valor para mover: '20px' = derecha, '-20px' = izquierda
           marginTop: '0px' // Cambia este valor para mover verticalmente: '20px' = abajo, '-20px' = arriba
         }}>
           <div 
@@ -60,8 +60,8 @@ export default function HeroSection() {
             style={{
               // Ajusta el tamaño del círculo aquí (en píxeles)
               // Desktop (pantallas grandes): ajusta estos valores
-              width: '320px', // Cambia este valor para hacerlo más grande o pequeño (ej: '360px' = más grande, '280px' = más pequeño)
-              height: '320px', // Debe ser el mismo valor que width para mantener el círculo
+              width: '350px', // Cambia este valor para hacerlo más grande o pequeño (ej: '360px' = más grande, '280px' = más pequeño)
+              height: '340px', // Debe ser el mismo valor que width para mantener el círculo
               // Para móviles, el tamaño se ajustará automáticamente, pero puedes forzar un tamaño específico aquí
             }}
           >
