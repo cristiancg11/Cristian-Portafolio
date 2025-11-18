@@ -55,9 +55,10 @@ export default function HeroSection() {
             <Image
               src="/cristian.jpg"
               alt="Mi foto"
-              width={200}
-              height={200}
-              className="object-cover w-full h-full"
+              width={320}
+              height={320}
+              className="object-cover w-full h-full rounded-full"
+              priority
             />
           </div>
           <div className="absolute inset-0 rounded-full border-4 border-violet-600/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
