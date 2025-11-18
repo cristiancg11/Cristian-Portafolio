@@ -156,10 +156,11 @@ export default function TechnologiesSection() {
             <div className="flex justify-center items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
               <button 
                 onClick={prevTech}
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                className="group relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-xl shadow-lg hover:shadow-xl hover:shadow-violet-600/25 border-2 border-transparent hover:border-violet-600/50 overflow-hidden"
                 aria-label="Previous technology"
               >
-                <span className="text-xl sm:text-2xl font-bold">←</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative text-3xl sm:text-4xl font-bold">←</span>
               </button>
               <div className="flex gap-2">
                 {technologies.map((_, index) => (
@@ -178,10 +179,11 @@ export default function TechnologiesSection() {
               </div>
               <button 
                 onClick={nextTech}
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-lg shadow-lg"
+                className="group relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:bg-violet-600 hover:text-black transition-all duration-300 hover:scale-110 rounded-xl shadow-lg hover:shadow-xl hover:shadow-violet-600/25 border-2 border-transparent hover:border-violet-600/50 overflow-hidden"
                 aria-label="Next technology"
               >
-                <span className="text-xl sm:text-2xl font-bold">→</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative text-3xl sm:text-4xl font-bold">→</span>
               </button>
             </div>
           </div>
