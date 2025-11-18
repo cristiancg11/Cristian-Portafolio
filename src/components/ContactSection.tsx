@@ -11,7 +11,6 @@ export default function ContactSection() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -52,33 +51,6 @@ export default function ContactSection() {
     });
   };
 
-  const socialLinks = [
-    {
-      id: 'github',
-      name: <FaGithub size={24} />,
-      icon: 'githud.png',
-      url: 'https://github.com/cristiancg11',
-      color: 'hover:bg-gray-700',
-      description: 'My projects and code'
-    },
-    {
-      id: 'linkedin',
-      name: 'LinkedIn',
-      icon: <FaLinkedin size={24} />,
-      url: 'https://www.linkedin.com/in/cristian-gomez-9935a4311',
-      color: 'hover:bg-blue-600',
-      description: 'My professional profile'
-    },
-    {
-      id: 'email',
-      name: 'Email',
-      icon: <FaEnvelope size={24} />,
-      url: 'mailto:cristiansantacruzz123321@gmail.com',
-      color: 'hover:bg-red-600',
-      description: 'Direct contact'
-    },
-    
-  ];
 
   return (
     <section id="contacto" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
@@ -165,7 +137,7 @@ export default function ContactSection() {
             { name: "Github", icon: <FaGithub size={24} />, url: "https://github.com/cristiancg11" },
             { name: "Linkedin", icon: <FaLinkedin size={24} />, url: "https://www.linkedin.com/in/cristian-gomez-9935a4311" },
             { name: "Gmail", icon: <FaEnvelope size={24} />, url: "cristiansantacruzz123321@gmail.com" }
-          ].map((social, index) => (
+          ].map((social) => (
             <a
               key={social.name}
               href={social.url}
