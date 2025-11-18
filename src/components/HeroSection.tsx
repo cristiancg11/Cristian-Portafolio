@@ -50,8 +50,21 @@ export default function HeroSection() {
       <div className={`flex-1 flex justify-center lg:justify-start z-10 mb-8 lg:mb-0 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
       }`}>
-        <div className="relative group">
-          <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative mx-auto lg:mx-0">
+        <div className="relative group" style={{
+          // Ajusta la posición horizontal del círculo (valores negativos = izquierda, positivos = derecha)
+          marginLeft: '0px', // Cambia este valor para mover: '20px' = derecha, '-20px' = izquierda
+          marginTop: '0px' // Cambia este valor para mover verticalmente: '20px' = abajo, '-20px' = arriba
+        }}>
+          <div 
+            className="rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative mx-auto lg:mx-0"
+            style={{
+              // Ajusta el tamaño del círculo aquí (en píxeles)
+              // Desktop (pantallas grandes): ajusta estos valores
+              width: '320px', // Cambia este valor para hacerlo más grande o pequeño (ej: '360px' = más grande, '280px' = más pequeño)
+              height: '320px', // Debe ser el mismo valor que width para mantener el círculo
+              // Para móviles, el tamaño se ajustará automáticamente, pero puedes forzar un tamaño específico aquí
+            }}
+          >
             <Image
               src="/cristian-profile.jpg"
               alt="Foto de Cristian Gómez"
@@ -59,7 +72,7 @@ export default function HeroSection() {
               height={320}
               className="rounded-full object-cover shadow-lg w-full h-full"
               style={{
-                objectPosition: '50% 30%' // Ajusta estos valores: primer número (50%) = horizontal (0% izquierda, 100% derecha), segundo número (30%) = vertical (0% arriba, 100% abajo)
+                objectPosition: '50% 3%' // Ajusta estos valores: primer número (50%) = horizontal (0% izquierda, 100% derecha), segundo número (30%) = vertical (0% arriba, 100% abajo)
               }}
               priority
               sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
