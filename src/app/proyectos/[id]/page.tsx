@@ -99,44 +99,46 @@ export default function ProjectPage() {
 
   return (
     <div className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12">
-      <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header del proyecto */}
         <div className="mb-8 sm:mb-12">
           <div className="flex items-center gap-4 mb-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 mb-2">
                 {project.title}
               </h1>
-              <p className="text-orange-500 font-semibold text-lg sm:text-xl">
+              <p className="text-violet-600 font-semibold text-lg sm:text-xl">
                 {project.subtitle}
               </p>
             </div>
           </div>
           
-          <div className="flex items-center gap-4 mb-6">
-            <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+          <div className="flex flex-wrap items-center gap-4 mb-6">
+            <span className={`px-4 py-2 rounded-full text-sm font-semibold ${
               project.status === t.projects.completed 
                 ? 'bg-green-500 text-white' 
-                : 'bg-orange-500 text-black'
+                : 'bg-violet-600 text-black'
             }`}>
               {project.status}
             </span>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <a 
                 href={project.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
+                className="group relative px-4 py-2 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg overflow-hidden"
               >
-                GitHub
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative">GitHub</span>
               </a>
               <a 
                 href={project.demo} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+                className="group relative px-4 py-2 bg-violet-600 hover:bg-violet-700 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25 overflow-hidden"
               >
-                {t.projectDetail.viewDemo}
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative">{t.projectDetail.viewDemo}</span>
               </a>
             </div>
           </div>
@@ -147,23 +149,23 @@ export default function ProjectPage() {
           {/* Description */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.projectDescription}
               </h2>
-              <p className="dark:text-gray-300 text-gray-600 leading-relaxed">
+              <p className="dark:text-gray-300 text-gray-600 leading-relaxed text-sm sm:text-base">
                 {project.longDescription}
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.mainFeatures}
               </h2>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {project.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center gap-2 dark:text-gray-300 text-gray-600">
-                    <span className="text-orange-500">→</span>
-                    <span>{feature}</span>
+                  <li key={index} className="flex items-start gap-3 dark:text-gray-300 text-gray-600">
+                    <span className="text-violet-600 text-xl font-bold mt-0.5">→</span>
+                    <span className="text-sm sm:text-base">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -173,14 +175,14 @@ export default function ProjectPage() {
           {/* Technologies and image */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 dark:text-white text-gray-900">
                 {t.projectDetail.technologiesUsed}
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech: string, index: number) => (
                   <span 
                     key={index}
-                    className="px-3 py-2 bg-orange-500 text-black font-semibold rounded-lg text-sm hover:bg-orange-600 transition-colors duration-300"
+                    className="px-3 py-2 bg-violet-600 text-black font-semibold rounded-lg text-sm hover:bg-violet-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-600/25"
                   >
                     {tech}
                   </span>
@@ -189,7 +191,7 @@ export default function ProjectPage() {
             </div>
 
             {/* Imagen del proyecto */}
-            <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-6 h-64 sm:h-80 flex items-center justify-center overflow-hidden relative">
+            <div className="dark:bg-gray-800 bg-gray-100 rounded-xl p-4 sm:p-6 h-64 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden relative border-2 border-violet-600/20 hover:border-violet-600/40 transition-all duration-300">
               {project.image ? (
                 <Image
                   src={project.image}
@@ -217,9 +219,10 @@ export default function ProjectPage() {
         <div className="mt-8 sm:mt-12 text-center">
           <button 
             onClick={() => router.back()}
-            className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
+            className="group relative px-6 py-3 dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-300 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg overflow-hidden"
           >
-            {t.projectDetail.backToProjects}
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-violet-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="relative">{t.projectDetail.backToProjects}</span>
           </button>
         </div>
       </div>
