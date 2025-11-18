@@ -51,17 +51,18 @@ export default function HeroSection() {
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
       }`}>
         <div className="relative group">
-          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative">
+          <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full border-4 border-violet-600 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-violet-600/25 overflow-hidden relative mx-auto lg:mx-0">
             <Image
               src="/cristian-profile.jpg"
               alt="Foto de Cristian Gómez"
-              width={300}
-              height={300}
+              width={320}
+              height={320}
               className="rounded-full object-cover shadow-lg w-full h-full"
               priority
+              sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
             />
           </div>
-          <div className="absolute inset-0 rounded-full border-4 border-violet-600/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 rounded-full border-4 border-violet-600/50 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
       </div>
 
