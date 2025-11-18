@@ -146,8 +146,18 @@ export default function Navbar() {
           {/* Botón Descargar CV */}
           <a
             href="/cv.pdf"
-            download
+            download="CV-Cristian-Gomez.pdf"
             className="group relative px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg"
+            onClick={(e) => {
+              // Forzar descarga en todos los navegadores
+              const link = document.createElement('a');
+              link.href = '/cv.pdf';
+              link.download = 'CV-Cristian-Gomez.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              e.preventDefault();
+            }}
           >
             {/* Hover gradient effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -215,8 +225,18 @@ export default function Navbar() {
               {/* Botón Descargar CV en móvil */}
               <a
                 href="/cv.pdf"
-                download
+                download="CV-Cristian-Gomez.pdf"
                 className="w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-200 border-b dark:border-gray-700 border-gray-200 last:border-b-0 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-inset dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200"
+                onClick={(e) => {
+                  // Forzar descarga en todos los navegadores
+                  const link = document.createElement('a');
+                  link.href = '/cv.pdf';
+                  link.download = 'CV-Cristian-Gomez.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  e.preventDefault();
+                }}
                 style={{
                   animation: `slideInFromRight 0.2s ease-out ${6 * 30}ms forwards`,
                   opacity: 0
