@@ -36,18 +36,6 @@ interface Translations {
     finTrackDescription: string;
     helloWorld: string;
   };
-  featuredProjects: {
-    title: string;
-    subtitle: string;
-    viewDemo: string;
-    viewCode: string;
-    viewDetails: string;
-    technologies: string;
-    status: string;
-    stars: string;
-    forks: string;
-    views: string;
-  };
   technologies: {
     title: string;
     subtitle: string;
@@ -161,18 +149,6 @@ const translations: Record<Language, Translations> = {
       finTrackDescription: 'Mobile and web application for personal expense control with automatic category tracking, financial report generation and productivity tools for better money management.',
       helloWorld: 'HELLO WORLD!',
     },
-    featuredProjects: {
-      title: 'Featured Projects',
-      subtitle: 'My most outstanding projects with demos, code and detailed information',
-      viewDemo: 'View Demo',
-      viewCode: 'View Code',
-      viewDetails: 'View Details',
-      technologies: 'Technologies',
-      status: 'Status',
-      stars: 'Stars',
-      forks: 'Forks',
-      views: 'Views',
-    },
     technologies: {
       title: 'Technologies',
       subtitle: 'Tools and technologies I use to create modern and efficient web applications.',
@@ -283,18 +259,6 @@ const translations: Record<Language, Translations> = {
       matchDescription: 'Plataforma web que analiza partidos de fútbol en tiempo real, mostrando estadísticas detalladas de jugadores clave, rendimiento del equipo y gráficos interactivos para una mejor comprensión del juego.',
       finTrackDescription: 'Aplicación móvil y web para el control de gastos personales con seguimiento automático de categorías, generación de reportes financieros y herramientas de productividad para una mejor gestión del dinero.',
       helloWorld: '¡HOLA MUNDO!',
-    },
-    featuredProjects: {
-      title: 'Proyectos Destacados',
-      subtitle: 'Mis proyectos más destacados con demos, código e información detallada',
-      viewDemo: 'Ver Demo',
-      viewCode: 'Ver Código',
-      viewDetails: 'Ver Detalles',
-      technologies: 'Tecnologías',
-      status: 'Estado',
-      stars: 'Estrellas',
-      forks: 'Forks',
-      views: 'Visitas',
     },
     technologies: {
       title: 'Tecnologías',

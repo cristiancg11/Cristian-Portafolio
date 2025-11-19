@@ -1,5 +1,4 @@
 import HeroSection from '@/components/HeroSection';
-import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import TechnologiesSection from '@/components/TechnologiesSection';
 import ExperienceSection from '@/components/ExperienceSection';
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <FeaturedProjectsSection />
       <ProjectsSection />
       <TechnologiesSection />
       <ExperienceSection />
