@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function TechnologiesSection() {
@@ -28,14 +28,14 @@ export default function TechnologiesSection() {
     return () => observer.disconnect();
   }, []);
 
-  const technologies = [
+  const technologies = useMemo(() => [
     {
       id: 1,
       title: t.technologies.languages,
       description: t.technologies.languagesDesc,
       items: ["JavaScript (JS)", "TypeScript (TS)", "Python"],
       icon: "",
-      detailedDescription: "JavaScript is a versatile programming language used for creating interactive web applications. TypeScript adds static typing to JavaScript, improving code quality and developer experience. Python is a powerful language known for its simplicity and versatility, used in web development, data science, and automation."
+      detailedDescription: t.technologies.languagesDetailedDesc
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default function TechnologiesSection() {
       description: t.technologies.frameworksDesc,
       items: ["Next.js", "React", "TailwindCSS"],
       icon: "",
-      detailedDescription: "Next.js is a React framework that enables server-side rendering and static site generation for optimal performance. React is a JavaScript library for building user interfaces with component-based architecture. TailwindCSS is a utility-first CSS framework that allows rapid UI development with pre-built classes."
+      detailedDescription: t.technologies.frameworksDetailedDesc
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export default function TechnologiesSection() {
       description: t.technologies.toolsDesc,
       items: ["Git", "GitHub", "Figma", "VS Code"],
       icon: "",
-      detailedDescription: "Git is a distributed version control system for tracking changes in code. GitHub is a platform for hosting and collaborating on Git repositories. Figma is a collaborative design tool for creating user interfaces and prototypes. VS Code is a powerful code editor with extensive extensions and debugging capabilities."
+      detailedDescription: t.technologies.toolsDetailedDesc
     },
     {
       id: 4,
@@ -59,9 +59,9 @@ export default function TechnologiesSection() {
       description: t.technologies.stylesDesc,
       items: ["CSS3", "SASS", "Figma", "Adobe XD"],
       icon: "",
-      detailedDescription: "CSS3 provides advanced styling capabilities including animations, transitions, and responsive design features. SASS is a CSS preprocessor that adds variables, nesting, and mixins for more maintainable stylesheets. Figma and Adobe XD are design tools for creating and prototyping user interfaces before development."
+      detailedDescription: t.technologies.stylesDetailedDesc
     }
-  ];
+  ], [t]);
 
   useEffect(() => {
     // Set first technology as selected by default

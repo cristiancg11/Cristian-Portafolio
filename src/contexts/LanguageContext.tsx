@@ -41,12 +41,16 @@ interface Translations {
     subtitle: string;
     languages: string;
     languagesDesc: string;
+    languagesDetailedDesc: string;
     frameworks: string;
     frameworksDesc: string;
+    frameworksDetailedDesc: string;
     tools: string;
     toolsDesc: string;
+    toolsDetailedDesc: string;
     stylesDesign: string;
     stylesDesc: string;
+    stylesDetailedDesc: string;
     alwaysLearning: string;
     alwaysLearningDesc: string;
     webDevelopment: string;
@@ -154,12 +158,16 @@ const translations: Record<Language, Translations> = {
       subtitle: 'Tools and technologies I use to create modern and efficient web applications.',
       languages: 'LANGUAGES',
       languagesDesc: 'Programming languages for logic and interaction of modern web applications.',
+      languagesDetailedDesc: 'JavaScript is a versatile programming language used for creating interactive web applications. TypeScript adds static typing to JavaScript, improving code quality and developer experience. Python is a powerful language known for its simplicity and versatility, used in web development, data science, and automation.',
       frameworks: 'FRAMEWORKS',
       frameworksDesc: 'Tools for faster development and modern, dynamic applications.',
+      frameworksDetailedDesc: 'Next.js is a React framework that enables server-side rendering and static site generation for optimal performance. React is a JavaScript library for building user interfaces with component-based architecture. TailwindCSS is a utility-first CSS framework that allows rapid UI development with pre-built classes.',
       tools: 'TOOLS',
       toolsDesc: 'Platforms for version control, collaboration and project deployment.',
+      toolsDetailedDesc: 'Git is a distributed version control system for tracking changes in code. GitHub is a platform for hosting and collaborating on Git repositories. Figma is a collaborative design tool for creating user interfaces and prototypes. VS Code is a powerful code editor with extensive extensions and debugging capabilities.',
       stylesDesign: 'STYLES / DESIGN',
       stylesDesc: 'Technologies for visual interfaces, clean design and user experience.',
+      stylesDetailedDesc: 'CSS3 provides advanced styling capabilities including animations, transitions, and responsive design features. SASS is a CSS preprocessor that adds variables, nesting, and mixins for more maintainable stylesheets. Figma and Adobe XD are design tools for creating and prototyping user interfaces before development.',
       alwaysLearning: 'Always Learning',
       alwaysLearningDesc: 'I stay up to date with the latest technologies and best practices in web development, always looking for new ways to create exceptional digital experiences.',
       webDevelopment: 'Web Development',
@@ -265,12 +273,16 @@ const translations: Record<Language, Translations> = {
       subtitle: 'Herramientas y tecnologías que utilizo para crear aplicaciones web modernas y eficientes.',
       languages: 'LENGUAJES',
       languagesDesc: 'Lenguajes de programación para la lógica e interacción de aplicaciones web modernas.',
+      languagesDetailedDesc: 'JavaScript es un lenguaje de programación versátil utilizado para crear aplicaciones web interactivas. TypeScript agrega tipado estático a JavaScript, mejorando la calidad del código y la experiencia del desarrollador. Python es un lenguaje poderoso conocido por su simplicidad y versatilidad, utilizado en desarrollo web, ciencia de datos y automatización.',
       frameworks: 'FRAMEWORKS',
       frameworksDesc: 'Herramientas para desarrollo más rápido y aplicaciones modernas y dinámicas.',
+      frameworksDetailedDesc: 'Next.js es un framework de React que permite renderizado del lado del servidor y generación de sitios estáticos para un rendimiento óptimo. React es una biblioteca de JavaScript para construir interfaces de usuario con arquitectura basada en componentes. TailwindCSS es un framework CSS utility-first que permite un desarrollo rápido de UI con clases pre-construidas.',
       tools: 'HERRAMIENTAS',
       toolsDesc: 'Plataformas para control de versiones, colaboración y despliegue de proyectos.',
+      toolsDetailedDesc: 'Git es un sistema de control de versiones distribuido para rastrear cambios en el código. GitHub es una plataforma para alojar y colaborar en repositorios Git. Figma es una herramienta de diseño colaborativa para crear interfaces de usuario y prototipos. VS Code es un editor de código poderoso con extensiones extensas y capacidades de depuración.',
       stylesDesign: 'ESTILOS / DISEÑO',
       stylesDesc: 'Tecnologías para interfaces visuales, diseño limpio y experiencia de usuario.',
+      stylesDetailedDesc: 'CSS3 proporciona capacidades avanzadas de estilo incluyendo animaciones, transiciones y características de diseño responsive. SASS es un preprocesador CSS que agrega variables, anidamiento y mixins para hojas de estilo más mantenibles. Figma y Adobe XD son herramientas de diseño para crear y prototipar interfaces de usuario antes del desarrollo.',
       alwaysLearning: 'Siempre Aprendiendo',
       alwaysLearningDesc: 'Me mantengo actualizado con las últimas tecnologías y mejores prácticas en desarrollo web, siempre buscando nuevas formas de crear experiencias digitales excepcionales.',
       webDevelopment: 'Desarrollo Web',
