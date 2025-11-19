@@ -5,14 +5,12 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import Toast from './Toast';
-import AboutModal from './AboutModal';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info'; isVisible: boolean }>({
     message: '',
     type: 'success',
@@ -27,7 +25,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
       
       // Detect active section
-      const sections = ['inicio', 'proyectos', 'tecnologias', 'experiencias', 'referencias', 'contacto'];
+      const sections = ['inicio', 'acerca-de-mi', 'proyectos', 'tecnologias', 'experiencias', 'referencias', 'contacto'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -93,10 +91,6 @@ export default function Navbar() {
         isVisible={toast.isVisible}
         onClose={() => setToast({ ...toast, isVisible: false })}
       />
-      <AboutModal
-        isOpen={isAboutModalOpen}
-        onClose={() => setIsAboutModalOpen(false)}
-      />
       {/* Overlay para cerrar el menú móvil al hacer click fuera */}
       {isMobileMenuOpen && (
         <div 
@@ -128,6 +122,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-1 sm:gap-2 md:gap-3 overflow-x-auto items-center">
           {[
             { id: 'inicio', labelKey: 'home'  },
+            { id: 'acerca-de-mi', labelKey: 'about' },
             { id: 'proyectos', labelKey: 'projects' },
             { id: 'tecnologias', labelKey: 'technologies' },
             { id: 'experiencias', labelKey: 'experience' },
@@ -161,20 +156,6 @@ export default function Navbar() {
               )}
             </button>
           ))}
-          {/* Botón Acerca de Mí */}
-          <button
-            onClick={() => setIsAboutModalOpen(true)}
-            className="group relative px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg"
-          >
-            {/* Hover gradient effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Button content */}
-            <span className="relative flex items-center gap-1 sm:gap-2 group-hover:scale-105 transition-transform duration-300">
-              <span className="hidden sm:inline">{t.nav.about}</span>
-              <span className="sm:hidden">{t.nav.about.split(' ')[0]}</span>
-            </span>
-          </button>
           {/* Botón Descargar CV */}
           <a
             href="/cv.pdf"
@@ -260,6 +241,7 @@ export default function Navbar() {
             >
               {[
                 { id: 'inicio', labelKey: 'home'  },
+                { id: 'acerca-de-mi', labelKey: 'about' },
                 { id: 'proyectos', labelKey: 'projects' },
                 { id: 'tecnologias', labelKey: 'technologies' },
                 { id: 'experiencias', labelKey: 'experience' },
@@ -287,23 +269,6 @@ export default function Navbar() {
                   {t.nav[labelKey as keyof typeof t.nav]}
                 </button>
               ))}
-              {/* Botón Acerca de Mí en móvil */}
-              <button
-                onClick={() => {
-                  setIsAboutModalOpen(true);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-200 border-b dark:border-gray-700 border-gray-200 last:border-b-0 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-inset dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200"
-                style={{
-                  animation: `slideInFromRight 0.2s ease-out ${6 * 30}ms forwards`,
-                  opacity: 0
-                }}
-                onAnimationEnd={(e) => {
-                  (e.currentTarget as HTMLElement).style.opacity = '1';
-                }}
-              >
-                {t.nav.about}
-              </button>
               {/* Botón Descargar CV en móvil */}
               <a
                 href="/cv.pdf"
