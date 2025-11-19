@@ -148,15 +148,34 @@ export default function Navbar() {
             href="/cv.pdf"
             download="CV-Cristian-Gomez.pdf"
             className="group relative px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap overflow-hidden dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-gray-200 text-gray-900 hover:bg-gray-300 hover:shadow-lg"
-            onClick={(e) => {
-              // Forzar descarga en todos los navegadores
-              const link = document.createElement('a');
-              link.href = '/cv.pdf';
-              link.download = 'CV-Cristian-Gomez.pdf';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
+            onClick={async (e) => {
               e.preventDefault();
+              try {
+                // Intentar descargar el archivo
+                const response = await fetch('/cv.pdf');
+                if (!response.ok) {
+                  throw new Error('Error al descargar el CV');
+                }
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'CV-Cristian-Gomez.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+              } catch (error) {
+                console.error('Error al descargar CV:', error);
+                // Fallback: intentar descarga directa
+                const link = document.createElement('a');
+                link.href = '/cv.pdf';
+                link.download = 'CV-Cristian-Gomez.pdf';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }
             }}
           >
             {/* Hover gradient effect */}
@@ -227,15 +246,34 @@ export default function Navbar() {
                 href="/cv.pdf"
                 download="CV-Cristian-Gomez.pdf"
                 className="w-full text-left px-4 py-3 text-sm font-semibold transition-all duration-200 border-b dark:border-gray-700 border-gray-200 last:border-b-0 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-inset dark:text-white text-gray-900 dark:hover:bg-gray-700 hover:bg-gray-200"
-                onClick={(e) => {
-                  // Forzar descarga en todos los navegadores
-                  const link = document.createElement('a');
-                  link.href = '/cv.pdf';
-                  link.download = 'CV-Cristian-Gomez.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                onClick={async (e) => {
                   e.preventDefault();
+                  try {
+                    // Intentar descargar el archivo
+                    const response = await fetch('/cv.pdf');
+                    if (!response.ok) {
+                      throw new Error('Error al descargar el CV');
+                    }
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'CV-Cristian-Gomez.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                  } catch (error) {
+                    console.error('Error al descargar CV:', error);
+                    // Fallback: intentar descarga directa
+                    const link = document.createElement('a');
+                    link.href = '/cv.pdf';
+                    link.download = 'CV-Cristian-Gomez.pdf';
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }
                 }}
                 style={{
                   animation: `slideInFromRight 0.2s ease-out ${6 * 30}ms forwards`,
