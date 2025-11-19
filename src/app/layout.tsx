@@ -21,8 +21,9 @@ export default function RootLayout({
               (function() {
                 try {
                   const theme = localStorage.getItem('theme');
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  const shouldBeDark = theme === 'dark' || (!theme && prefersDark);
+                  // Solo usar el tema guardado, no la preferencia del sistema
+                  // Si no hay tema guardado, usar 'dark' por defecto
+                  const shouldBeDark = theme === 'dark' || (!theme);
                   const root = document.documentElement;
                   if (shouldBeDark) {
                     root.classList.add('dark');
