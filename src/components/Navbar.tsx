@@ -112,15 +112,15 @@ export default function Navbar() {
           aria-label="Toggle theme"
         >
           {/* Hover gradient effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-violet-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           
           {/* Theme icon */}
-          <span className="relative text-lg group-hover:scale-110 transition-transform duration-300">
+          <span className="relative text-lg group-hover:scale-110 transition-transform duration-300 pointer-events-none">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </span>
           
           {/* Pulse effect */}
-          <div className="absolute inset-0 rounded-lg border-2 border-violet-600 opacity-0 group-hover:opacity-100 animate-ping" />
+          <div className="absolute inset-0 rounded-lg border-2 border-violet-600 opacity-0 group-hover:opacity-100 animate-ping pointer-events-none" />
         </button>
 
         {/* Desktop navigation */}

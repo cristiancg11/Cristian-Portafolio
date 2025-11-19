@@ -34,6 +34,7 @@ export default function RootLayout({
                     // Default to dark if no theme is set
                     root.classList.add('dark');
                     root.classList.remove('light');
+                    localStorage.setItem('theme', 'dark');
                   }
                 } catch (e) {
                   document.documentElement.classList.add('dark');

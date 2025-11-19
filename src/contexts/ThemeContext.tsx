@@ -11,24 +11,50 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Función helper para obtener el tema actual del DOM
+function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'dark';
+  
+  try {
+    // Primero intentar leer del localStorage
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      return savedTheme;
+    }
+    
+    // Si no hay en localStorage, leer del DOM (establecido por el script)
+    const root = document.documentElement;
+    if (root.classList.contains('dark')) {
+      return 'dark';
+    }
+    if (root.classList.contains('light')) {
+      return 'light';
+    }
+  } catch (error) {
+    console.error('Error reading initial theme:', error);
+  }
+  
+  return 'dark';
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  // Usar función lazy para evitar problemas de hidratación
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    return getInitialTheme();
+  });
   const [mounted, setMounted] = useState(false);
 
-  // Inicializar tema desde localStorage al montar
+  // Sincronizar con el DOM al montar
   useEffect(() => {
     const root = document.documentElement;
     
     try {
-      const savedTheme = localStorage.getItem('theme') as Theme | null;
-      let initialTheme: Theme = 'dark';
+      // Leer el tema actual del DOM o localStorage
+      const currentTheme = getInitialTheme();
       
-      if (savedTheme === 'dark' || savedTheme === 'light') {
-        initialTheme = savedTheme;
-      }
-      
-      // Aplicar tema inmediatamente
-      if (initialTheme === 'dark') {
+      // Asegurar que el DOM esté sincronizado
+      if (currentTheme === 'dark') {
         root.classList.add('dark');
         root.classList.remove('light');
       } else {
@@ -36,10 +62,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         root.classList.add('light');
       }
       
-      setTheme(initialTheme);
+      setTheme(currentTheme);
       setMounted(true);
     } catch (error) {
-      console.error('Error loading theme:', error);
+      console.error('Error initializing theme:', error);
       root.classList.add('dark');
       root.classList.remove('light');
       setTheme('dark');
