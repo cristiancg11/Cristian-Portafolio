@@ -12,6 +12,7 @@ interface Translations {
     experience: string;
     references: string;
     contact: string;
+    about: string;
     downloadCV: string;
   };
   hero: {
@@ -118,6 +119,11 @@ interface Translations {
   common: {
     backToHome: string;
   };
+  about: {
+    title: string;
+    description: string;
+    closeButton: string;
+  };
 }
 
 const translations: Record<Language, Translations> = {
@@ -129,6 +135,7 @@ const translations: Record<Language, Translations> = {
       experience: 'EXPERIENCE',
       references: 'REFERENCES',
       contact: 'CONTACT',
+      about: 'ABOUT ME',
       downloadCV: 'DOWNLOAD CV',
     },
     hero: {
@@ -235,6 +242,11 @@ const translations: Record<Language, Translations> = {
     common: {
       backToHome: '← Back to Home',
     },
+    about: {
+      title: 'About Me',
+      description: 'I am a future Software Engineer passionate about web development and creating projects that add real value. Currently studying Software Engineering, I focus on frontend development, web innovation, and constant learning. I am dedicated to creating useful projects with good design, using modern technologies like Next.js, React, TypeScript, and Tailwind CSS. My goal is to continue growing as a developer and contribute to innovative solutions in the technology field.',
+      closeButton: 'Close',
+    },
   },
   es: {
     nav: {
@@ -244,6 +256,7 @@ const translations: Record<Language, Translations> = {
       experience: 'EXPERIENCIAS',
       references: 'REFERENCIAS',
       contact: 'CONTACTO',
+      about: 'ACERCA DE MÍ',
       downloadCV: 'DESCARGAR CV',
     },
     hero: {
@@ -349,6 +362,11 @@ const translations: Record<Language, Translations> = {
     },
     common: {
       backToHome: '← Volver al Inicio',
+    },
+    about: {
+      title: 'Acerca de Mí',
+      description: 'Soy un futuro Ingeniero de Software apasionado por el desarrollo web y la creación de proyectos que aporten valor real. Actualmente estudiando Ingeniería de Software, me enfoco en el desarrollo frontend, la innovación web y el aprendizaje constante. Me dedico a crear proyectos útiles con buen diseño, utilizando tecnologías modernas como Next.js, React, TypeScript y Tailwind CSS. Mi objetivo es seguir creciendo como desarrollador y contribuir a soluciones innovadoras en el campo de la tecnología.',
+      closeButton: 'Cerrar',
     },
   },
 };
