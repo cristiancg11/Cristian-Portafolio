@@ -20,11 +20,9 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  const theme = localStorage.getItem('theme');
-                  // Solo usar el tema guardado, no la preferencia del sistema
-                  // Si no hay tema guardado, usar 'dark' por defecto
-                  const shouldBeDark = theme === 'dark' || (!theme);
-                  const root = document.documentElement;
+                  var theme = localStorage.getItem('theme');
+                  var shouldBeDark = theme === 'dark' || !theme;
+                  var root = document.documentElement;
                   if (shouldBeDark) {
                     root.classList.add('dark');
                     root.classList.remove('light');
@@ -33,12 +31,12 @@ export default function RootLayout({
                     root.classList.add('light');
                   }
                 } catch (e) {
-                  // Fallback: default to dark
                   document.documentElement.classList.add('dark');
                 }
               })();
             `,
           }}
+          suppressHydrationWarning
         />
       </head>
       <body className="dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-800 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:text-white text-gray-900 transition-colors duration-300">
