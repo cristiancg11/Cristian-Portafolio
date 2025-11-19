@@ -4,12 +4,18 @@ import { useState, useEffect, useRef } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import Toast from './Toast';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info'; isVisible: boolean }>({
+    message: '',
+    type: 'success',
+    isVisible: false
+  });
   const menuRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { t } = useLanguage();
@@ -79,6 +85,12 @@ export default function Navbar() {
 
   return (
     <>
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.isVisible}
+        onClose={() => setToast({ ...toast, isVisible: false })}
+      />
       {/* Overlay para cerrar el menú móvil al hacer click fuera */}
       {isMobileMenuOpen && (
         <div 
@@ -165,6 +177,13 @@ export default function Navbar() {
                 link.click();
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
+                
+                // Mostrar notificación de éxito
+                setToast({
+                  message: 'CV descargado exitosamente',
+                  type: 'success',
+                  isVisible: true
+                });
               } catch (error) {
                 console.error('Error al descargar CV:', error);
                 // Fallback: intentar descarga directa
@@ -175,6 +194,13 @@ export default function Navbar() {
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
+                
+                // Mostrar notificación de éxito (aunque sea fallback)
+                setToast({
+                  message: 'CV descargado exitosamente',
+                  type: 'success',
+                  isVisible: true
+                });
               }
             }}
           >
@@ -263,6 +289,13 @@ export default function Navbar() {
                     link.click();
                     document.body.removeChild(link);
                     window.URL.revokeObjectURL(url);
+                    
+                    // Mostrar notificación de éxito
+                    setToast({
+                      message: 'CV descargado exitosamente',
+                      type: 'success',
+                      isVisible: true
+                    });
                   } catch (error) {
                     console.error('Error al descargar CV:', error);
                     // Fallback: intentar descarga directa
@@ -273,6 +306,13 @@ export default function Navbar() {
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
+                    
+                    // Mostrar notificación de éxito (aunque sea fallback)
+                    setToast({
+                      message: 'CV descargado exitosamente',
+                      type: 'success',
+                      isVisible: true
+                    });
                   }
                 }}
                 style={{

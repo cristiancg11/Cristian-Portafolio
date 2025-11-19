@@ -2,6 +2,7 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Toast from './Toast';
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +12,11 @@ export default function ContactSection() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info'; isVisible: boolean }>({
+    message: '',
+    type: 'success',
+    isVisible: false
+  });
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -35,13 +41,38 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Form submitted:', formData);
-    alert(t.contact.successMessage);
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      // Crear el enlace mailto: con el mensaje prellenado
+      const subject = encodeURIComponent(`Contacto desde portafolio - ${formData.name}`);
+      const body = encodeURIComponent(
+        `Nombre: ${formData.name}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Mensaje:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:cristiansantacruzz123321@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Abrir el cliente de correo
+      window.location.href = mailtoLink;
+      
+      // Mostrar mensaje de éxito después de un breve delay
+      setTimeout(() => {
+        setToast({
+          message: t.contact.successMessage,
+          type: 'success',
+          isVisible: true
+        });
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(false);
+      }, 500);
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      setToast({
+        message: 'Error al enviar el mensaje. Por favor, intenta de nuevo.',
+        type: 'error',
+        isVisible: true
+      });
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -54,6 +85,12 @@ export default function ContactSection() {
 
   return (
     <section id="contacto" className="min-h-screen dark:bg-black bg-white dark:text-white text-gray-900 py-8 sm:py-12 relative overflow-hidden">
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.isVisible}
+        onClose={() => setToast({ ...toast, isVisible: false })}
+      />
       <div className="w-full max-w-4xl mx-auto px-4">
         <div className={`text-center mb-8 sm:mb-10 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
