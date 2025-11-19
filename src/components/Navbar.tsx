@@ -102,8 +102,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-3 px-2 sm:py-4 sm:px-4">
         {/* Theme toggle button */}
         <button
-          onClick={toggleTheme}
-          className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden"
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleTheme();
+          }}
+          className="group relative flex items-center justify-center w-10 h-10 rounded-lg dark:bg-gray-800 bg-gray-200 dark:text-white text-gray-900 hover:dark:bg-gray-700 hover:bg-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden z-50 cursor-pointer"
           aria-label="Toggle theme"
         >
           {/* Hover gradient effect */}

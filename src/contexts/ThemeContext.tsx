@@ -12,37 +12,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Inicializar con 'dark' por defecto, se actualizará en useEffect
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Solo en cliente, leer del localStorage
-    if (typeof window !== 'undefined') {
-      try {
-        const savedTheme = localStorage.getItem('theme') as Theme | null;
-        if (savedTheme === 'dark' || savedTheme === 'light') {
-          return savedTheme;
-        }
-      } catch {
-        // Ignorar errores de localStorage
-      }
-    }
-    return 'dark';
-  });
+  const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
+  // Inicializar tema desde localStorage al montar
   useEffect(() => {
-    // Aplicar tema inicial inmediatamente para evitar flash
     const root = document.documentElement;
     
     try {
-      // Verificar si hay una preferencia guardada en localStorage
       const savedTheme = localStorage.getItem('theme') as Theme | null;
-      let initialTheme: Theme;
+      let initialTheme: Theme = 'dark';
       
       if (savedTheme === 'dark' || savedTheme === 'light') {
         initialTheme = savedTheme;
-      } else {
-        // Tema por defecto: dark (no usar preferencia del sistema)
-        initialTheme = 'dark';
       }
       
       // Aplicar tema inmediatamente
@@ -57,7 +39,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setTheme(initialTheme);
       setMounted(true);
     } catch (error) {
-      // Fallback en caso de error
       console.error('Error loading theme:', error);
       root.classList.add('dark');
       root.classList.remove('light');
@@ -66,50 +47,51 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  // Aplicar cambios de tema cuando cambie el estado
   useEffect(() => {
-    if (mounted) {
-      try {
-        const root = document.documentElement;
-        localStorage.setItem('theme', theme);
-        
-        // Aplicar la clase al documento
-        if (theme === 'dark') {
-          root.classList.add('dark');
-          root.classList.remove('light');
-        } else {
-          root.classList.remove('dark');
-          root.classList.add('light');
-        }
-      } catch (error) {
-        console.error('Error saving theme:', error);
+    if (!mounted) return;
+    
+    const root = document.documentElement;
+    
+    try {
+      // Aplicar la clase al documento
+      if (theme === 'dark') {
+        root.classList.add('dark');
+        root.classList.remove('light');
+      } else {
+        root.classList.remove('dark');
+        root.classList.add('light');
       }
+      
+      // Guardar en localStorage
+      localStorage.setItem('theme', theme);
+    } catch (error) {
+      console.error('Error applying theme:', error);
     }
   }, [theme, mounted]);
 
   const toggleTheme = () => {
     setTheme(prevTheme => {
-      try {
-        const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
-        // Aplicar inmediatamente para mejor UX (sin esperar re-render)
-        const root = document.documentElement;
-        if (newTheme === 'dark') {
-          root.classList.add('dark');
-          root.classList.remove('light');
-        } else {
-          root.classList.remove('dark');
-          root.classList.add('light');
-        }
-        // Persistir en localStorage
-        try {
-          localStorage.setItem('theme', newTheme);
-        } catch (storageError) {
-          console.warn('Could not save theme to localStorage:', storageError);
-        }
-        return newTheme;
-      } catch (error) {
-        console.error('Error toggling theme:', error);
-        return prevTheme;
+      const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
+      
+      // Aplicar inmediatamente para mejor UX
+      const root = document.documentElement;
+      if (newTheme === 'dark') {
+        root.classList.add('dark');
+        root.classList.remove('light');
+      } else {
+        root.classList.remove('dark');
+        root.classList.add('light');
       }
+      
+      // Persistir en localStorage
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (storageError) {
+        console.warn('Could not save theme to localStorage:', storageError);
+      }
+      
+      return newTheme;
     });
   };
 

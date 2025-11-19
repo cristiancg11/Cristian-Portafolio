@@ -21,14 +21,19 @@ export default function RootLayout({
               (function() {
                 try {
                   var theme = localStorage.getItem('theme');
-                  var shouldBeDark = theme === 'dark' || !theme;
                   var root = document.documentElement;
-                  if (shouldBeDark) {
+                  if (theme === 'dark' || theme === 'light') {
+                    if (theme === 'dark') {
+                      root.classList.add('dark');
+                      root.classList.remove('light');
+                    } else {
+                      root.classList.remove('dark');
+                      root.classList.add('light');
+                    }
+                  } else {
+                    // Default to dark if no theme is set
                     root.classList.add('dark');
                     root.classList.remove('light');
-                  } else {
-                    root.classList.remove('dark');
-                    root.classList.add('light');
                   }
                 } catch (e) {
                   document.documentElement.classList.add('dark');
