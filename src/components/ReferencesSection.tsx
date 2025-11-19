@@ -35,36 +35,36 @@ export default function ReferencesSection() {
       description: t.references.ref1Description,
       avatar: "",
       contact: "maria.gonzalez@email.com",
-      instagram: "https://www.instagram.com/cristiancg1111/",
+      instagram: "https://www.instagram.com/pantojaandresparra/",
       rating: 5
     },
     {
       id: 2,
-      name: "Carlos Rodríguez",
+      name: "Ricardo Arias",
       role: t.references.projectMentor,
       description: t.references.ref2Description,
       avatar: "",
-      contact: "carlos.rodriguez@email.com",
+      contact: "ricardo.arias@email.com",
       instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     },
     {
       id: 3,
-      name: "Ana Martínez",
+      name: "Felipe Santacruz",
       role: t.references.projectCollaborator,
       description: t.references.ref3Description,
       avatar: "",
-      contact: "ana.martinez@email.com",
+      contact: "felipe.santacruz@email.com",
       instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     },
     {
       id: 4,
-      name: "Dr. Luis Pérez",
+      name: "Nicolas Wagimin",
       role: t.references.programmingProfessor,
       description: t.references.ref4Description,
       avatar: "",
-      contact: "luis.perez@universidad.edu",
+      contact: "nicolas.wagimin@email.com",
       instagram: "https://www.instagram.com/cristiancg1111/",
       rating: 5
     }
